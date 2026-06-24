@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+option go_package = "mfconsult/idl/gen";
+option java_multiple_files = true;
+option java_package = "github.com/mklfarha/mfconsult";
+option java_outer_classname = "Enum";
+
+package mfconsult;
+
+
+enum BookingStatus { 
+    BOOKING_STATUS_INVALID = 0;
+    BOOKING_STATUS_PENDING_REVIEW = 1;
+    BOOKING_STATUS_APPROVED = 2;
+    BOOKING_STATUS_PENDING_PAYMENT = 3;
+    BOOKING_STATUS_CONFIRMED = 4;
+    BOOKING_STATUS_COMPLETED = 5;
+    BOOKING_STATUS_DECLINED = 6;
+    BOOKING_STATUS_EXPIRED = 7;
+    BOOKING_STATUS_CANCELLED = 8;
+    BOOKING_STATUS_NO_SHOW = 9;
+}
+
+enum ReviewDecision { 
+    REVIEW_DECISION_INVALID = 0;
+    REVIEW_DECISION_PENDING = 1;
+    REVIEW_DECISION_APPROVED = 2;
+    REVIEW_DECISION_DECLINED = 3;
+}
+
+enum HelpTopic { 
+    HELP_TOPIC_INVALID = 0;
+    HELP_TOPIC_GREENFIELD_ARCHITECTURE = 1;
+    HELP_TOPIC_IMPROVING_EXISTING_SYSTEM = 2;
+    HELP_TOPIC_AUDITING_AI_GENERATED_CODE = 3;
+    HELP_TOPIC_SCALING_PERFORMANCE = 4;
+    HELP_TOPIC_TECHNICAL_LEADERSHIP = 5;
+    HELP_TOPIC_OTHER = 6;
+}
+
+enum PaymentStatus { 
+    PAYMENT_STATUS_INVALID = 0;
+    PAYMENT_STATUS_UNPAID = 1;
+    PAYMENT_STATUS_PAID = 2;
+    PAYMENT_STATUS_REFUNDED = 3;
+}
+
+enum DocumentKind { 
+    DOCUMENT_KIND_INVALID = 0;
+    DOCUMENT_KIND_FILE = 1;
+    DOCUMENT_KIND_REPO_URL = 2;
+    DOCUMENT_KIND_LINK = 3;
+}
+
+enum NdaStatus { 
+    NDA_STATUS_INVALID = 0;
+    NDA_STATUS_REQUESTED = 1;
+    NDA_STATUS_SENT = 2;
+    NDA_STATUS_SIGNED = 3;
+}
+
+enum WebhookSource { 
+    WEBHOOK_SOURCE_INVALID = 0;
+    WEBHOOK_SOURCE_STRIPE = 1;
+    WEBHOOK_SOURCE_SCHEDULER = 2;
+    WEBHOOK_SOURCE_ESIGN = 3;
+}

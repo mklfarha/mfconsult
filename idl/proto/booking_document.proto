@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "mfconsult/idl/gen";
+option java_multiple_files = true;
+option java_package = "github.com/mklfarha/mfconsult";
+option java_outer_classname = "BookingDocument";
+
+package mfconsult;
+
+
+import "enum.proto";
+import "google/protobuf/timestamp.proto";
+
+message BookingDocument {  
+    string id = 1;
+    string booking_id = 2;
+    DocumentKind kind = 3;
+    string url = 4;
+    string label = 5;
+    google.protobuf.Timestamp purge_after = 6;
+    google.protobuf.Timestamp created_at = 7;    
+}

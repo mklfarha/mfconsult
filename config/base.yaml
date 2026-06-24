@@ -1,0 +1,22 @@
+
+ports:  
+  grpc: 6005
+  http: 8080
+
+auth:
+  
+  
+
+
+
+db:
+  - name: << Database Name Here>>
+    host: << Database Host Here>>
+    port: << Database Port Here>>
+    user: << Database User Here>>
+    pswd: << Database Password Here>>
+    params: << Database Params Here>>
+    driver: "<< Database Driver Here >>"
+
+monitoring:
+  enabled: false
