@@ -12,7 +12,7 @@ import (
 func ClientToProto(e main_entity.Client) *pb.Client {
 	return &pb.Client{
 		Id:        e.ID.String(),
-		Name:      e.Name,
+		Name:      e.Name.ValueOrZero(),
 		Email:     e.Email,
 		Timezone:  e.Timezone.ValueOrZero(),
 		Notes:     e.Notes.ValueOrZero(),
@@ -35,7 +35,7 @@ func ClientFromProto(m *pb.Client) main_entity.Client {
 	}
 	return main_entity.Client{
 		ID:        StringToUUID(m.GetId()),
-		Name:      m.GetName(),
+		Name:      null.StringFrom(m.Name),
 		Email:     m.GetEmail(),
 		Timezone:  null.StringFrom(m.Timezone),
 		Notes:     null.StringFrom(m.Notes),

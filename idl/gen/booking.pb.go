@@ -23,26 +23,23 @@ const (
 )
 
 type Booking struct {
-	state            protoimpl.MessageState `protogen:"open.v1"`
-	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	ClientId         string                 `protobuf:"bytes,2,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
-	Status           BookingStatus          `protobuf:"varint,3,opt,name=status,proto3,enum=mfconsult.BookingStatus" json:"status,omitempty"`
-	ReviewDecision   ReviewDecision         `protobuf:"varint,4,opt,name=review_decision,json=reviewDecision,proto3,enum=mfconsult.ReviewDecision" json:"review_decision,omitempty"`
-	ReviewedAt       *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=reviewed_at,json=reviewedAt,proto3" json:"reviewed_at,omitempty"`
-	DeclineReason    string                 `protobuf:"bytes,6,opt,name=decline_reason,json=declineReason,proto3" json:"decline_reason,omitempty"`
-	PayLinkToken     string                 `protobuf:"bytes,7,opt,name=pay_link_token,json=payLinkToken,proto3" json:"pay_link_token,omitempty"`
-	PayLinkExpiresAt *timestamppb.Timestamp `protobuf:"bytes,8,opt,name=pay_link_expires_at,json=payLinkExpiresAt,proto3" json:"pay_link_expires_at,omitempty"`
-	PortalToken      string                 `protobuf:"bytes,9,opt,name=portal_token,json=portalToken,proto3" json:"portal_token,omitempty"`
-	Intake           []*BookingIntake       `protobuf:"bytes,10,rep,name=intake,proto3" json:"intake,omitempty"`
-	Payment          []*BookingPayment      `protobuf:"bytes,11,rep,name=payment,proto3" json:"payment,omitempty"`
-	Scheduling       []*BookingScheduling   `protobuf:"bytes,12,rep,name=scheduling,proto3" json:"scheduling,omitempty"`
-	TermsVersion     string                 `protobuf:"bytes,13,opt,name=terms_version,json=termsVersion,proto3" json:"terms_version,omitempty"`
-	TermsAcceptedAt  *timestamppb.Timestamp `protobuf:"bytes,14,opt,name=terms_accepted_at,json=termsAcceptedAt,proto3" json:"terms_accepted_at,omitempty"`
-	TermsAcceptedIp  string                 `protobuf:"bytes,15,opt,name=terms_accepted_ip,json=termsAcceptedIp,proto3" json:"terms_accepted_ip,omitempty"`
-	CreatedAt        *timestamppb.Timestamp `protobuf:"bytes,16,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	UpdatedAt        *timestamppb.Timestamp `protobuf:"bytes,17,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ClientId        string                 `protobuf:"bytes,2,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	Status          BookingStatus          `protobuf:"varint,3,opt,name=status,proto3,enum=mfconsult.BookingStatus" json:"status,omitempty"`
+	ReviewDecision  ReviewDecision         `protobuf:"varint,4,opt,name=review_decision,json=reviewDecision,proto3,enum=mfconsult.ReviewDecision" json:"review_decision,omitempty"`
+	ReviewedAt      *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=reviewed_at,json=reviewedAt,proto3" json:"reviewed_at,omitempty"`
+	DeclineReason   string                 `protobuf:"bytes,6,opt,name=decline_reason,json=declineReason,proto3" json:"decline_reason,omitempty"`
+	Intake          []*BookingIntake       `protobuf:"bytes,7,rep,name=intake,proto3" json:"intake,omitempty"`
+	Payment         []*BookingPayment      `protobuf:"bytes,8,rep,name=payment,proto3" json:"payment,omitempty"`
+	Scheduling      []*BookingScheduling   `protobuf:"bytes,9,rep,name=scheduling,proto3" json:"scheduling,omitempty"`
+	TermsVersion    string                 `protobuf:"bytes,10,opt,name=terms_version,json=termsVersion,proto3" json:"terms_version,omitempty"`
+	TermsAcceptedAt *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=terms_accepted_at,json=termsAcceptedAt,proto3" json:"terms_accepted_at,omitempty"`
+	TermsAcceptedIp string                 `protobuf:"bytes,12,opt,name=terms_accepted_ip,json=termsAcceptedIp,proto3" json:"terms_accepted_ip,omitempty"`
+	CreatedAt       *timestamppb.Timestamp `protobuf:"bytes,13,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt       *timestamppb.Timestamp `protobuf:"bytes,14,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *Booking) Reset() {
@@ -117,27 +114,6 @@ func (x *Booking) GetDeclineReason() string {
 	return ""
 }
 
-func (x *Booking) GetPayLinkToken() string {
-	if x != nil {
-		return x.PayLinkToken
-	}
-	return ""
-}
-
-func (x *Booking) GetPayLinkExpiresAt() *timestamppb.Timestamp {
-	if x != nil {
-		return x.PayLinkExpiresAt
-	}
-	return nil
-}
-
-func (x *Booking) GetPortalToken() string {
-	if x != nil {
-		return x.PortalToken
-	}
-	return ""
-}
-
 func (x *Booking) GetIntake() []*BookingIntake {
 	if x != nil {
 		return x.Intake
@@ -199,7 +175,7 @@ var File_booking_proto protoreflect.FileDescriptor
 const file_booking_proto_rawDesc = "" +
 	"\n" +
 	"\rbooking.proto\x12\tmfconsult\x1a\x14booking_intake.proto\x1a\x15booking_payment.proto\x1a\x18booking_scheduling.proto\x1a\n" +
-	"enum.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd8\x06\n" +
+	"enum.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc4\x05\n" +
 	"\aBooking\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
 	"\tclient_id\x18\x02 \x01(\tR\bclientId\x120\n" +
@@ -207,23 +183,20 @@ const file_booking_proto_rawDesc = "" +
 	"\x0freview_decision\x18\x04 \x01(\x0e2\x19.mfconsult.ReviewDecisionR\x0ereviewDecision\x12;\n" +
 	"\vreviewed_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\n" +
 	"reviewedAt\x12%\n" +
-	"\x0edecline_reason\x18\x06 \x01(\tR\rdeclineReason\x12$\n" +
-	"\x0epay_link_token\x18\a \x01(\tR\fpayLinkToken\x12I\n" +
-	"\x13pay_link_expires_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\x10payLinkExpiresAt\x12!\n" +
-	"\fportal_token\x18\t \x01(\tR\vportalToken\x120\n" +
-	"\x06intake\x18\n" +
-	" \x03(\v2\x18.mfconsult.BookingIntakeR\x06intake\x123\n" +
-	"\apayment\x18\v \x03(\v2\x19.mfconsult.BookingPaymentR\apayment\x12<\n" +
+	"\x0edecline_reason\x18\x06 \x01(\tR\rdeclineReason\x120\n" +
+	"\x06intake\x18\a \x03(\v2\x18.mfconsult.BookingIntakeR\x06intake\x123\n" +
+	"\apayment\x18\b \x03(\v2\x19.mfconsult.BookingPaymentR\apayment\x12<\n" +
 	"\n" +
-	"scheduling\x18\f \x03(\v2\x1c.mfconsult.BookingSchedulingR\n" +
+	"scheduling\x18\t \x03(\v2\x1c.mfconsult.BookingSchedulingR\n" +
 	"scheduling\x12#\n" +
-	"\rterms_version\x18\r \x01(\tR\ftermsVersion\x12F\n" +
-	"\x11terms_accepted_at\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampR\x0ftermsAcceptedAt\x12*\n" +
-	"\x11terms_accepted_ip\x18\x0f \x01(\tR\x0ftermsAcceptedIp\x129\n" +
+	"\rterms_version\x18\n" +
+	" \x01(\tR\ftermsVersion\x12F\n" +
+	"\x11terms_accepted_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\x0ftermsAcceptedAt\x12*\n" +
+	"\x11terms_accepted_ip\x18\f \x01(\tR\x0ftermsAcceptedIp\x129\n" +
 	"\n" +
-	"created_at\x18\x10 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"created_at\x18\r \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
 	"\n" +
-	"updated_at\x18\x11 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAtB=\n" +
+	"updated_at\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAtB=\n" +
 	"\x1dgithub.com/mklfarha/mfconsultB\aBookingP\x01Z\x11mfconsult/idl/genb\x06proto3"
 
 var (
@@ -249,21 +222,20 @@ var file_booking_proto_goTypes = []any{
 	(*BookingScheduling)(nil),     // 6: mfconsult.BookingScheduling
 }
 var file_booking_proto_depIdxs = []int32{
-	1,  // 0: mfconsult.Booking.status:type_name -> mfconsult.BookingStatus
-	2,  // 1: mfconsult.Booking.review_decision:type_name -> mfconsult.ReviewDecision
-	3,  // 2: mfconsult.Booking.reviewed_at:type_name -> google.protobuf.Timestamp
-	3,  // 3: mfconsult.Booking.pay_link_expires_at:type_name -> google.protobuf.Timestamp
-	4,  // 4: mfconsult.Booking.intake:type_name -> mfconsult.BookingIntake
-	5,  // 5: mfconsult.Booking.payment:type_name -> mfconsult.BookingPayment
-	6,  // 6: mfconsult.Booking.scheduling:type_name -> mfconsult.BookingScheduling
-	3,  // 7: mfconsult.Booking.terms_accepted_at:type_name -> google.protobuf.Timestamp
-	3,  // 8: mfconsult.Booking.created_at:type_name -> google.protobuf.Timestamp
-	3,  // 9: mfconsult.Booking.updated_at:type_name -> google.protobuf.Timestamp
-	10, // [10:10] is the sub-list for method output_type
-	10, // [10:10] is the sub-list for method input_type
-	10, // [10:10] is the sub-list for extension type_name
-	10, // [10:10] is the sub-list for extension extendee
-	0,  // [0:10] is the sub-list for field type_name
+	1, // 0: mfconsult.Booking.status:type_name -> mfconsult.BookingStatus
+	2, // 1: mfconsult.Booking.review_decision:type_name -> mfconsult.ReviewDecision
+	3, // 2: mfconsult.Booking.reviewed_at:type_name -> google.protobuf.Timestamp
+	4, // 3: mfconsult.Booking.intake:type_name -> mfconsult.BookingIntake
+	5, // 4: mfconsult.Booking.payment:type_name -> mfconsult.BookingPayment
+	6, // 5: mfconsult.Booking.scheduling:type_name -> mfconsult.BookingScheduling
+	3, // 6: mfconsult.Booking.terms_accepted_at:type_name -> google.protobuf.Timestamp
+	3, // 7: mfconsult.Booking.created_at:type_name -> google.protobuf.Timestamp
+	3, // 8: mfconsult.Booking.updated_at:type_name -> google.protobuf.Timestamp
+	9, // [9:9] is the sub-list for method output_type
+	9, // [9:9] is the sub-list for method input_type
+	9, // [9:9] is the sub-list for extension type_name
+	9, // [9:9] is the sub-list for extension extendee
+	0, // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_booking_proto_init() }

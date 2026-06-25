@@ -21,15 +21,12 @@ message Booking {
     ReviewDecision review_decision = 4;
     google.protobuf.Timestamp reviewed_at = 5;
     string decline_reason = 6;
-    string pay_link_token = 7;
-    google.protobuf.Timestamp pay_link_expires_at = 8;
-    string portal_token = 9;
-    repeated BookingIntake intake = 10;
-    repeated BookingPayment payment = 11;
-    repeated BookingScheduling scheduling = 12;
-    string terms_version = 13;
-    google.protobuf.Timestamp terms_accepted_at = 14;
-    string terms_accepted_ip = 15;
-    google.protobuf.Timestamp created_at = 16;
-    google.protobuf.Timestamp updated_at = 17;    
+    repeated BookingIntake intake = 7;
+    repeated BookingPayment payment = 8;
+    repeated BookingScheduling scheduling = 9;
+    string terms_version = 10;
+    google.protobuf.Timestamp terms_accepted_at = 11;
+    string terms_accepted_ip = 12;
+    google.protobuf.Timestamp created_at = 13;
+    google.protobuf.Timestamp updated_at = 14;    
 }

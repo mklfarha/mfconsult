@@ -169,12 +169,6 @@ func bookingDeclarations() *filtering.Declarations {
 
 		filtering.DeclareIdent("decline_reason", filtering.TypeString),
 
-		filtering.DeclareIdent("pay_link_token", filtering.TypeString),
-
-		filtering.DeclareIdent("pay_link_expires_at", filtering.TypeTimestamp),
-
-		filtering.DeclareIdent("portal_token", filtering.TypeString),
-
 		filtering.DeclareIdent("terms_version", filtering.TypeString),
 
 		filtering.DeclareIdent("terms_accepted_at", filtering.TypeTimestamp),

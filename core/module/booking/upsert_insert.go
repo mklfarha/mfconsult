@@ -75,12 +75,6 @@ func mapUpsertRequestToInsertParams(req types.UpsertRequest) mfconsultdb.InsertB
 
 		DeclineReason: req.Booking.DeclineReason,
 
-		PayLinkToken: req.Booking.PayLinkToken,
-
-		PayLinkExpiresAt: req.Booking.PayLinkExpiresAt,
-
-		PortalToken: req.Booking.PortalToken,
-
 		Intake: booking_intake.BookingIntakeSliceToJSON(req.Booking.Intake),
 
 		Payment: booking_payment.BookingPaymentSliceToJSON(req.Booking.Payment),

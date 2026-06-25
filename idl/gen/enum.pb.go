@@ -308,55 +308,55 @@ func (DocumentKind) EnumDescriptor() ([]byte, []int) {
 	return file_enum_proto_rawDescGZIP(), []int{4}
 }
 
-type NdaStatus int32
+type AgreementStatus int32
 
 const (
-	NdaStatus_NDA_STATUS_INVALID   NdaStatus = 0
-	NdaStatus_NDA_STATUS_REQUESTED NdaStatus = 1
-	NdaStatus_NDA_STATUS_SENT      NdaStatus = 2
-	NdaStatus_NDA_STATUS_SIGNED    NdaStatus = 3
+	AgreementStatus_AGREEMENT_STATUS_INVALID   AgreementStatus = 0
+	AgreementStatus_AGREEMENT_STATUS_REQUESTED AgreementStatus = 1
+	AgreementStatus_AGREEMENT_STATUS_SENT      AgreementStatus = 2
+	AgreementStatus_AGREEMENT_STATUS_SIGNED    AgreementStatus = 3
 )
 
-// Enum value maps for NdaStatus.
+// Enum value maps for AgreementStatus.
 var (
-	NdaStatus_name = map[int32]string{
-		0: "NDA_STATUS_INVALID",
-		1: "NDA_STATUS_REQUESTED",
-		2: "NDA_STATUS_SENT",
-		3: "NDA_STATUS_SIGNED",
+	AgreementStatus_name = map[int32]string{
+		0: "AGREEMENT_STATUS_INVALID",
+		1: "AGREEMENT_STATUS_REQUESTED",
+		2: "AGREEMENT_STATUS_SENT",
+		3: "AGREEMENT_STATUS_SIGNED",
 	}
-	NdaStatus_value = map[string]int32{
-		"NDA_STATUS_INVALID":   0,
-		"NDA_STATUS_REQUESTED": 1,
-		"NDA_STATUS_SENT":      2,
-		"NDA_STATUS_SIGNED":    3,
+	AgreementStatus_value = map[string]int32{
+		"AGREEMENT_STATUS_INVALID":   0,
+		"AGREEMENT_STATUS_REQUESTED": 1,
+		"AGREEMENT_STATUS_SENT":      2,
+		"AGREEMENT_STATUS_SIGNED":    3,
 	}
 )
 
-func (x NdaStatus) Enum() *NdaStatus {
-	p := new(NdaStatus)
+func (x AgreementStatus) Enum() *AgreementStatus {
+	p := new(AgreementStatus)
 	*p = x
 	return p
 }
 
-func (x NdaStatus) String() string {
+func (x AgreementStatus) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (NdaStatus) Descriptor() protoreflect.EnumDescriptor {
+func (AgreementStatus) Descriptor() protoreflect.EnumDescriptor {
 	return file_enum_proto_enumTypes[5].Descriptor()
 }
 
-func (NdaStatus) Type() protoreflect.EnumType {
+func (AgreementStatus) Type() protoreflect.EnumType {
 	return &file_enum_proto_enumTypes[5]
 }
 
-func (x NdaStatus) Number() protoreflect.EnumNumber {
+func (x AgreementStatus) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use NdaStatus.Descriptor instead.
-func (NdaStatus) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use AgreementStatus.Descriptor instead.
+func (AgreementStatus) EnumDescriptor() ([]byte, []int) {
 	return file_enum_proto_rawDescGZIP(), []int{5}
 }
 
@@ -412,6 +412,113 @@ func (WebhookSource) EnumDescriptor() ([]byte, []int) {
 	return file_enum_proto_rawDescGZIP(), []int{6}
 }
 
+type InquiryStatus int32
+
+const (
+	InquiryStatus_INQUIRY_STATUS_INVALID   InquiryStatus = 0
+	InquiryStatus_INQUIRY_STATUS_NEW       InquiryStatus = 1
+	InquiryStatus_INQUIRY_STATUS_REVIEWING InquiryStatus = 2
+	InquiryStatus_INQUIRY_STATUS_CONTACTED InquiryStatus = 3
+	InquiryStatus_INQUIRY_STATUS_QUALIFIED InquiryStatus = 4
+	InquiryStatus_INQUIRY_STATUS_DECLINED  InquiryStatus = 5
+)
+
+// Enum value maps for InquiryStatus.
+var (
+	InquiryStatus_name = map[int32]string{
+		0: "INQUIRY_STATUS_INVALID",
+		1: "INQUIRY_STATUS_NEW",
+		2: "INQUIRY_STATUS_REVIEWING",
+		3: "INQUIRY_STATUS_CONTACTED",
+		4: "INQUIRY_STATUS_QUALIFIED",
+		5: "INQUIRY_STATUS_DECLINED",
+	}
+	InquiryStatus_value = map[string]int32{
+		"INQUIRY_STATUS_INVALID":   0,
+		"INQUIRY_STATUS_NEW":       1,
+		"INQUIRY_STATUS_REVIEWING": 2,
+		"INQUIRY_STATUS_CONTACTED": 3,
+		"INQUIRY_STATUS_QUALIFIED": 4,
+		"INQUIRY_STATUS_DECLINED":  5,
+	}
+)
+
+func (x InquiryStatus) Enum() *InquiryStatus {
+	p := new(InquiryStatus)
+	*p = x
+	return p
+}
+
+func (x InquiryStatus) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (InquiryStatus) Descriptor() protoreflect.EnumDescriptor {
+	return file_enum_proto_enumTypes[7].Descriptor()
+}
+
+func (InquiryStatus) Type() protoreflect.EnumType {
+	return &file_enum_proto_enumTypes[7]
+}
+
+func (x InquiryStatus) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use InquiryStatus.Descriptor instead.
+func (InquiryStatus) EnumDescriptor() ([]byte, []int) {
+	return file_enum_proto_rawDescGZIP(), []int{7}
+}
+
+type MagicLinkPurpose int32
+
+const (
+	MagicLinkPurpose_MAGIC_LINK_PURPOSE_INVALID        MagicLinkPurpose = 0
+	MagicLinkPurpose_MAGIC_LINK_PURPOSE_BOOKING_ACCESS MagicLinkPurpose = 1
+	MagicLinkPurpose_MAGIC_LINK_PURPOSE_PORTAL_ACCESS  MagicLinkPurpose = 2
+)
+
+// Enum value maps for MagicLinkPurpose.
+var (
+	MagicLinkPurpose_name = map[int32]string{
+		0: "MAGIC_LINK_PURPOSE_INVALID",
+		1: "MAGIC_LINK_PURPOSE_BOOKING_ACCESS",
+		2: "MAGIC_LINK_PURPOSE_PORTAL_ACCESS",
+	}
+	MagicLinkPurpose_value = map[string]int32{
+		"MAGIC_LINK_PURPOSE_INVALID":        0,
+		"MAGIC_LINK_PURPOSE_BOOKING_ACCESS": 1,
+		"MAGIC_LINK_PURPOSE_PORTAL_ACCESS":  2,
+	}
+)
+
+func (x MagicLinkPurpose) Enum() *MagicLinkPurpose {
+	p := new(MagicLinkPurpose)
+	*p = x
+	return p
+}
+
+func (x MagicLinkPurpose) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (MagicLinkPurpose) Descriptor() protoreflect.EnumDescriptor {
+	return file_enum_proto_enumTypes[8].Descriptor()
+}
+
+func (MagicLinkPurpose) Type() protoreflect.EnumType {
+	return &file_enum_proto_enumTypes[8]
+}
+
+func (x MagicLinkPurpose) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use MagicLinkPurpose.Descriptor instead.
+func (MagicLinkPurpose) EnumDescriptor() ([]byte, []int) {
+	return file_enum_proto_rawDescGZIP(), []int{8}
+}
+
 var File_enum_proto protoreflect.FileDescriptor
 
 const file_enum_proto_rawDesc = "" +
@@ -451,17 +558,28 @@ const file_enum_proto_rawDesc = "" +
 	"\x15DOCUMENT_KIND_INVALID\x10\x00\x12\x16\n" +
 	"\x12DOCUMENT_KIND_FILE\x10\x01\x12\x1a\n" +
 	"\x16DOCUMENT_KIND_REPO_URL\x10\x02\x12\x16\n" +
-	"\x12DOCUMENT_KIND_LINK\x10\x03*i\n" +
-	"\tNdaStatus\x12\x16\n" +
-	"\x12NDA_STATUS_INVALID\x10\x00\x12\x18\n" +
-	"\x14NDA_STATUS_REQUESTED\x10\x01\x12\x13\n" +
-	"\x0fNDA_STATUS_SENT\x10\x02\x12\x15\n" +
-	"\x11NDA_STATUS_SIGNED\x10\x03*~\n" +
+	"\x12DOCUMENT_KIND_LINK\x10\x03*\x87\x01\n" +
+	"\x0fAgreementStatus\x12\x1c\n" +
+	"\x18AGREEMENT_STATUS_INVALID\x10\x00\x12\x1e\n" +
+	"\x1aAGREEMENT_STATUS_REQUESTED\x10\x01\x12\x19\n" +
+	"\x15AGREEMENT_STATUS_SENT\x10\x02\x12\x1b\n" +
+	"\x17AGREEMENT_STATUS_SIGNED\x10\x03*~\n" +
 	"\rWebhookSource\x12\x1a\n" +
 	"\x16WEBHOOK_SOURCE_INVALID\x10\x00\x12\x19\n" +
 	"\x15WEBHOOK_SOURCE_STRIPE\x10\x01\x12\x1c\n" +
 	"\x18WEBHOOK_SOURCE_SCHEDULER\x10\x02\x12\x18\n" +
-	"\x14WEBHOOK_SOURCE_ESIGN\x10\x03B:\n" +
+	"\x14WEBHOOK_SOURCE_ESIGN\x10\x03*\xba\x01\n" +
+	"\rInquiryStatus\x12\x1a\n" +
+	"\x16INQUIRY_STATUS_INVALID\x10\x00\x12\x16\n" +
+	"\x12INQUIRY_STATUS_NEW\x10\x01\x12\x1c\n" +
+	"\x18INQUIRY_STATUS_REVIEWING\x10\x02\x12\x1c\n" +
+	"\x18INQUIRY_STATUS_CONTACTED\x10\x03\x12\x1c\n" +
+	"\x18INQUIRY_STATUS_QUALIFIED\x10\x04\x12\x1b\n" +
+	"\x17INQUIRY_STATUS_DECLINED\x10\x05*\x7f\n" +
+	"\x10MagicLinkPurpose\x12\x1e\n" +
+	"\x1aMAGIC_LINK_PURPOSE_INVALID\x10\x00\x12%\n" +
+	"!MAGIC_LINK_PURPOSE_BOOKING_ACCESS\x10\x01\x12$\n" +
+	" MAGIC_LINK_PURPOSE_PORTAL_ACCESS\x10\x02B:\n" +
 	"\x1dgithub.com/mklfarha/mfconsultB\x04EnumP\x01Z\x11mfconsult/idl/genb\x06proto3"
 
 var (
@@ -476,15 +594,17 @@ func file_enum_proto_rawDescGZIP() []byte {
 	return file_enum_proto_rawDescData
 }
 
-var file_enum_proto_enumTypes = make([]protoimpl.EnumInfo, 7)
+var file_enum_proto_enumTypes = make([]protoimpl.EnumInfo, 9)
 var file_enum_proto_goTypes = []any{
-	(BookingStatus)(0),  // 0: mfconsult.BookingStatus
-	(ReviewDecision)(0), // 1: mfconsult.ReviewDecision
-	(HelpTopic)(0),      // 2: mfconsult.HelpTopic
-	(PaymentStatus)(0),  // 3: mfconsult.PaymentStatus
-	(DocumentKind)(0),   // 4: mfconsult.DocumentKind
-	(NdaStatus)(0),      // 5: mfconsult.NdaStatus
-	(WebhookSource)(0),  // 6: mfconsult.WebhookSource
+	(BookingStatus)(0),    // 0: mfconsult.BookingStatus
+	(ReviewDecision)(0),   // 1: mfconsult.ReviewDecision
+	(HelpTopic)(0),        // 2: mfconsult.HelpTopic
+	(PaymentStatus)(0),    // 3: mfconsult.PaymentStatus
+	(DocumentKind)(0),     // 4: mfconsult.DocumentKind
+	(AgreementStatus)(0),  // 5: mfconsult.AgreementStatus
+	(WebhookSource)(0),    // 6: mfconsult.WebhookSource
+	(InquiryStatus)(0),    // 7: mfconsult.InquiryStatus
+	(MagicLinkPurpose)(0), // 8: mfconsult.MagicLinkPurpose
 }
 var file_enum_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
@@ -504,7 +624,7 @@ func file_enum_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_enum_proto_rawDesc), len(file_enum_proto_rawDesc)),
-			NumEnums:      7,
+			NumEnums:      9,
 			NumMessages:   0,
 			NumExtensions: 0,
 			NumServices:   0,

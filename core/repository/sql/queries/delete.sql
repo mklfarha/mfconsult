@@ -23,8 +23,18 @@ DELETE FROM `booking_recap`
 WHERE
 `id` = ?;
 
--- name: DeleteNdaDocument :execresult
-DELETE FROM `nda_document`
+-- name: DeleteEngagementAgreement :execresult
+DELETE FROM `engagement_agreement`
+WHERE
+`id` = ?;
+
+-- name: DeleteEngagementInquiry :execresult
+DELETE FROM `engagement_inquiry`
+WHERE
+`id` = ?;
+
+-- name: DeleteMagicLink :execresult
+DELETE FROM `magic_link`
 WHERE
 `id` = ?;
 

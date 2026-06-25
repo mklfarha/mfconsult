@@ -14,14 +14,21 @@ sql:
           amount_cents: AmountCents
           body: Body
           booking_id: BookingId
+          budget_range: BudgetRange
           certificate_url: CertificateURL
           client_id: ClientId
+          company: Company
+          consumed_at: ConsumedAt
+          contract_url: ContractURL
           created_at: CreatedAt
+          created_ip: CreatedIp
           currency: Currency
           decline_reason: DeclineReason
           email: Email
+          engagement_inquiry_id: EngagementInquiryId
           envelope_id: EnvelopeId
           event_type: EventType
+          expires_at: ExpiresAt
           help_details: HelpDetails
           help_topic: HelpTopic
           id: ID
@@ -29,22 +36,25 @@ sql:
           kind: Kind
           label: Label
           name: Name
+          nda_url: NdaURL
           notes: Notes
-          pay_link_expires_at: PayLinkExpiresAt
-          pay_link_token: PayLinkToken
           payload: Payload
           payment: Payment
           payment_status: PaymentStatus
-          portal_token: PortalToken
+          phone: Phone
           prep_notes: PrepNotes
           processed_at: ProcessedAt
+          project_summary: ProjectSummary
           published_at: PublishedAt
           purge_after: PurgeAfter
+          purpose: Purpose
           reason: Reason
           review_decision: ReviewDecision
+          review_notes: ReviewNotes
           reviewed_at: ReviewedAt
           scheduler_booking_id: SchedulerBookingId
           scheduling: Scheduling
+          scope_details: ScopeDetails
           signed_at: SignedAt
           slot_end: SlotEnd
           slot_start: SlotStart
@@ -55,10 +65,13 @@ sql:
           terms_accepted_at: TermsAcceptedAt
           terms_accepted_ip: TermsAcceptedIp
           terms_version: TermsVersion
+          timeline: Timeline
           timezone: Timezone
+          token: Token
           updated_at: UpdatedAt
           url: URL
-          video_url: VideoURL        
+          video_url: VideoURL
+          why_more_than_session: WhyMoreThanSession        
         overrides:          
           - db_type: "int"            
             go_type:              
@@ -146,5 +159,7 @@ overrides:
       booking_recap: BookingRecap
       booking_scheduling: BookingScheduling
       client: Client
-      nda_document: NdaDocument
+      engagement_agreement: EngagementAgreement
+      engagement_inquiry: EngagementInquiry
+      magic_link: MagicLink
       webhook_event: WebhookEvent

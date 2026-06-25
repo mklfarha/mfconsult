@@ -122,12 +122,6 @@ var listFields = []string{
 
 	"decline_reason",
 
-	"pay_link_token",
-
-	"pay_link_expires_at",
-
-	"portal_token",
-
 	"intake",
 
 	"payment",
@@ -158,12 +152,6 @@ var listFieldRegistry = map[string]func(*repogen.Booking) any{
 	"reviewed_at": func(i *repogen.Booking) any { return &i.ReviewedAt },
 
 	"decline_reason": func(i *repogen.Booking) any { return &i.DeclineReason },
-
-	"pay_link_token": func(i *repogen.Booking) any { return &i.PayLinkToken },
-
-	"pay_link_expires_at": func(i *repogen.Booking) any { return &i.PayLinkExpiresAt },
-
-	"portal_token": func(i *repogen.Booking) any { return &i.PortalToken },
 
 	"intake": func(i *repogen.Booking) any { return &i.Intake },
 

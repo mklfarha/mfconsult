@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS `client` (
     `id` CHAR(36) NOT NULL,
-    `name` VARCHAR(255) NOT NULL,
+    `name` VARCHAR(255),
     `email` VARCHAR(512) NOT NULL,
     `timezone` VARCHAR(64),
     `notes` TEXT,
@@ -24,9 +24,6 @@ CREATE TABLE IF NOT EXISTS `booking` (
     `review_decision` INT NOT NULL,
     `reviewed_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `decline_reason` TEXT,
-    `pay_link_token` VARCHAR(64),
-    `pay_link_expires_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
-    `portal_token` VARCHAR(64),
     `intake` JSON,
     `payment` JSON,
     `scheduling` JSON,
@@ -64,16 +61,58 @@ CREATE TABLE IF NOT EXISTS `booking_recap` (
         REFERENCES `booking` (`id`)
 ) ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS `nda_document` (
+CREATE TABLE IF NOT EXISTS `engagement_agreement` (
     `id` CHAR(36) NOT NULL,
     `client_id` CHAR(36) NOT NULL,
-    `url` VARCHAR(512),
+    `nda_url` VARCHAR(512),
     `status` INT,
     `signed_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `envelope_id` VARCHAR(128),
     `certificate_url` VARCHAR(512),
-    CONSTRAINT `client_has_nda`
+    `contract_url` VARCHAR(512),
+    `engagement_inquiry_id` CHAR(36) NOT NULL,
+    `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT `client_has_agreement`
+        FOREIGN KEY (`client_id`)
+        REFERENCES `client` (`id`),
+    CONSTRAINT `engagement_has_agreement`
+        FOREIGN KEY (`engagement_inquiry_id`)
+        REFERENCES `engagement_inquiry` (`id`)
+) ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `engagement_inquiry` (
+    `id` CHAR(36) NOT NULL,
+    `client_id` CHAR(36),
+    `name` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(512) NOT NULL,
+    `phone` VARCHAR(32),
+    `company` VARCHAR(255),
+    `project_summary` VARCHAR(255) NOT NULL,
+    `why_more_than_session` TEXT,
+    `scope_details` VARCHAR(255),
+    `budget_range` VARCHAR(128),
+    `timeline` VARCHAR(128),
+    `status` INT,
+    `review_notes` TEXT,
+    `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT `client_has_inquiries`
+        FOREIGN KEY (`client_id`)
+        REFERENCES `client` (`id`)
+) ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `magic_link` (
+    `id` CHAR(36) NOT NULL,
+    `client_id` CHAR(36) NOT NULL,
+    `email` VARCHAR(512),
+    `token` VARCHAR(128) NOT NULL,
+    `purpose` INT,
+    `expires_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    `consumed_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    `created_ip` VARCHAR(64),
+    CONSTRAINT `client_has_magic_links`
         FOREIGN KEY (`client_id`)
         REFERENCES `client` (`id`)
 ) ENGINE = InnoDB;

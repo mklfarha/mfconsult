@@ -15,7 +15,7 @@ WHERE
 -- name: UpdateBooking :exec
 UPDATE `booking`
 SET
-`client_id` = ?, `status` = ?, `review_decision` = ?, `reviewed_at` = ?, `decline_reason` = ?, `pay_link_token` = ?, `pay_link_expires_at` = ?, `portal_token` = ?, `intake` = ?, `payment` = ?, `scheduling` = ?, `terms_version` = ?, `terms_accepted_at` = ?, `terms_accepted_ip` = ?, `created_at` = ?, `updated_at` = ?
+`client_id` = ?, `status` = ?, `review_decision` = ?, `reviewed_at` = ?, `decline_reason` = ?, `intake` = ?, `payment` = ?, `scheduling` = ?, `terms_version` = ?, `terms_accepted_at` = ?, `terms_accepted_ip` = ?, `created_at` = ?, `updated_at` = ?
 WHERE
 `id` = ?;
 
@@ -33,10 +33,24 @@ SET
 WHERE
 `id` = ?;
 
--- name: UpdateNdaDocument :exec
-UPDATE `nda_document`
+-- name: UpdateEngagementAgreement :exec
+UPDATE `engagement_agreement`
 SET
-`client_id` = ?, `url` = ?, `status` = ?, `signed_at` = ?, `created_at` = ?, `envelope_id` = ?, `certificate_url` = ?
+`client_id` = ?, `nda_url` = ?, `status` = ?, `signed_at` = ?, `created_at` = ?, `envelope_id` = ?, `certificate_url` = ?, `contract_url` = ?, `engagement_inquiry_id` = ?, `updated_at` = ?
+WHERE
+`id` = ?;
+
+-- name: UpdateEngagementInquiry :exec
+UPDATE `engagement_inquiry`
+SET
+`client_id` = ?, `name` = ?, `email` = ?, `phone` = ?, `company` = ?, `project_summary` = ?, `why_more_than_session` = ?, `scope_details` = ?, `budget_range` = ?, `timeline` = ?, `status` = ?, `review_notes` = ?, `created_at` = ?, `updated_at` = ?
+WHERE
+`id` = ?;
+
+-- name: UpdateMagicLink :exec
+UPDATE `magic_link`
+SET
+`client_id` = ?, `email` = ?, `token` = ?, `purpose` = ?, `expires_at` = ?, `consumed_at` = ?, `created_at` = ?, `created_ip` = ?
 WHERE
 `id` = ?;
 

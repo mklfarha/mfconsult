@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option go_package = "mfconsult/idl/gen";
+option java_multiple_files = true;
+option java_package = "github.com/mklfarha/mfconsult";
+option java_outer_classname = "EngagementAgreement";
+
+package mfconsult;
+
+
+import "enum.proto";
+import "google/protobuf/timestamp.proto";
+
+message EngagementAgreement {  
+    string id = 1;
+    string client_id = 2;
+    string nda_url = 3;
+    AgreementStatus status = 4;
+    google.protobuf.Timestamp signed_at = 5;
+    google.protobuf.Timestamp created_at = 6;
+    string envelope_id = 7;
+    string certificate_url = 8;
+    string contract_url = 9;
+    string engagement_inquiry_id = 10;
+    google.protobuf.Timestamp updated_at = 11;    
+}

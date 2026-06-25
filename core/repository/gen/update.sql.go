@@ -14,29 +14,26 @@ import (
 const updateBooking = `-- name: UpdateBooking :exec
 UPDATE ` + "`" + `booking` + "`" + `
 SET
-` + "`" + `client_id` + "`" + ` = ?, ` + "`" + `status` + "`" + ` = ?, ` + "`" + `review_decision` + "`" + ` = ?, ` + "`" + `reviewed_at` + "`" + ` = ?, ` + "`" + `decline_reason` + "`" + ` = ?, ` + "`" + `pay_link_token` + "`" + ` = ?, ` + "`" + `pay_link_expires_at` + "`" + ` = ?, ` + "`" + `portal_token` + "`" + ` = ?, ` + "`" + `intake` + "`" + ` = ?, ` + "`" + `payment` + "`" + ` = ?, ` + "`" + `scheduling` + "`" + ` = ?, ` + "`" + `terms_version` + "`" + ` = ?, ` + "`" + `terms_accepted_at` + "`" + ` = ?, ` + "`" + `terms_accepted_ip` + "`" + ` = ?, ` + "`" + `created_at` + "`" + ` = ?, ` + "`" + `updated_at` + "`" + ` = ?
+` + "`" + `client_id` + "`" + ` = ?, ` + "`" + `status` + "`" + ` = ?, ` + "`" + `review_decision` + "`" + ` = ?, ` + "`" + `reviewed_at` + "`" + ` = ?, ` + "`" + `decline_reason` + "`" + ` = ?, ` + "`" + `intake` + "`" + ` = ?, ` + "`" + `payment` + "`" + ` = ?, ` + "`" + `scheduling` + "`" + ` = ?, ` + "`" + `terms_version` + "`" + ` = ?, ` + "`" + `terms_accepted_at` + "`" + ` = ?, ` + "`" + `terms_accepted_ip` + "`" + ` = ?, ` + "`" + `created_at` + "`" + ` = ?, ` + "`" + `updated_at` + "`" + ` = ?
 WHERE
 ` + "`" + `id` + "`" + ` = ?
 `
 
 type UpdateBookingParams struct {
-	ClientId         string      `json:"client_id"`
-	Status           int64       `json:"status"`
-	ReviewDecision   int64       `json:"review_decision"`
-	ReviewedAt       null.Time   `json:"reviewed_at"`
-	DeclineReason    null.String `json:"decline_reason"`
-	PayLinkToken     null.String `json:"pay_link_token"`
-	PayLinkExpiresAt null.Time   `json:"pay_link_expires_at"`
-	PortalToken      null.String `json:"portal_token"`
-	Intake           []byte      `json:"intake"`
-	Payment          []byte      `json:"payment"`
-	Scheduling       []byte      `json:"scheduling"`
-	TermsVersion     null.String `json:"terms_version"`
-	TermsAcceptedAt  null.Time   `json:"terms_accepted_at"`
-	TermsAcceptedIp  null.String `json:"terms_accepted_ip"`
-	CreatedAt        null.Time   `json:"created_at"`
-	UpdatedAt        null.Time   `json:"updated_at"`
-	ID               string      `json:"id"`
+	ClientId        string      `json:"client_id"`
+	Status          int64       `json:"status"`
+	ReviewDecision  int64       `json:"review_decision"`
+	ReviewedAt      null.Time   `json:"reviewed_at"`
+	DeclineReason   null.String `json:"decline_reason"`
+	Intake          []byte      `json:"intake"`
+	Payment         []byte      `json:"payment"`
+	Scheduling      []byte      `json:"scheduling"`
+	TermsVersion    null.String `json:"terms_version"`
+	TermsAcceptedAt null.Time   `json:"terms_accepted_at"`
+	TermsAcceptedIp null.String `json:"terms_accepted_ip"`
+	CreatedAt       null.Time   `json:"created_at"`
+	UpdatedAt       null.Time   `json:"updated_at"`
+	ID              string      `json:"id"`
 }
 
 func (q *Queries) UpdateBooking(ctx context.Context, arg UpdateBookingParams) error {
@@ -46,9 +43,6 @@ func (q *Queries) UpdateBooking(ctx context.Context, arg UpdateBookingParams) er
 		arg.ReviewDecision,
 		arg.ReviewedAt,
 		arg.DeclineReason,
-		arg.PayLinkToken,
-		arg.PayLinkExpiresAt,
-		arg.PortalToken,
 		arg.Intake,
 		arg.Payment,
 		arg.Scheduling,
@@ -129,7 +123,7 @@ WHERE
 `
 
 type UpdateClientParams struct {
-	Name      string      `json:"name"`
+	Name      null.String `json:"name"`
 	Email     string      `json:"email"`
 	Timezone  null.String `json:"timezone"`
 	Notes     null.String `json:"notes"`
@@ -151,34 +145,122 @@ func (q *Queries) UpdateClient(ctx context.Context, arg UpdateClientParams) erro
 	return err
 }
 
-const updateNdaDocument = `-- name: UpdateNdaDocument :exec
-UPDATE ` + "`" + `nda_document` + "`" + `
+const updateEngagementAgreement = `-- name: UpdateEngagementAgreement :exec
+UPDATE ` + "`" + `engagement_agreement` + "`" + `
 SET
-` + "`" + `client_id` + "`" + ` = ?, ` + "`" + `url` + "`" + ` = ?, ` + "`" + `status` + "`" + ` = ?, ` + "`" + `signed_at` + "`" + ` = ?, ` + "`" + `created_at` + "`" + ` = ?, ` + "`" + `envelope_id` + "`" + ` = ?, ` + "`" + `certificate_url` + "`" + ` = ?
+` + "`" + `client_id` + "`" + ` = ?, ` + "`" + `nda_url` + "`" + ` = ?, ` + "`" + `status` + "`" + ` = ?, ` + "`" + `signed_at` + "`" + ` = ?, ` + "`" + `created_at` + "`" + ` = ?, ` + "`" + `envelope_id` + "`" + ` = ?, ` + "`" + `certificate_url` + "`" + ` = ?, ` + "`" + `contract_url` + "`" + ` = ?, ` + "`" + `engagement_inquiry_id` + "`" + ` = ?, ` + "`" + `updated_at` + "`" + ` = ?
 WHERE
 ` + "`" + `id` + "`" + ` = ?
 `
 
-type UpdateNdaDocumentParams struct {
-	ClientId       string      `json:"client_id"`
-	URL            null.String `json:"url"`
-	Status         null.Int    `json:"status"`
-	SignedAt       null.Time   `json:"signed_at"`
-	CreatedAt      null.Time   `json:"created_at"`
-	EnvelopeId     null.String `json:"envelope_id"`
-	CertificateURL null.String `json:"certificate_url"`
-	ID             string      `json:"id"`
+type UpdateEngagementAgreementParams struct {
+	ClientId            string      `json:"client_id"`
+	NdaURL              null.String `json:"nda_url"`
+	Status              null.Int    `json:"status"`
+	SignedAt            null.Time   `json:"signed_at"`
+	CreatedAt           null.Time   `json:"created_at"`
+	EnvelopeId          null.String `json:"envelope_id"`
+	CertificateURL      null.String `json:"certificate_url"`
+	ContractURL         null.String `json:"contract_url"`
+	EngagementInquiryId string      `json:"engagement_inquiry_id"`
+	UpdatedAt           null.Time   `json:"updated_at"`
+	ID                  string      `json:"id"`
 }
 
-func (q *Queries) UpdateNdaDocument(ctx context.Context, arg UpdateNdaDocumentParams) error {
-	_, err := q.db.ExecContext(ctx, updateNdaDocument,
+func (q *Queries) UpdateEngagementAgreement(ctx context.Context, arg UpdateEngagementAgreementParams) error {
+	_, err := q.db.ExecContext(ctx, updateEngagementAgreement,
 		arg.ClientId,
-		arg.URL,
+		arg.NdaURL,
 		arg.Status,
 		arg.SignedAt,
 		arg.CreatedAt,
 		arg.EnvelopeId,
 		arg.CertificateURL,
+		arg.ContractURL,
+		arg.EngagementInquiryId,
+		arg.UpdatedAt,
+		arg.ID,
+	)
+	return err
+}
+
+const updateEngagementInquiry = `-- name: UpdateEngagementInquiry :exec
+UPDATE ` + "`" + `engagement_inquiry` + "`" + `
+SET
+` + "`" + `client_id` + "`" + ` = ?, ` + "`" + `name` + "`" + ` = ?, ` + "`" + `email` + "`" + ` = ?, ` + "`" + `phone` + "`" + ` = ?, ` + "`" + `company` + "`" + ` = ?, ` + "`" + `project_summary` + "`" + ` = ?, ` + "`" + `why_more_than_session` + "`" + ` = ?, ` + "`" + `scope_details` + "`" + ` = ?, ` + "`" + `budget_range` + "`" + ` = ?, ` + "`" + `timeline` + "`" + ` = ?, ` + "`" + `status` + "`" + ` = ?, ` + "`" + `review_notes` + "`" + ` = ?, ` + "`" + `created_at` + "`" + ` = ?, ` + "`" + `updated_at` + "`" + ` = ?
+WHERE
+` + "`" + `id` + "`" + ` = ?
+`
+
+type UpdateEngagementInquiryParams struct {
+	ClientId           null.String `json:"client_id"`
+	Name               string      `json:"name"`
+	Email              string      `json:"email"`
+	Phone              null.String `json:"phone"`
+	Company            null.String `json:"company"`
+	ProjectSummary     string      `json:"project_summary"`
+	WhyMoreThanSession null.String `json:"why_more_than_session"`
+	ScopeDetails       null.String `json:"scope_details"`
+	BudgetRange        null.String `json:"budget_range"`
+	Timeline           null.String `json:"timeline"`
+	Status             null.Int    `json:"status"`
+	ReviewNotes        null.String `json:"review_notes"`
+	CreatedAt          null.Time   `json:"created_at"`
+	UpdatedAt          null.Time   `json:"updated_at"`
+	ID                 string      `json:"id"`
+}
+
+func (q *Queries) UpdateEngagementInquiry(ctx context.Context, arg UpdateEngagementInquiryParams) error {
+	_, err := q.db.ExecContext(ctx, updateEngagementInquiry,
+		arg.ClientId,
+		arg.Name,
+		arg.Email,
+		arg.Phone,
+		arg.Company,
+		arg.ProjectSummary,
+		arg.WhyMoreThanSession,
+		arg.ScopeDetails,
+		arg.BudgetRange,
+		arg.Timeline,
+		arg.Status,
+		arg.ReviewNotes,
+		arg.CreatedAt,
+		arg.UpdatedAt,
+		arg.ID,
+	)
+	return err
+}
+
+const updateMagicLink = `-- name: UpdateMagicLink :exec
+UPDATE ` + "`" + `magic_link` + "`" + `
+SET
+` + "`" + `client_id` + "`" + ` = ?, ` + "`" + `email` + "`" + ` = ?, ` + "`" + `token` + "`" + ` = ?, ` + "`" + `purpose` + "`" + ` = ?, ` + "`" + `expires_at` + "`" + ` = ?, ` + "`" + `consumed_at` + "`" + ` = ?, ` + "`" + `created_at` + "`" + ` = ?, ` + "`" + `created_ip` + "`" + ` = ?
+WHERE
+` + "`" + `id` + "`" + ` = ?
+`
+
+type UpdateMagicLinkParams struct {
+	ClientId   string      `json:"client_id"`
+	Email      null.String `json:"email"`
+	Token      string      `json:"token"`
+	Purpose    null.Int    `json:"purpose"`
+	ExpiresAt  null.Time   `json:"expires_at"`
+	ConsumedAt null.Time   `json:"consumed_at"`
+	CreatedAt  null.Time   `json:"created_at"`
+	CreatedIp  null.String `json:"created_ip"`
+	ID         string      `json:"id"`
+}
+
+func (q *Queries) UpdateMagicLink(ctx context.Context, arg UpdateMagicLinkParams) error {
+	_, err := q.db.ExecContext(ctx, updateMagicLink,
+		arg.ClientId,
+		arg.Email,
+		arg.Token,
+		arg.Purpose,
+		arg.ExpiresAt,
+		arg.ConsumedAt,
+		arg.CreatedAt,
+		arg.CreatedIp,
 		arg.ID,
 	)
 	return err

@@ -1779,8 +1779,8 @@ func (x *UpdateBookingRecapRequest) GetUpdateMask() *fieldmaskpb.FieldMask {
 	return nil
 }
 
-// nda_document start
-type ListNdaDocumentRequest struct {
+// engagement_agreement start
+type ListEngagementAgreementRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// The maximum number of records to return. The service may return fewer than
 	// this value.
@@ -1800,20 +1800,20 @@ type ListNdaDocumentRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListNdaDocumentRequest) Reset() {
-	*x = ListNdaDocumentRequest{}
+func (x *ListEngagementAgreementRequest) Reset() {
+	*x = ListEngagementAgreementRequest{}
 	mi := &file_service_mfconsult_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListNdaDocumentRequest) String() string {
+func (x *ListEngagementAgreementRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListNdaDocumentRequest) ProtoMessage() {}
+func (*ListEngagementAgreementRequest) ProtoMessage() {}
 
-func (x *ListNdaDocumentRequest) ProtoReflect() protoreflect.Message {
+func (x *ListEngagementAgreementRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_service_mfconsult_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1825,63 +1825,63 @@ func (x *ListNdaDocumentRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListNdaDocumentRequest.ProtoReflect.Descriptor instead.
-func (*ListNdaDocumentRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListEngagementAgreementRequest.ProtoReflect.Descriptor instead.
+func (*ListEngagementAgreementRequest) Descriptor() ([]byte, []int) {
 	return file_service_mfconsult_proto_rawDescGZIP(), []int{28}
 }
 
-func (x *ListNdaDocumentRequest) GetPageSize() int32 {
+func (x *ListEngagementAgreementRequest) GetPageSize() int32 {
 	if x != nil {
 		return x.PageSize
 	}
 	return 0
 }
 
-func (x *ListNdaDocumentRequest) GetPageToken() string {
+func (x *ListEngagementAgreementRequest) GetPageToken() string {
 	if x != nil {
 		return x.PageToken
 	}
 	return ""
 }
 
-func (x *ListNdaDocumentRequest) GetFilter() string {
+func (x *ListEngagementAgreementRequest) GetFilter() string {
 	if x != nil {
 		return x.Filter
 	}
 	return ""
 }
 
-func (x *ListNdaDocumentRequest) GetOrderBy() string {
+func (x *ListEngagementAgreementRequest) GetOrderBy() string {
 	if x != nil {
 		return x.OrderBy
 	}
 	return ""
 }
 
-func (x *ListNdaDocumentRequest) GetIncludeFields() []string {
+func (x *ListEngagementAgreementRequest) GetIncludeFields() []string {
 	if x != nil {
 		return x.IncludeFields
 	}
 	return nil
 }
 
-func (x *ListNdaDocumentRequest) GetExcludeFields() []string {
+func (x *ListEngagementAgreementRequest) GetExcludeFields() []string {
 	if x != nil {
 		return x.ExcludeFields
 	}
 	return nil
 }
 
-func (x *ListNdaDocumentRequest) GetSkipCache() bool {
+func (x *ListEngagementAgreementRequest) GetSkipCache() bool {
 	if x != nil {
 		return x.SkipCache
 	}
 	return false
 }
 
-type ListNdaDocumentResponse struct {
-	state       protoimpl.MessageState `protogen:"open.v1"`
-	NdaDocument []*NdaDocument         `protobuf:"bytes,1,rep,name=nda_document,json=ndaDocument,proto3" json:"nda_document,omitempty"`
+type ListEngagementAgreementResponse struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	EngagementAgreement []*EngagementAgreement `protobuf:"bytes,1,rep,name=engagement_agreement,json=engagementAgreement,proto3" json:"engagement_agreement,omitempty"`
 	// A token that can be sent as `page_token` to retrieve the next page.
 	// If this field is omitted, there are no subsequent pages.
 	NextPageToken string `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
@@ -1889,20 +1889,20 @@ type ListNdaDocumentResponse struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListNdaDocumentResponse) Reset() {
-	*x = ListNdaDocumentResponse{}
+func (x *ListEngagementAgreementResponse) Reset() {
+	*x = ListEngagementAgreementResponse{}
 	mi := &file_service_mfconsult_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListNdaDocumentResponse) String() string {
+func (x *ListEngagementAgreementResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListNdaDocumentResponse) ProtoMessage() {}
+func (*ListEngagementAgreementResponse) ProtoMessage() {}
 
-func (x *ListNdaDocumentResponse) ProtoReflect() protoreflect.Message {
+func (x *ListEngagementAgreementResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_service_mfconsult_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1914,46 +1914,46 @@ func (x *ListNdaDocumentResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListNdaDocumentResponse.ProtoReflect.Descriptor instead.
-func (*ListNdaDocumentResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListEngagementAgreementResponse.ProtoReflect.Descriptor instead.
+func (*ListEngagementAgreementResponse) Descriptor() ([]byte, []int) {
 	return file_service_mfconsult_proto_rawDescGZIP(), []int{29}
 }
 
-func (x *ListNdaDocumentResponse) GetNdaDocument() []*NdaDocument {
+func (x *ListEngagementAgreementResponse) GetEngagementAgreement() []*EngagementAgreement {
 	if x != nil {
-		return x.NdaDocument
+		return x.EngagementAgreement
 	}
 	return nil
 }
 
-func (x *ListNdaDocumentResponse) GetNextPageToken() string {
+func (x *ListEngagementAgreementResponse) GetNextPageToken() string {
 	if x != nil {
 		return x.NextPageToken
 	}
 	return ""
 }
 
-type CreateNdaDocumentRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	NdaDocument   *NdaDocument           `protobuf:"bytes,1,opt,name=nda_document,json=ndaDocument,proto3" json:"nda_document,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+type CreateEngagementAgreementRequest struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	EngagementAgreement *EngagementAgreement   `protobuf:"bytes,1,opt,name=engagement_agreement,json=engagementAgreement,proto3" json:"engagement_agreement,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
 }
 
-func (x *CreateNdaDocumentRequest) Reset() {
-	*x = CreateNdaDocumentRequest{}
+func (x *CreateEngagementAgreementRequest) Reset() {
+	*x = CreateEngagementAgreementRequest{}
 	mi := &file_service_mfconsult_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CreateNdaDocumentRequest) String() string {
+func (x *CreateEngagementAgreementRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateNdaDocumentRequest) ProtoMessage() {}
+func (*CreateEngagementAgreementRequest) ProtoMessage() {}
 
-func (x *CreateNdaDocumentRequest) ProtoReflect() protoreflect.Message {
+func (x *CreateEngagementAgreementRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_service_mfconsult_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1965,41 +1965,41 @@ func (x *CreateNdaDocumentRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateNdaDocumentRequest.ProtoReflect.Descriptor instead.
-func (*CreateNdaDocumentRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateEngagementAgreementRequest.ProtoReflect.Descriptor instead.
+func (*CreateEngagementAgreementRequest) Descriptor() ([]byte, []int) {
 	return file_service_mfconsult_proto_rawDescGZIP(), []int{30}
 }
 
-func (x *CreateNdaDocumentRequest) GetNdaDocument() *NdaDocument {
+func (x *CreateEngagementAgreementRequest) GetEngagementAgreement() *EngagementAgreement {
 	if x != nil {
-		return x.NdaDocument
+		return x.EngagementAgreement
 	}
 	return nil
 }
 
-type UpdateNdaDocumentRequest struct {
-	state       protoimpl.MessageState `protogen:"open.v1"`
-	NdaDocument *NdaDocument           `protobuf:"bytes,1,opt,name=nda_document,json=ndaDocument,proto3" json:"nda_document,omitempty"`
+type UpdateEngagementAgreementRequest struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	EngagementAgreement *EngagementAgreement   `protobuf:"bytes,1,opt,name=engagement_agreement,json=engagementAgreement,proto3" json:"engagement_agreement,omitempty"`
 	// The list of fields to update.
 	UpdateMask    *fieldmaskpb.FieldMask `protobuf:"bytes,2,opt,name=update_mask,json=updateMask,proto3" json:"update_mask,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *UpdateNdaDocumentRequest) Reset() {
-	*x = UpdateNdaDocumentRequest{}
+func (x *UpdateEngagementAgreementRequest) Reset() {
+	*x = UpdateEngagementAgreementRequest{}
 	mi := &file_service_mfconsult_proto_msgTypes[31]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *UpdateNdaDocumentRequest) String() string {
+func (x *UpdateEngagementAgreementRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdateNdaDocumentRequest) ProtoMessage() {}
+func (*UpdateEngagementAgreementRequest) ProtoMessage() {}
 
-func (x *UpdateNdaDocumentRequest) ProtoReflect() protoreflect.Message {
+func (x *UpdateEngagementAgreementRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_service_mfconsult_proto_msgTypes[31]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2011,19 +2011,19 @@ func (x *UpdateNdaDocumentRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdateNdaDocumentRequest.ProtoReflect.Descriptor instead.
-func (*UpdateNdaDocumentRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpdateEngagementAgreementRequest.ProtoReflect.Descriptor instead.
+func (*UpdateEngagementAgreementRequest) Descriptor() ([]byte, []int) {
 	return file_service_mfconsult_proto_rawDescGZIP(), []int{31}
 }
 
-func (x *UpdateNdaDocumentRequest) GetNdaDocument() *NdaDocument {
+func (x *UpdateEngagementAgreementRequest) GetEngagementAgreement() *EngagementAgreement {
 	if x != nil {
-		return x.NdaDocument
+		return x.EngagementAgreement
 	}
 	return nil
 }
 
-func (x *UpdateNdaDocumentRequest) GetUpdateMask() *fieldmaskpb.FieldMask {
+func (x *UpdateEngagementAgreementRequest) GetUpdateMask() *fieldmaskpb.FieldMask {
 	if x != nil {
 		return x.UpdateMask
 	}
@@ -2281,11 +2281,513 @@ func (x *UpdateWebhookEventRequest) GetUpdateMask() *fieldmaskpb.FieldMask {
 	return nil
 }
 
+// engagement_inquiry start
+type ListEngagementInquiryRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// The maximum number of records to return. The service may return fewer than
+	// this value.
+	PageSize int32 `protobuf:"varint,1,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	// A page token, received from a previous call.
+	// Provide this to retrieve the subsequent page.
+	PageToken string `protobuf:"bytes,2,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"`
+	// https://google.aip.dev/160
+	// https://pkg.go.dev/go.einride.tech/aip@v0.67.1
+	// https://github.com/einride/aip-go
+	Filter        string   `protobuf:"bytes,3,opt,name=filter,proto3" json:"filter,omitempty"`
+	OrderBy       string   `protobuf:"bytes,4,opt,name=order_by,json=orderBy,proto3" json:"order_by,omitempty"`
+	IncludeFields []string `protobuf:"bytes,5,rep,name=include_fields,json=includeFields,proto3" json:"include_fields,omitempty"`
+	ExcludeFields []string `protobuf:"bytes,6,rep,name=exclude_fields,json=excludeFields,proto3" json:"exclude_fields,omitempty"`
+	SkipCache     bool     `protobuf:"varint,7,opt,name=skip_cache,json=skipCache,proto3" json:"skip_cache,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListEngagementInquiryRequest) Reset() {
+	*x = ListEngagementInquiryRequest{}
+	mi := &file_service_mfconsult_proto_msgTypes[36]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListEngagementInquiryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListEngagementInquiryRequest) ProtoMessage() {}
+
+func (x *ListEngagementInquiryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_service_mfconsult_proto_msgTypes[36]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListEngagementInquiryRequest.ProtoReflect.Descriptor instead.
+func (*ListEngagementInquiryRequest) Descriptor() ([]byte, []int) {
+	return file_service_mfconsult_proto_rawDescGZIP(), []int{36}
+}
+
+func (x *ListEngagementInquiryRequest) GetPageSize() int32 {
+	if x != nil {
+		return x.PageSize
+	}
+	return 0
+}
+
+func (x *ListEngagementInquiryRequest) GetPageToken() string {
+	if x != nil {
+		return x.PageToken
+	}
+	return ""
+}
+
+func (x *ListEngagementInquiryRequest) GetFilter() string {
+	if x != nil {
+		return x.Filter
+	}
+	return ""
+}
+
+func (x *ListEngagementInquiryRequest) GetOrderBy() string {
+	if x != nil {
+		return x.OrderBy
+	}
+	return ""
+}
+
+func (x *ListEngagementInquiryRequest) GetIncludeFields() []string {
+	if x != nil {
+		return x.IncludeFields
+	}
+	return nil
+}
+
+func (x *ListEngagementInquiryRequest) GetExcludeFields() []string {
+	if x != nil {
+		return x.ExcludeFields
+	}
+	return nil
+}
+
+func (x *ListEngagementInquiryRequest) GetSkipCache() bool {
+	if x != nil {
+		return x.SkipCache
+	}
+	return false
+}
+
+type ListEngagementInquiryResponse struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	EngagementInquiry []*EngagementInquiry   `protobuf:"bytes,1,rep,name=engagement_inquiry,json=engagementInquiry,proto3" json:"engagement_inquiry,omitempty"`
+	// A token that can be sent as `page_token` to retrieve the next page.
+	// If this field is omitted, there are no subsequent pages.
+	NextPageToken string `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListEngagementInquiryResponse) Reset() {
+	*x = ListEngagementInquiryResponse{}
+	mi := &file_service_mfconsult_proto_msgTypes[37]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListEngagementInquiryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListEngagementInquiryResponse) ProtoMessage() {}
+
+func (x *ListEngagementInquiryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_service_mfconsult_proto_msgTypes[37]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListEngagementInquiryResponse.ProtoReflect.Descriptor instead.
+func (*ListEngagementInquiryResponse) Descriptor() ([]byte, []int) {
+	return file_service_mfconsult_proto_rawDescGZIP(), []int{37}
+}
+
+func (x *ListEngagementInquiryResponse) GetEngagementInquiry() []*EngagementInquiry {
+	if x != nil {
+		return x.EngagementInquiry
+	}
+	return nil
+}
+
+func (x *ListEngagementInquiryResponse) GetNextPageToken() string {
+	if x != nil {
+		return x.NextPageToken
+	}
+	return ""
+}
+
+type CreateEngagementInquiryRequest struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	EngagementInquiry *EngagementInquiry     `protobuf:"bytes,1,opt,name=engagement_inquiry,json=engagementInquiry,proto3" json:"engagement_inquiry,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *CreateEngagementInquiryRequest) Reset() {
+	*x = CreateEngagementInquiryRequest{}
+	mi := &file_service_mfconsult_proto_msgTypes[38]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateEngagementInquiryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateEngagementInquiryRequest) ProtoMessage() {}
+
+func (x *CreateEngagementInquiryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_service_mfconsult_proto_msgTypes[38]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateEngagementInquiryRequest.ProtoReflect.Descriptor instead.
+func (*CreateEngagementInquiryRequest) Descriptor() ([]byte, []int) {
+	return file_service_mfconsult_proto_rawDescGZIP(), []int{38}
+}
+
+func (x *CreateEngagementInquiryRequest) GetEngagementInquiry() *EngagementInquiry {
+	if x != nil {
+		return x.EngagementInquiry
+	}
+	return nil
+}
+
+type UpdateEngagementInquiryRequest struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	EngagementInquiry *EngagementInquiry     `protobuf:"bytes,1,opt,name=engagement_inquiry,json=engagementInquiry,proto3" json:"engagement_inquiry,omitempty"`
+	// The list of fields to update.
+	UpdateMask    *fieldmaskpb.FieldMask `protobuf:"bytes,2,opt,name=update_mask,json=updateMask,proto3" json:"update_mask,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateEngagementInquiryRequest) Reset() {
+	*x = UpdateEngagementInquiryRequest{}
+	mi := &file_service_mfconsult_proto_msgTypes[39]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateEngagementInquiryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateEngagementInquiryRequest) ProtoMessage() {}
+
+func (x *UpdateEngagementInquiryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_service_mfconsult_proto_msgTypes[39]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateEngagementInquiryRequest.ProtoReflect.Descriptor instead.
+func (*UpdateEngagementInquiryRequest) Descriptor() ([]byte, []int) {
+	return file_service_mfconsult_proto_rawDescGZIP(), []int{39}
+}
+
+func (x *UpdateEngagementInquiryRequest) GetEngagementInquiry() *EngagementInquiry {
+	if x != nil {
+		return x.EngagementInquiry
+	}
+	return nil
+}
+
+func (x *UpdateEngagementInquiryRequest) GetUpdateMask() *fieldmaskpb.FieldMask {
+	if x != nil {
+		return x.UpdateMask
+	}
+	return nil
+}
+
+// magic_link start
+type ListMagicLinkRequest struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// The maximum number of records to return. The service may return fewer than
+	// this value.
+	PageSize int32 `protobuf:"varint,1,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	// A page token, received from a previous call.
+	// Provide this to retrieve the subsequent page.
+	PageToken string `protobuf:"bytes,2,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"`
+	// https://google.aip.dev/160
+	// https://pkg.go.dev/go.einride.tech/aip@v0.67.1
+	// https://github.com/einride/aip-go
+	Filter        string   `protobuf:"bytes,3,opt,name=filter,proto3" json:"filter,omitempty"`
+	OrderBy       string   `protobuf:"bytes,4,opt,name=order_by,json=orderBy,proto3" json:"order_by,omitempty"`
+	IncludeFields []string `protobuf:"bytes,5,rep,name=include_fields,json=includeFields,proto3" json:"include_fields,omitempty"`
+	ExcludeFields []string `protobuf:"bytes,6,rep,name=exclude_fields,json=excludeFields,proto3" json:"exclude_fields,omitempty"`
+	SkipCache     bool     `protobuf:"varint,7,opt,name=skip_cache,json=skipCache,proto3" json:"skip_cache,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMagicLinkRequest) Reset() {
+	*x = ListMagicLinkRequest{}
+	mi := &file_service_mfconsult_proto_msgTypes[40]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMagicLinkRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMagicLinkRequest) ProtoMessage() {}
+
+func (x *ListMagicLinkRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_service_mfconsult_proto_msgTypes[40]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMagicLinkRequest.ProtoReflect.Descriptor instead.
+func (*ListMagicLinkRequest) Descriptor() ([]byte, []int) {
+	return file_service_mfconsult_proto_rawDescGZIP(), []int{40}
+}
+
+func (x *ListMagicLinkRequest) GetPageSize() int32 {
+	if x != nil {
+		return x.PageSize
+	}
+	return 0
+}
+
+func (x *ListMagicLinkRequest) GetPageToken() string {
+	if x != nil {
+		return x.PageToken
+	}
+	return ""
+}
+
+func (x *ListMagicLinkRequest) GetFilter() string {
+	if x != nil {
+		return x.Filter
+	}
+	return ""
+}
+
+func (x *ListMagicLinkRequest) GetOrderBy() string {
+	if x != nil {
+		return x.OrderBy
+	}
+	return ""
+}
+
+func (x *ListMagicLinkRequest) GetIncludeFields() []string {
+	if x != nil {
+		return x.IncludeFields
+	}
+	return nil
+}
+
+func (x *ListMagicLinkRequest) GetExcludeFields() []string {
+	if x != nil {
+		return x.ExcludeFields
+	}
+	return nil
+}
+
+func (x *ListMagicLinkRequest) GetSkipCache() bool {
+	if x != nil {
+		return x.SkipCache
+	}
+	return false
+}
+
+type ListMagicLinkResponse struct {
+	state     protoimpl.MessageState `protogen:"open.v1"`
+	MagicLink []*MagicLink           `protobuf:"bytes,1,rep,name=magic_link,json=magicLink,proto3" json:"magic_link,omitempty"`
+	// A token that can be sent as `page_token` to retrieve the next page.
+	// If this field is omitted, there are no subsequent pages.
+	NextPageToken string `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListMagicLinkResponse) Reset() {
+	*x = ListMagicLinkResponse{}
+	mi := &file_service_mfconsult_proto_msgTypes[41]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListMagicLinkResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListMagicLinkResponse) ProtoMessage() {}
+
+func (x *ListMagicLinkResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_service_mfconsult_proto_msgTypes[41]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListMagicLinkResponse.ProtoReflect.Descriptor instead.
+func (*ListMagicLinkResponse) Descriptor() ([]byte, []int) {
+	return file_service_mfconsult_proto_rawDescGZIP(), []int{41}
+}
+
+func (x *ListMagicLinkResponse) GetMagicLink() []*MagicLink {
+	if x != nil {
+		return x.MagicLink
+	}
+	return nil
+}
+
+func (x *ListMagicLinkResponse) GetNextPageToken() string {
+	if x != nil {
+		return x.NextPageToken
+	}
+	return ""
+}
+
+type CreateMagicLinkRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	MagicLink     *MagicLink             `protobuf:"bytes,1,opt,name=magic_link,json=magicLink,proto3" json:"magic_link,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateMagicLinkRequest) Reset() {
+	*x = CreateMagicLinkRequest{}
+	mi := &file_service_mfconsult_proto_msgTypes[42]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateMagicLinkRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateMagicLinkRequest) ProtoMessage() {}
+
+func (x *CreateMagicLinkRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_service_mfconsult_proto_msgTypes[42]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateMagicLinkRequest.ProtoReflect.Descriptor instead.
+func (*CreateMagicLinkRequest) Descriptor() ([]byte, []int) {
+	return file_service_mfconsult_proto_rawDescGZIP(), []int{42}
+}
+
+func (x *CreateMagicLinkRequest) GetMagicLink() *MagicLink {
+	if x != nil {
+		return x.MagicLink
+	}
+	return nil
+}
+
+type UpdateMagicLinkRequest struct {
+	state     protoimpl.MessageState `protogen:"open.v1"`
+	MagicLink *MagicLink             `protobuf:"bytes,1,opt,name=magic_link,json=magicLink,proto3" json:"magic_link,omitempty"`
+	// The list of fields to update.
+	UpdateMask    *fieldmaskpb.FieldMask `protobuf:"bytes,2,opt,name=update_mask,json=updateMask,proto3" json:"update_mask,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateMagicLinkRequest) Reset() {
+	*x = UpdateMagicLinkRequest{}
+	mi := &file_service_mfconsult_proto_msgTypes[43]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateMagicLinkRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateMagicLinkRequest) ProtoMessage() {}
+
+func (x *UpdateMagicLinkRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_service_mfconsult_proto_msgTypes[43]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateMagicLinkRequest.ProtoReflect.Descriptor instead.
+func (*UpdateMagicLinkRequest) Descriptor() ([]byte, []int) {
+	return file_service_mfconsult_proto_rawDescGZIP(), []int{43}
+}
+
+func (x *UpdateMagicLinkRequest) GetMagicLink() *MagicLink {
+	if x != nil {
+		return x.MagicLink
+	}
+	return nil
+}
+
+func (x *UpdateMagicLinkRequest) GetUpdateMask() *fieldmaskpb.FieldMask {
+	if x != nil {
+		return x.UpdateMask
+	}
+	return nil
+}
+
 var File_service_mfconsult_proto protoreflect.FileDescriptor
 
 const file_service_mfconsult_proto_rawDesc = "" +
 	"\n" +
-	"\x17service_mfconsult.proto\x12\tmfconsult\x1a google/protobuf/field_mask.proto\x1a\fclient.proto\x1a\rbooking.proto\x1a\x14booking_intake.proto\x1a\x15booking_payment.proto\x1a\x18booking_scheduling.proto\x1a\x16booking_document.proto\x1a\x13booking_recap.proto\x1a\x12nda_document.proto\x1a\x13webhook_event.proto\"\xef\x01\n" +
+	"\x17service_mfconsult.proto\x12\tmfconsult\x1a google/protobuf/field_mask.proto\x1a\fclient.proto\x1a\rbooking.proto\x1a\x14booking_intake.proto\x1a\x15booking_payment.proto\x1a\x18booking_scheduling.proto\x1a\x16booking_document.proto\x1a\x13booking_recap.proto\x1a\x1aengagement_agreement.proto\x1a\x13webhook_event.proto\x1a\x18engagement_inquiry.proto\x1a\x10magic_link.proto\"\xef\x01\n" +
 	"\x11ListClientRequest\x12\x1b\n" +
 	"\tpage_size\x18\x01 \x01(\x05R\bpageSize\x12\x1d\n" +
 	"\n" +
@@ -2418,8 +2920,8 @@ const file_service_mfconsult_proto_rawDesc = "" +
 	"\x19UpdateBookingRecapRequest\x12<\n" +
 	"\rbooking_recap\x18\x01 \x01(\v2\x17.mfconsult.BookingRecapR\fbookingRecap\x12;\n" +
 	"\vupdate_mask\x18\x02 \x01(\v2\x1a.google.protobuf.FieldMaskR\n" +
-	"updateMask\"\xf4\x01\n" +
-	"\x16ListNdaDocumentRequest\x12\x1b\n" +
+	"updateMask\"\xfc\x01\n" +
+	"\x1eListEngagementAgreementRequest\x12\x1b\n" +
 	"\tpage_size\x18\x01 \x01(\x05R\bpageSize\x12\x1d\n" +
 	"\n" +
 	"page_token\x18\x02 \x01(\tR\tpageToken\x12\x16\n" +
@@ -2428,14 +2930,14 @@ const file_service_mfconsult_proto_rawDesc = "" +
 	"\x0einclude_fields\x18\x05 \x03(\tR\rincludeFields\x12%\n" +
 	"\x0eexclude_fields\x18\x06 \x03(\tR\rexcludeFields\x12\x1d\n" +
 	"\n" +
-	"skip_cache\x18\a \x01(\bR\tskipCache\"|\n" +
-	"\x17ListNdaDocumentResponse\x129\n" +
-	"\fnda_document\x18\x01 \x03(\v2\x16.mfconsult.NdaDocumentR\vndaDocument\x12&\n" +
-	"\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"U\n" +
-	"\x18CreateNdaDocumentRequest\x129\n" +
-	"\fnda_document\x18\x01 \x01(\v2\x16.mfconsult.NdaDocumentR\vndaDocument\"\x92\x01\n" +
-	"\x18UpdateNdaDocumentRequest\x129\n" +
-	"\fnda_document\x18\x01 \x01(\v2\x16.mfconsult.NdaDocumentR\vndaDocument\x12;\n" +
+	"skip_cache\x18\a \x01(\bR\tskipCache\"\x9c\x01\n" +
+	"\x1fListEngagementAgreementResponse\x12Q\n" +
+	"\x14engagement_agreement\x18\x01 \x03(\v2\x1e.mfconsult.EngagementAgreementR\x13engagementAgreement\x12&\n" +
+	"\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"u\n" +
+	" CreateEngagementAgreementRequest\x12Q\n" +
+	"\x14engagement_agreement\x18\x01 \x01(\v2\x1e.mfconsult.EngagementAgreementR\x13engagementAgreement\"\xb2\x01\n" +
+	" UpdateEngagementAgreementRequest\x12Q\n" +
+	"\x14engagement_agreement\x18\x01 \x01(\v2\x1e.mfconsult.EngagementAgreementR\x13engagementAgreement\x12;\n" +
 	"\vupdate_mask\x18\x02 \x01(\v2\x1a.google.protobuf.FieldMaskR\n" +
 	"updateMask\"\xf5\x01\n" +
 	"\x17ListWebhookEventRequest\x12\x1b\n" +
@@ -2456,7 +2958,48 @@ const file_service_mfconsult_proto_rawDesc = "" +
 	"\x19UpdateWebhookEventRequest\x12<\n" +
 	"\rwebhook_event\x18\x01 \x01(\v2\x17.mfconsult.WebhookEventR\fwebhookEvent\x12;\n" +
 	"\vupdate_mask\x18\x02 \x01(\v2\x1a.google.protobuf.FieldMaskR\n" +
-	"updateMask2\xf7\x12\n" +
+	"updateMask\"\xfa\x01\n" +
+	"\x1cListEngagementInquiryRequest\x12\x1b\n" +
+	"\tpage_size\x18\x01 \x01(\x05R\bpageSize\x12\x1d\n" +
+	"\n" +
+	"page_token\x18\x02 \x01(\tR\tpageToken\x12\x16\n" +
+	"\x06filter\x18\x03 \x01(\tR\x06filter\x12\x19\n" +
+	"\border_by\x18\x04 \x01(\tR\aorderBy\x12%\n" +
+	"\x0einclude_fields\x18\x05 \x03(\tR\rincludeFields\x12%\n" +
+	"\x0eexclude_fields\x18\x06 \x03(\tR\rexcludeFields\x12\x1d\n" +
+	"\n" +
+	"skip_cache\x18\a \x01(\bR\tskipCache\"\x94\x01\n" +
+	"\x1dListEngagementInquiryResponse\x12K\n" +
+	"\x12engagement_inquiry\x18\x01 \x03(\v2\x1c.mfconsult.EngagementInquiryR\x11engagementInquiry\x12&\n" +
+	"\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"m\n" +
+	"\x1eCreateEngagementInquiryRequest\x12K\n" +
+	"\x12engagement_inquiry\x18\x01 \x01(\v2\x1c.mfconsult.EngagementInquiryR\x11engagementInquiry\"\xaa\x01\n" +
+	"\x1eUpdateEngagementInquiryRequest\x12K\n" +
+	"\x12engagement_inquiry\x18\x01 \x01(\v2\x1c.mfconsult.EngagementInquiryR\x11engagementInquiry\x12;\n" +
+	"\vupdate_mask\x18\x02 \x01(\v2\x1a.google.protobuf.FieldMaskR\n" +
+	"updateMask\"\xf2\x01\n" +
+	"\x14ListMagicLinkRequest\x12\x1b\n" +
+	"\tpage_size\x18\x01 \x01(\x05R\bpageSize\x12\x1d\n" +
+	"\n" +
+	"page_token\x18\x02 \x01(\tR\tpageToken\x12\x16\n" +
+	"\x06filter\x18\x03 \x01(\tR\x06filter\x12\x19\n" +
+	"\border_by\x18\x04 \x01(\tR\aorderBy\x12%\n" +
+	"\x0einclude_fields\x18\x05 \x03(\tR\rincludeFields\x12%\n" +
+	"\x0eexclude_fields\x18\x06 \x03(\tR\rexcludeFields\x12\x1d\n" +
+	"\n" +
+	"skip_cache\x18\a \x01(\bR\tskipCache\"t\n" +
+	"\x15ListMagicLinkResponse\x123\n" +
+	"\n" +
+	"magic_link\x18\x01 \x03(\v2\x14.mfconsult.MagicLinkR\tmagicLink\x12&\n" +
+	"\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"M\n" +
+	"\x16CreateMagicLinkRequest\x123\n" +
+	"\n" +
+	"magic_link\x18\x01 \x01(\v2\x14.mfconsult.MagicLinkR\tmagicLink\"\x8a\x01\n" +
+	"\x16UpdateMagicLinkRequest\x123\n" +
+	"\n" +
+	"magic_link\x18\x01 \x01(\v2\x14.mfconsult.MagicLinkR\tmagicLink\x12;\n" +
+	"\vupdate_mask\x18\x02 \x01(\v2\x1a.google.protobuf.FieldMaskR\n" +
+	"updateMask2\xeb\x17\n" +
 	"\tMfconsult\x12K\n" +
 	"\n" +
 	"ListClient\x12\x1c.mfconsult.ListClientRequest\x1a\x1d.mfconsult.ListClientResponse\"\x00\x12C\n" +
@@ -2479,13 +3022,19 @@ const file_service_mfconsult_proto_rawDesc = "" +
 	"\x15UpdateBookingDocument\x12'.mfconsult.UpdateBookingDocumentRequest\x1a\x1a.mfconsult.BookingDocument\"\x00\x12]\n" +
 	"\x10ListBookingRecap\x12\".mfconsult.ListBookingRecapRequest\x1a#.mfconsult.ListBookingRecapResponse\"\x00\x12U\n" +
 	"\x12CreateBookingRecap\x12$.mfconsult.CreateBookingRecapRequest\x1a\x17.mfconsult.BookingRecap\"\x00\x12U\n" +
-	"\x12UpdateBookingRecap\x12$.mfconsult.UpdateBookingRecapRequest\x1a\x17.mfconsult.BookingRecap\"\x00\x12Z\n" +
-	"\x0fListNdaDocument\x12!.mfconsult.ListNdaDocumentRequest\x1a\".mfconsult.ListNdaDocumentResponse\"\x00\x12R\n" +
-	"\x11CreateNdaDocument\x12#.mfconsult.CreateNdaDocumentRequest\x1a\x16.mfconsult.NdaDocument\"\x00\x12R\n" +
-	"\x11UpdateNdaDocument\x12#.mfconsult.UpdateNdaDocumentRequest\x1a\x16.mfconsult.NdaDocument\"\x00\x12]\n" +
+	"\x12UpdateBookingRecap\x12$.mfconsult.UpdateBookingRecapRequest\x1a\x17.mfconsult.BookingRecap\"\x00\x12r\n" +
+	"\x17ListEngagementAgreement\x12).mfconsult.ListEngagementAgreementRequest\x1a*.mfconsult.ListEngagementAgreementResponse\"\x00\x12j\n" +
+	"\x19CreateEngagementAgreement\x12+.mfconsult.CreateEngagementAgreementRequest\x1a\x1e.mfconsult.EngagementAgreement\"\x00\x12j\n" +
+	"\x19UpdateEngagementAgreement\x12+.mfconsult.UpdateEngagementAgreementRequest\x1a\x1e.mfconsult.EngagementAgreement\"\x00\x12]\n" +
 	"\x10ListWebhookEvent\x12\".mfconsult.ListWebhookEventRequest\x1a#.mfconsult.ListWebhookEventResponse\"\x00\x12U\n" +
 	"\x12CreateWebhookEvent\x12$.mfconsult.CreateWebhookEventRequest\x1a\x17.mfconsult.WebhookEvent\"\x00\x12U\n" +
-	"\x12UpdateWebhookEvent\x12$.mfconsult.UpdateWebhookEventRequest\x1a\x17.mfconsult.WebhookEvent\"\x00B?\n" +
+	"\x12UpdateWebhookEvent\x12$.mfconsult.UpdateWebhookEventRequest\x1a\x17.mfconsult.WebhookEvent\"\x00\x12l\n" +
+	"\x15ListEngagementInquiry\x12'.mfconsult.ListEngagementInquiryRequest\x1a(.mfconsult.ListEngagementInquiryResponse\"\x00\x12d\n" +
+	"\x17CreateEngagementInquiry\x12).mfconsult.CreateEngagementInquiryRequest\x1a\x1c.mfconsult.EngagementInquiry\"\x00\x12d\n" +
+	"\x17UpdateEngagementInquiry\x12).mfconsult.UpdateEngagementInquiryRequest\x1a\x1c.mfconsult.EngagementInquiry\"\x00\x12T\n" +
+	"\rListMagicLink\x12\x1f.mfconsult.ListMagicLinkRequest\x1a .mfconsult.ListMagicLinkResponse\"\x00\x12L\n" +
+	"\x0fCreateMagicLink\x12!.mfconsult.CreateMagicLinkRequest\x1a\x14.mfconsult.MagicLink\"\x00\x12L\n" +
+	"\x0fUpdateMagicLink\x12!.mfconsult.UpdateMagicLinkRequest\x1a\x14.mfconsult.MagicLink\"\x00B?\n" +
 	"\x1dgithub.com/mklfarha/mfconsultB\tMfconsultP\x01Z\x11mfconsult/idl/genb\x06proto3"
 
 var (
@@ -2500,151 +3049,181 @@ func file_service_mfconsult_proto_rawDescGZIP() []byte {
 	return file_service_mfconsult_proto_rawDescData
 }
 
-var file_service_mfconsult_proto_msgTypes = make([]protoimpl.MessageInfo, 36)
+var file_service_mfconsult_proto_msgTypes = make([]protoimpl.MessageInfo, 44)
 var file_service_mfconsult_proto_goTypes = []any{
-	(*ListClientRequest)(nil),              // 0: mfconsult.ListClientRequest
-	(*ListClientResponse)(nil),             // 1: mfconsult.ListClientResponse
-	(*CreateClientRequest)(nil),            // 2: mfconsult.CreateClientRequest
-	(*UpdateClientRequest)(nil),            // 3: mfconsult.UpdateClientRequest
-	(*ListBookingRequest)(nil),             // 4: mfconsult.ListBookingRequest
-	(*ListBookingResponse)(nil),            // 5: mfconsult.ListBookingResponse
-	(*CreateBookingRequest)(nil),           // 6: mfconsult.CreateBookingRequest
-	(*UpdateBookingRequest)(nil),           // 7: mfconsult.UpdateBookingRequest
-	(*ListBookingIntakeRequest)(nil),       // 8: mfconsult.ListBookingIntakeRequest
-	(*ListBookingIntakeResponse)(nil),      // 9: mfconsult.ListBookingIntakeResponse
-	(*CreateBookingIntakeRequest)(nil),     // 10: mfconsult.CreateBookingIntakeRequest
-	(*UpdateBookingIntakeRequest)(nil),     // 11: mfconsult.UpdateBookingIntakeRequest
-	(*ListBookingPaymentRequest)(nil),      // 12: mfconsult.ListBookingPaymentRequest
-	(*ListBookingPaymentResponse)(nil),     // 13: mfconsult.ListBookingPaymentResponse
-	(*CreateBookingPaymentRequest)(nil),    // 14: mfconsult.CreateBookingPaymentRequest
-	(*UpdateBookingPaymentRequest)(nil),    // 15: mfconsult.UpdateBookingPaymentRequest
-	(*ListBookingSchedulingRequest)(nil),   // 16: mfconsult.ListBookingSchedulingRequest
-	(*ListBookingSchedulingResponse)(nil),  // 17: mfconsult.ListBookingSchedulingResponse
-	(*CreateBookingSchedulingRequest)(nil), // 18: mfconsult.CreateBookingSchedulingRequest
-	(*UpdateBookingSchedulingRequest)(nil), // 19: mfconsult.UpdateBookingSchedulingRequest
-	(*ListBookingDocumentRequest)(nil),     // 20: mfconsult.ListBookingDocumentRequest
-	(*ListBookingDocumentResponse)(nil),    // 21: mfconsult.ListBookingDocumentResponse
-	(*CreateBookingDocumentRequest)(nil),   // 22: mfconsult.CreateBookingDocumentRequest
-	(*UpdateBookingDocumentRequest)(nil),   // 23: mfconsult.UpdateBookingDocumentRequest
-	(*ListBookingRecapRequest)(nil),        // 24: mfconsult.ListBookingRecapRequest
-	(*ListBookingRecapResponse)(nil),       // 25: mfconsult.ListBookingRecapResponse
-	(*CreateBookingRecapRequest)(nil),      // 26: mfconsult.CreateBookingRecapRequest
-	(*UpdateBookingRecapRequest)(nil),      // 27: mfconsult.UpdateBookingRecapRequest
-	(*ListNdaDocumentRequest)(nil),         // 28: mfconsult.ListNdaDocumentRequest
-	(*ListNdaDocumentResponse)(nil),        // 29: mfconsult.ListNdaDocumentResponse
-	(*CreateNdaDocumentRequest)(nil),       // 30: mfconsult.CreateNdaDocumentRequest
-	(*UpdateNdaDocumentRequest)(nil),       // 31: mfconsult.UpdateNdaDocumentRequest
-	(*ListWebhookEventRequest)(nil),        // 32: mfconsult.ListWebhookEventRequest
-	(*ListWebhookEventResponse)(nil),       // 33: mfconsult.ListWebhookEventResponse
-	(*CreateWebhookEventRequest)(nil),      // 34: mfconsult.CreateWebhookEventRequest
-	(*UpdateWebhookEventRequest)(nil),      // 35: mfconsult.UpdateWebhookEventRequest
-	(*Client)(nil),                         // 36: mfconsult.Client
-	(*fieldmaskpb.FieldMask)(nil),          // 37: google.protobuf.FieldMask
-	(*Booking)(nil),                        // 38: mfconsult.Booking
-	(*BookingIntake)(nil),                  // 39: mfconsult.BookingIntake
-	(*BookingPayment)(nil),                 // 40: mfconsult.BookingPayment
-	(*BookingScheduling)(nil),              // 41: mfconsult.BookingScheduling
-	(*BookingDocument)(nil),                // 42: mfconsult.BookingDocument
-	(*BookingRecap)(nil),                   // 43: mfconsult.BookingRecap
-	(*NdaDocument)(nil),                    // 44: mfconsult.NdaDocument
-	(*WebhookEvent)(nil),                   // 45: mfconsult.WebhookEvent
+	(*ListClientRequest)(nil),                // 0: mfconsult.ListClientRequest
+	(*ListClientResponse)(nil),               // 1: mfconsult.ListClientResponse
+	(*CreateClientRequest)(nil),              // 2: mfconsult.CreateClientRequest
+	(*UpdateClientRequest)(nil),              // 3: mfconsult.UpdateClientRequest
+	(*ListBookingRequest)(nil),               // 4: mfconsult.ListBookingRequest
+	(*ListBookingResponse)(nil),              // 5: mfconsult.ListBookingResponse
+	(*CreateBookingRequest)(nil),             // 6: mfconsult.CreateBookingRequest
+	(*UpdateBookingRequest)(nil),             // 7: mfconsult.UpdateBookingRequest
+	(*ListBookingIntakeRequest)(nil),         // 8: mfconsult.ListBookingIntakeRequest
+	(*ListBookingIntakeResponse)(nil),        // 9: mfconsult.ListBookingIntakeResponse
+	(*CreateBookingIntakeRequest)(nil),       // 10: mfconsult.CreateBookingIntakeRequest
+	(*UpdateBookingIntakeRequest)(nil),       // 11: mfconsult.UpdateBookingIntakeRequest
+	(*ListBookingPaymentRequest)(nil),        // 12: mfconsult.ListBookingPaymentRequest
+	(*ListBookingPaymentResponse)(nil),       // 13: mfconsult.ListBookingPaymentResponse
+	(*CreateBookingPaymentRequest)(nil),      // 14: mfconsult.CreateBookingPaymentRequest
+	(*UpdateBookingPaymentRequest)(nil),      // 15: mfconsult.UpdateBookingPaymentRequest
+	(*ListBookingSchedulingRequest)(nil),     // 16: mfconsult.ListBookingSchedulingRequest
+	(*ListBookingSchedulingResponse)(nil),    // 17: mfconsult.ListBookingSchedulingResponse
+	(*CreateBookingSchedulingRequest)(nil),   // 18: mfconsult.CreateBookingSchedulingRequest
+	(*UpdateBookingSchedulingRequest)(nil),   // 19: mfconsult.UpdateBookingSchedulingRequest
+	(*ListBookingDocumentRequest)(nil),       // 20: mfconsult.ListBookingDocumentRequest
+	(*ListBookingDocumentResponse)(nil),      // 21: mfconsult.ListBookingDocumentResponse
+	(*CreateBookingDocumentRequest)(nil),     // 22: mfconsult.CreateBookingDocumentRequest
+	(*UpdateBookingDocumentRequest)(nil),     // 23: mfconsult.UpdateBookingDocumentRequest
+	(*ListBookingRecapRequest)(nil),          // 24: mfconsult.ListBookingRecapRequest
+	(*ListBookingRecapResponse)(nil),         // 25: mfconsult.ListBookingRecapResponse
+	(*CreateBookingRecapRequest)(nil),        // 26: mfconsult.CreateBookingRecapRequest
+	(*UpdateBookingRecapRequest)(nil),        // 27: mfconsult.UpdateBookingRecapRequest
+	(*ListEngagementAgreementRequest)(nil),   // 28: mfconsult.ListEngagementAgreementRequest
+	(*ListEngagementAgreementResponse)(nil),  // 29: mfconsult.ListEngagementAgreementResponse
+	(*CreateEngagementAgreementRequest)(nil), // 30: mfconsult.CreateEngagementAgreementRequest
+	(*UpdateEngagementAgreementRequest)(nil), // 31: mfconsult.UpdateEngagementAgreementRequest
+	(*ListWebhookEventRequest)(nil),          // 32: mfconsult.ListWebhookEventRequest
+	(*ListWebhookEventResponse)(nil),         // 33: mfconsult.ListWebhookEventResponse
+	(*CreateWebhookEventRequest)(nil),        // 34: mfconsult.CreateWebhookEventRequest
+	(*UpdateWebhookEventRequest)(nil),        // 35: mfconsult.UpdateWebhookEventRequest
+	(*ListEngagementInquiryRequest)(nil),     // 36: mfconsult.ListEngagementInquiryRequest
+	(*ListEngagementInquiryResponse)(nil),    // 37: mfconsult.ListEngagementInquiryResponse
+	(*CreateEngagementInquiryRequest)(nil),   // 38: mfconsult.CreateEngagementInquiryRequest
+	(*UpdateEngagementInquiryRequest)(nil),   // 39: mfconsult.UpdateEngagementInquiryRequest
+	(*ListMagicLinkRequest)(nil),             // 40: mfconsult.ListMagicLinkRequest
+	(*ListMagicLinkResponse)(nil),            // 41: mfconsult.ListMagicLinkResponse
+	(*CreateMagicLinkRequest)(nil),           // 42: mfconsult.CreateMagicLinkRequest
+	(*UpdateMagicLinkRequest)(nil),           // 43: mfconsult.UpdateMagicLinkRequest
+	(*Client)(nil),                           // 44: mfconsult.Client
+	(*fieldmaskpb.FieldMask)(nil),            // 45: google.protobuf.FieldMask
+	(*Booking)(nil),                          // 46: mfconsult.Booking
+	(*BookingIntake)(nil),                    // 47: mfconsult.BookingIntake
+	(*BookingPayment)(nil),                   // 48: mfconsult.BookingPayment
+	(*BookingScheduling)(nil),                // 49: mfconsult.BookingScheduling
+	(*BookingDocument)(nil),                  // 50: mfconsult.BookingDocument
+	(*BookingRecap)(nil),                     // 51: mfconsult.BookingRecap
+	(*EngagementAgreement)(nil),              // 52: mfconsult.EngagementAgreement
+	(*WebhookEvent)(nil),                     // 53: mfconsult.WebhookEvent
+	(*EngagementInquiry)(nil),                // 54: mfconsult.EngagementInquiry
+	(*MagicLink)(nil),                        // 55: mfconsult.MagicLink
 }
 var file_service_mfconsult_proto_depIdxs = []int32{
-	36, // 0: mfconsult.ListClientResponse.client:type_name -> mfconsult.Client
-	36, // 1: mfconsult.CreateClientRequest.client:type_name -> mfconsult.Client
-	36, // 2: mfconsult.UpdateClientRequest.client:type_name -> mfconsult.Client
-	37, // 3: mfconsult.UpdateClientRequest.update_mask:type_name -> google.protobuf.FieldMask
-	38, // 4: mfconsult.ListBookingResponse.booking:type_name -> mfconsult.Booking
-	38, // 5: mfconsult.CreateBookingRequest.booking:type_name -> mfconsult.Booking
-	38, // 6: mfconsult.UpdateBookingRequest.booking:type_name -> mfconsult.Booking
-	37, // 7: mfconsult.UpdateBookingRequest.update_mask:type_name -> google.protobuf.FieldMask
-	39, // 8: mfconsult.ListBookingIntakeResponse.booking_intake:type_name -> mfconsult.BookingIntake
-	39, // 9: mfconsult.CreateBookingIntakeRequest.booking_intake:type_name -> mfconsult.BookingIntake
-	39, // 10: mfconsult.UpdateBookingIntakeRequest.booking_intake:type_name -> mfconsult.BookingIntake
-	37, // 11: mfconsult.UpdateBookingIntakeRequest.update_mask:type_name -> google.protobuf.FieldMask
-	40, // 12: mfconsult.ListBookingPaymentResponse.booking_payment:type_name -> mfconsult.BookingPayment
-	40, // 13: mfconsult.CreateBookingPaymentRequest.booking_payment:type_name -> mfconsult.BookingPayment
-	40, // 14: mfconsult.UpdateBookingPaymentRequest.booking_payment:type_name -> mfconsult.BookingPayment
-	37, // 15: mfconsult.UpdateBookingPaymentRequest.update_mask:type_name -> google.protobuf.FieldMask
-	41, // 16: mfconsult.ListBookingSchedulingResponse.booking_scheduling:type_name -> mfconsult.BookingScheduling
-	41, // 17: mfconsult.CreateBookingSchedulingRequest.booking_scheduling:type_name -> mfconsult.BookingScheduling
-	41, // 18: mfconsult.UpdateBookingSchedulingRequest.booking_scheduling:type_name -> mfconsult.BookingScheduling
-	37, // 19: mfconsult.UpdateBookingSchedulingRequest.update_mask:type_name -> google.protobuf.FieldMask
-	42, // 20: mfconsult.ListBookingDocumentResponse.booking_document:type_name -> mfconsult.BookingDocument
-	42, // 21: mfconsult.CreateBookingDocumentRequest.booking_document:type_name -> mfconsult.BookingDocument
-	42, // 22: mfconsult.UpdateBookingDocumentRequest.booking_document:type_name -> mfconsult.BookingDocument
-	37, // 23: mfconsult.UpdateBookingDocumentRequest.update_mask:type_name -> google.protobuf.FieldMask
-	43, // 24: mfconsult.ListBookingRecapResponse.booking_recap:type_name -> mfconsult.BookingRecap
-	43, // 25: mfconsult.CreateBookingRecapRequest.booking_recap:type_name -> mfconsult.BookingRecap
-	43, // 26: mfconsult.UpdateBookingRecapRequest.booking_recap:type_name -> mfconsult.BookingRecap
-	37, // 27: mfconsult.UpdateBookingRecapRequest.update_mask:type_name -> google.protobuf.FieldMask
-	44, // 28: mfconsult.ListNdaDocumentResponse.nda_document:type_name -> mfconsult.NdaDocument
-	44, // 29: mfconsult.CreateNdaDocumentRequest.nda_document:type_name -> mfconsult.NdaDocument
-	44, // 30: mfconsult.UpdateNdaDocumentRequest.nda_document:type_name -> mfconsult.NdaDocument
-	37, // 31: mfconsult.UpdateNdaDocumentRequest.update_mask:type_name -> google.protobuf.FieldMask
-	45, // 32: mfconsult.ListWebhookEventResponse.webhook_event:type_name -> mfconsult.WebhookEvent
-	45, // 33: mfconsult.CreateWebhookEventRequest.webhook_event:type_name -> mfconsult.WebhookEvent
-	45, // 34: mfconsult.UpdateWebhookEventRequest.webhook_event:type_name -> mfconsult.WebhookEvent
-	37, // 35: mfconsult.UpdateWebhookEventRequest.update_mask:type_name -> google.protobuf.FieldMask
-	0,  // 36: mfconsult.Mfconsult.ListClient:input_type -> mfconsult.ListClientRequest
-	2,  // 37: mfconsult.Mfconsult.CreateClient:input_type -> mfconsult.CreateClientRequest
-	3,  // 38: mfconsult.Mfconsult.UpdateClient:input_type -> mfconsult.UpdateClientRequest
-	4,  // 39: mfconsult.Mfconsult.ListBooking:input_type -> mfconsult.ListBookingRequest
-	6,  // 40: mfconsult.Mfconsult.CreateBooking:input_type -> mfconsult.CreateBookingRequest
-	7,  // 41: mfconsult.Mfconsult.UpdateBooking:input_type -> mfconsult.UpdateBookingRequest
-	8,  // 42: mfconsult.Mfconsult.ListBookingIntake:input_type -> mfconsult.ListBookingIntakeRequest
-	10, // 43: mfconsult.Mfconsult.CreateBookingIntake:input_type -> mfconsult.CreateBookingIntakeRequest
-	11, // 44: mfconsult.Mfconsult.UpdateBookingIntake:input_type -> mfconsult.UpdateBookingIntakeRequest
-	12, // 45: mfconsult.Mfconsult.ListBookingPayment:input_type -> mfconsult.ListBookingPaymentRequest
-	14, // 46: mfconsult.Mfconsult.CreateBookingPayment:input_type -> mfconsult.CreateBookingPaymentRequest
-	15, // 47: mfconsult.Mfconsult.UpdateBookingPayment:input_type -> mfconsult.UpdateBookingPaymentRequest
-	16, // 48: mfconsult.Mfconsult.ListBookingScheduling:input_type -> mfconsult.ListBookingSchedulingRequest
-	18, // 49: mfconsult.Mfconsult.CreateBookingScheduling:input_type -> mfconsult.CreateBookingSchedulingRequest
-	19, // 50: mfconsult.Mfconsult.UpdateBookingScheduling:input_type -> mfconsult.UpdateBookingSchedulingRequest
-	20, // 51: mfconsult.Mfconsult.ListBookingDocument:input_type -> mfconsult.ListBookingDocumentRequest
-	22, // 52: mfconsult.Mfconsult.CreateBookingDocument:input_type -> mfconsult.CreateBookingDocumentRequest
-	23, // 53: mfconsult.Mfconsult.UpdateBookingDocument:input_type -> mfconsult.UpdateBookingDocumentRequest
-	24, // 54: mfconsult.Mfconsult.ListBookingRecap:input_type -> mfconsult.ListBookingRecapRequest
-	26, // 55: mfconsult.Mfconsult.CreateBookingRecap:input_type -> mfconsult.CreateBookingRecapRequest
-	27, // 56: mfconsult.Mfconsult.UpdateBookingRecap:input_type -> mfconsult.UpdateBookingRecapRequest
-	28, // 57: mfconsult.Mfconsult.ListNdaDocument:input_type -> mfconsult.ListNdaDocumentRequest
-	30, // 58: mfconsult.Mfconsult.CreateNdaDocument:input_type -> mfconsult.CreateNdaDocumentRequest
-	31, // 59: mfconsult.Mfconsult.UpdateNdaDocument:input_type -> mfconsult.UpdateNdaDocumentRequest
-	32, // 60: mfconsult.Mfconsult.ListWebhookEvent:input_type -> mfconsult.ListWebhookEventRequest
-	34, // 61: mfconsult.Mfconsult.CreateWebhookEvent:input_type -> mfconsult.CreateWebhookEventRequest
-	35, // 62: mfconsult.Mfconsult.UpdateWebhookEvent:input_type -> mfconsult.UpdateWebhookEventRequest
-	1,  // 63: mfconsult.Mfconsult.ListClient:output_type -> mfconsult.ListClientResponse
-	36, // 64: mfconsult.Mfconsult.CreateClient:output_type -> mfconsult.Client
-	36, // 65: mfconsult.Mfconsult.UpdateClient:output_type -> mfconsult.Client
-	5,  // 66: mfconsult.Mfconsult.ListBooking:output_type -> mfconsult.ListBookingResponse
-	38, // 67: mfconsult.Mfconsult.CreateBooking:output_type -> mfconsult.Booking
-	38, // 68: mfconsult.Mfconsult.UpdateBooking:output_type -> mfconsult.Booking
-	9,  // 69: mfconsult.Mfconsult.ListBookingIntake:output_type -> mfconsult.ListBookingIntakeResponse
-	39, // 70: mfconsult.Mfconsult.CreateBookingIntake:output_type -> mfconsult.BookingIntake
-	39, // 71: mfconsult.Mfconsult.UpdateBookingIntake:output_type -> mfconsult.BookingIntake
-	13, // 72: mfconsult.Mfconsult.ListBookingPayment:output_type -> mfconsult.ListBookingPaymentResponse
-	40, // 73: mfconsult.Mfconsult.CreateBookingPayment:output_type -> mfconsult.BookingPayment
-	40, // 74: mfconsult.Mfconsult.UpdateBookingPayment:output_type -> mfconsult.BookingPayment
-	17, // 75: mfconsult.Mfconsult.ListBookingScheduling:output_type -> mfconsult.ListBookingSchedulingResponse
-	41, // 76: mfconsult.Mfconsult.CreateBookingScheduling:output_type -> mfconsult.BookingScheduling
-	41, // 77: mfconsult.Mfconsult.UpdateBookingScheduling:output_type -> mfconsult.BookingScheduling
-	21, // 78: mfconsult.Mfconsult.ListBookingDocument:output_type -> mfconsult.ListBookingDocumentResponse
-	42, // 79: mfconsult.Mfconsult.CreateBookingDocument:output_type -> mfconsult.BookingDocument
-	42, // 80: mfconsult.Mfconsult.UpdateBookingDocument:output_type -> mfconsult.BookingDocument
-	25, // 81: mfconsult.Mfconsult.ListBookingRecap:output_type -> mfconsult.ListBookingRecapResponse
-	43, // 82: mfconsult.Mfconsult.CreateBookingRecap:output_type -> mfconsult.BookingRecap
-	43, // 83: mfconsult.Mfconsult.UpdateBookingRecap:output_type -> mfconsult.BookingRecap
-	29, // 84: mfconsult.Mfconsult.ListNdaDocument:output_type -> mfconsult.ListNdaDocumentResponse
-	44, // 85: mfconsult.Mfconsult.CreateNdaDocument:output_type -> mfconsult.NdaDocument
-	44, // 86: mfconsult.Mfconsult.UpdateNdaDocument:output_type -> mfconsult.NdaDocument
-	33, // 87: mfconsult.Mfconsult.ListWebhookEvent:output_type -> mfconsult.ListWebhookEventResponse
-	45, // 88: mfconsult.Mfconsult.CreateWebhookEvent:output_type -> mfconsult.WebhookEvent
-	45, // 89: mfconsult.Mfconsult.UpdateWebhookEvent:output_type -> mfconsult.WebhookEvent
-	63, // [63:90] is the sub-list for method output_type
-	36, // [36:63] is the sub-list for method input_type
-	36, // [36:36] is the sub-list for extension type_name
-	36, // [36:36] is the sub-list for extension extendee
-	0,  // [0:36] is the sub-list for field type_name
+	44, // 0: mfconsult.ListClientResponse.client:type_name -> mfconsult.Client
+	44, // 1: mfconsult.CreateClientRequest.client:type_name -> mfconsult.Client
+	44, // 2: mfconsult.UpdateClientRequest.client:type_name -> mfconsult.Client
+	45, // 3: mfconsult.UpdateClientRequest.update_mask:type_name -> google.protobuf.FieldMask
+	46, // 4: mfconsult.ListBookingResponse.booking:type_name -> mfconsult.Booking
+	46, // 5: mfconsult.CreateBookingRequest.booking:type_name -> mfconsult.Booking
+	46, // 6: mfconsult.UpdateBookingRequest.booking:type_name -> mfconsult.Booking
+	45, // 7: mfconsult.UpdateBookingRequest.update_mask:type_name -> google.protobuf.FieldMask
+	47, // 8: mfconsult.ListBookingIntakeResponse.booking_intake:type_name -> mfconsult.BookingIntake
+	47, // 9: mfconsult.CreateBookingIntakeRequest.booking_intake:type_name -> mfconsult.BookingIntake
+	47, // 10: mfconsult.UpdateBookingIntakeRequest.booking_intake:type_name -> mfconsult.BookingIntake
+	45, // 11: mfconsult.UpdateBookingIntakeRequest.update_mask:type_name -> google.protobuf.FieldMask
+	48, // 12: mfconsult.ListBookingPaymentResponse.booking_payment:type_name -> mfconsult.BookingPayment
+	48, // 13: mfconsult.CreateBookingPaymentRequest.booking_payment:type_name -> mfconsult.BookingPayment
+	48, // 14: mfconsult.UpdateBookingPaymentRequest.booking_payment:type_name -> mfconsult.BookingPayment
+	45, // 15: mfconsult.UpdateBookingPaymentRequest.update_mask:type_name -> google.protobuf.FieldMask
+	49, // 16: mfconsult.ListBookingSchedulingResponse.booking_scheduling:type_name -> mfconsult.BookingScheduling
+	49, // 17: mfconsult.CreateBookingSchedulingRequest.booking_scheduling:type_name -> mfconsult.BookingScheduling
+	49, // 18: mfconsult.UpdateBookingSchedulingRequest.booking_scheduling:type_name -> mfconsult.BookingScheduling
+	45, // 19: mfconsult.UpdateBookingSchedulingRequest.update_mask:type_name -> google.protobuf.FieldMask
+	50, // 20: mfconsult.ListBookingDocumentResponse.booking_document:type_name -> mfconsult.BookingDocument
+	50, // 21: mfconsult.CreateBookingDocumentRequest.booking_document:type_name -> mfconsult.BookingDocument
+	50, // 22: mfconsult.UpdateBookingDocumentRequest.booking_document:type_name -> mfconsult.BookingDocument
+	45, // 23: mfconsult.UpdateBookingDocumentRequest.update_mask:type_name -> google.protobuf.FieldMask
+	51, // 24: mfconsult.ListBookingRecapResponse.booking_recap:type_name -> mfconsult.BookingRecap
+	51, // 25: mfconsult.CreateBookingRecapRequest.booking_recap:type_name -> mfconsult.BookingRecap
+	51, // 26: mfconsult.UpdateBookingRecapRequest.booking_recap:type_name -> mfconsult.BookingRecap
+	45, // 27: mfconsult.UpdateBookingRecapRequest.update_mask:type_name -> google.protobuf.FieldMask
+	52, // 28: mfconsult.ListEngagementAgreementResponse.engagement_agreement:type_name -> mfconsult.EngagementAgreement
+	52, // 29: mfconsult.CreateEngagementAgreementRequest.engagement_agreement:type_name -> mfconsult.EngagementAgreement
+	52, // 30: mfconsult.UpdateEngagementAgreementRequest.engagement_agreement:type_name -> mfconsult.EngagementAgreement
+	45, // 31: mfconsult.UpdateEngagementAgreementRequest.update_mask:type_name -> google.protobuf.FieldMask
+	53, // 32: mfconsult.ListWebhookEventResponse.webhook_event:type_name -> mfconsult.WebhookEvent
+	53, // 33: mfconsult.CreateWebhookEventRequest.webhook_event:type_name -> mfconsult.WebhookEvent
+	53, // 34: mfconsult.UpdateWebhookEventRequest.webhook_event:type_name -> mfconsult.WebhookEvent
+	45, // 35: mfconsult.UpdateWebhookEventRequest.update_mask:type_name -> google.protobuf.FieldMask
+	54, // 36: mfconsult.ListEngagementInquiryResponse.engagement_inquiry:type_name -> mfconsult.EngagementInquiry
+	54, // 37: mfconsult.CreateEngagementInquiryRequest.engagement_inquiry:type_name -> mfconsult.EngagementInquiry
+	54, // 38: mfconsult.UpdateEngagementInquiryRequest.engagement_inquiry:type_name -> mfconsult.EngagementInquiry
+	45, // 39: mfconsult.UpdateEngagementInquiryRequest.update_mask:type_name -> google.protobuf.FieldMask
+	55, // 40: mfconsult.ListMagicLinkResponse.magic_link:type_name -> mfconsult.MagicLink
+	55, // 41: mfconsult.CreateMagicLinkRequest.magic_link:type_name -> mfconsult.MagicLink
+	55, // 42: mfconsult.UpdateMagicLinkRequest.magic_link:type_name -> mfconsult.MagicLink
+	45, // 43: mfconsult.UpdateMagicLinkRequest.update_mask:type_name -> google.protobuf.FieldMask
+	0,  // 44: mfconsult.Mfconsult.ListClient:input_type -> mfconsult.ListClientRequest
+	2,  // 45: mfconsult.Mfconsult.CreateClient:input_type -> mfconsult.CreateClientRequest
+	3,  // 46: mfconsult.Mfconsult.UpdateClient:input_type -> mfconsult.UpdateClientRequest
+	4,  // 47: mfconsult.Mfconsult.ListBooking:input_type -> mfconsult.ListBookingRequest
+	6,  // 48: mfconsult.Mfconsult.CreateBooking:input_type -> mfconsult.CreateBookingRequest
+	7,  // 49: mfconsult.Mfconsult.UpdateBooking:input_type -> mfconsult.UpdateBookingRequest
+	8,  // 50: mfconsult.Mfconsult.ListBookingIntake:input_type -> mfconsult.ListBookingIntakeRequest
+	10, // 51: mfconsult.Mfconsult.CreateBookingIntake:input_type -> mfconsult.CreateBookingIntakeRequest
+	11, // 52: mfconsult.Mfconsult.UpdateBookingIntake:input_type -> mfconsult.UpdateBookingIntakeRequest
+	12, // 53: mfconsult.Mfconsult.ListBookingPayment:input_type -> mfconsult.ListBookingPaymentRequest
+	14, // 54: mfconsult.Mfconsult.CreateBookingPayment:input_type -> mfconsult.CreateBookingPaymentRequest
+	15, // 55: mfconsult.Mfconsult.UpdateBookingPayment:input_type -> mfconsult.UpdateBookingPaymentRequest
+	16, // 56: mfconsult.Mfconsult.ListBookingScheduling:input_type -> mfconsult.ListBookingSchedulingRequest
+	18, // 57: mfconsult.Mfconsult.CreateBookingScheduling:input_type -> mfconsult.CreateBookingSchedulingRequest
+	19, // 58: mfconsult.Mfconsult.UpdateBookingScheduling:input_type -> mfconsult.UpdateBookingSchedulingRequest
+	20, // 59: mfconsult.Mfconsult.ListBookingDocument:input_type -> mfconsult.ListBookingDocumentRequest
+	22, // 60: mfconsult.Mfconsult.CreateBookingDocument:input_type -> mfconsult.CreateBookingDocumentRequest
+	23, // 61: mfconsult.Mfconsult.UpdateBookingDocument:input_type -> mfconsult.UpdateBookingDocumentRequest
+	24, // 62: mfconsult.Mfconsult.ListBookingRecap:input_type -> mfconsult.ListBookingRecapRequest
+	26, // 63: mfconsult.Mfconsult.CreateBookingRecap:input_type -> mfconsult.CreateBookingRecapRequest
+	27, // 64: mfconsult.Mfconsult.UpdateBookingRecap:input_type -> mfconsult.UpdateBookingRecapRequest
+	28, // 65: mfconsult.Mfconsult.ListEngagementAgreement:input_type -> mfconsult.ListEngagementAgreementRequest
+	30, // 66: mfconsult.Mfconsult.CreateEngagementAgreement:input_type -> mfconsult.CreateEngagementAgreementRequest
+	31, // 67: mfconsult.Mfconsult.UpdateEngagementAgreement:input_type -> mfconsult.UpdateEngagementAgreementRequest
+	32, // 68: mfconsult.Mfconsult.ListWebhookEvent:input_type -> mfconsult.ListWebhookEventRequest
+	34, // 69: mfconsult.Mfconsult.CreateWebhookEvent:input_type -> mfconsult.CreateWebhookEventRequest
+	35, // 70: mfconsult.Mfconsult.UpdateWebhookEvent:input_type -> mfconsult.UpdateWebhookEventRequest
+	36, // 71: mfconsult.Mfconsult.ListEngagementInquiry:input_type -> mfconsult.ListEngagementInquiryRequest
+	38, // 72: mfconsult.Mfconsult.CreateEngagementInquiry:input_type -> mfconsult.CreateEngagementInquiryRequest
+	39, // 73: mfconsult.Mfconsult.UpdateEngagementInquiry:input_type -> mfconsult.UpdateEngagementInquiryRequest
+	40, // 74: mfconsult.Mfconsult.ListMagicLink:input_type -> mfconsult.ListMagicLinkRequest
+	42, // 75: mfconsult.Mfconsult.CreateMagicLink:input_type -> mfconsult.CreateMagicLinkRequest
+	43, // 76: mfconsult.Mfconsult.UpdateMagicLink:input_type -> mfconsult.UpdateMagicLinkRequest
+	1,  // 77: mfconsult.Mfconsult.ListClient:output_type -> mfconsult.ListClientResponse
+	44, // 78: mfconsult.Mfconsult.CreateClient:output_type -> mfconsult.Client
+	44, // 79: mfconsult.Mfconsult.UpdateClient:output_type -> mfconsult.Client
+	5,  // 80: mfconsult.Mfconsult.ListBooking:output_type -> mfconsult.ListBookingResponse
+	46, // 81: mfconsult.Mfconsult.CreateBooking:output_type -> mfconsult.Booking
+	46, // 82: mfconsult.Mfconsult.UpdateBooking:output_type -> mfconsult.Booking
+	9,  // 83: mfconsult.Mfconsult.ListBookingIntake:output_type -> mfconsult.ListBookingIntakeResponse
+	47, // 84: mfconsult.Mfconsult.CreateBookingIntake:output_type -> mfconsult.BookingIntake
+	47, // 85: mfconsult.Mfconsult.UpdateBookingIntake:output_type -> mfconsult.BookingIntake
+	13, // 86: mfconsult.Mfconsult.ListBookingPayment:output_type -> mfconsult.ListBookingPaymentResponse
+	48, // 87: mfconsult.Mfconsult.CreateBookingPayment:output_type -> mfconsult.BookingPayment
+	48, // 88: mfconsult.Mfconsult.UpdateBookingPayment:output_type -> mfconsult.BookingPayment
+	17, // 89: mfconsult.Mfconsult.ListBookingScheduling:output_type -> mfconsult.ListBookingSchedulingResponse
+	49, // 90: mfconsult.Mfconsult.CreateBookingScheduling:output_type -> mfconsult.BookingScheduling
+	49, // 91: mfconsult.Mfconsult.UpdateBookingScheduling:output_type -> mfconsult.BookingScheduling
+	21, // 92: mfconsult.Mfconsult.ListBookingDocument:output_type -> mfconsult.ListBookingDocumentResponse
+	50, // 93: mfconsult.Mfconsult.CreateBookingDocument:output_type -> mfconsult.BookingDocument
+	50, // 94: mfconsult.Mfconsult.UpdateBookingDocument:output_type -> mfconsult.BookingDocument
+	25, // 95: mfconsult.Mfconsult.ListBookingRecap:output_type -> mfconsult.ListBookingRecapResponse
+	51, // 96: mfconsult.Mfconsult.CreateBookingRecap:output_type -> mfconsult.BookingRecap
+	51, // 97: mfconsult.Mfconsult.UpdateBookingRecap:output_type -> mfconsult.BookingRecap
+	29, // 98: mfconsult.Mfconsult.ListEngagementAgreement:output_type -> mfconsult.ListEngagementAgreementResponse
+	52, // 99: mfconsult.Mfconsult.CreateEngagementAgreement:output_type -> mfconsult.EngagementAgreement
+	52, // 100: mfconsult.Mfconsult.UpdateEngagementAgreement:output_type -> mfconsult.EngagementAgreement
+	33, // 101: mfconsult.Mfconsult.ListWebhookEvent:output_type -> mfconsult.ListWebhookEventResponse
+	53, // 102: mfconsult.Mfconsult.CreateWebhookEvent:output_type -> mfconsult.WebhookEvent
+	53, // 103: mfconsult.Mfconsult.UpdateWebhookEvent:output_type -> mfconsult.WebhookEvent
+	37, // 104: mfconsult.Mfconsult.ListEngagementInquiry:output_type -> mfconsult.ListEngagementInquiryResponse
+	54, // 105: mfconsult.Mfconsult.CreateEngagementInquiry:output_type -> mfconsult.EngagementInquiry
+	54, // 106: mfconsult.Mfconsult.UpdateEngagementInquiry:output_type -> mfconsult.EngagementInquiry
+	41, // 107: mfconsult.Mfconsult.ListMagicLink:output_type -> mfconsult.ListMagicLinkResponse
+	55, // 108: mfconsult.Mfconsult.CreateMagicLink:output_type -> mfconsult.MagicLink
+	55, // 109: mfconsult.Mfconsult.UpdateMagicLink:output_type -> mfconsult.MagicLink
+	77, // [77:110] is the sub-list for method output_type
+	44, // [44:77] is the sub-list for method input_type
+	44, // [44:44] is the sub-list for extension type_name
+	44, // [44:44] is the sub-list for extension extendee
+	0,  // [0:44] is the sub-list for field type_name
 }
 
 func init() { file_service_mfconsult_proto_init() }
@@ -2659,15 +3238,17 @@ func file_service_mfconsult_proto_init() {
 	file_booking_scheduling_proto_init()
 	file_booking_document_proto_init()
 	file_booking_recap_proto_init()
-	file_nda_document_proto_init()
+	file_engagement_agreement_proto_init()
 	file_webhook_event_proto_init()
+	file_engagement_inquiry_proto_init()
+	file_magic_link_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_service_mfconsult_proto_rawDesc), len(file_service_mfconsult_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   36,
+			NumMessages:   44,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

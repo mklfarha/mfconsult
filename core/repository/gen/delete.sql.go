@@ -50,14 +50,34 @@ func (q *Queries) DeleteClient(ctx context.Context, id string) (sql.Result, erro
 	return q.db.ExecContext(ctx, deleteClient, id)
 }
 
-const deleteNdaDocument = `-- name: DeleteNdaDocument :execresult
-DELETE FROM ` + "`" + `nda_document` + "`" + `
+const deleteEngagementAgreement = `-- name: DeleteEngagementAgreement :execresult
+DELETE FROM ` + "`" + `engagement_agreement` + "`" + `
 WHERE
 ` + "`" + `id` + "`" + ` = ?
 `
 
-func (q *Queries) DeleteNdaDocument(ctx context.Context, id string) (sql.Result, error) {
-	return q.db.ExecContext(ctx, deleteNdaDocument, id)
+func (q *Queries) DeleteEngagementAgreement(ctx context.Context, id string) (sql.Result, error) {
+	return q.db.ExecContext(ctx, deleteEngagementAgreement, id)
+}
+
+const deleteEngagementInquiry = `-- name: DeleteEngagementInquiry :execresult
+DELETE FROM ` + "`" + `engagement_inquiry` + "`" + `
+WHERE
+` + "`" + `id` + "`" + ` = ?
+`
+
+func (q *Queries) DeleteEngagementInquiry(ctx context.Context, id string) (sql.Result, error) {
+	return q.db.ExecContext(ctx, deleteEngagementInquiry, id)
+}
+
+const deleteMagicLink = `-- name: DeleteMagicLink :execresult
+DELETE FROM ` + "`" + `magic_link` + "`" + `
+WHERE
+` + "`" + `id` + "`" + ` = ?
+`
+
+func (q *Queries) DeleteMagicLink(ctx context.Context, id string) (sql.Result, error) {
+	return q.db.ExecContext(ctx, deleteMagicLink, id)
 }
 
 const deleteWebhookEvent = `-- name: DeleteWebhookEvent :execresult

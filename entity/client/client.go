@@ -12,7 +12,7 @@ import (
 
 type Client struct {
 	ID        uuid.UUID   `json:"id"`
-	Name      string      `json:"name"`
+	Name      null.String `json:"name"`
 	Email     string      `json:"email"`
 	Timezone  null.String `json:"timezone"`
 	Notes     null.String `json:"notes"`

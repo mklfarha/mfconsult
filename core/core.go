@@ -22,9 +22,13 @@ import (
 
 	"github.com/mklfarha/mfconsult/core/module/booking_recap"
 
-	"github.com/mklfarha/mfconsult/core/module/nda_document"
+	"github.com/mklfarha/mfconsult/core/module/engagement_agreement"
 
 	"github.com/mklfarha/mfconsult/core/module/webhook_event"
+
+	"github.com/mklfarha/mfconsult/core/module/engagement_inquiry"
+
+	"github.com/mklfarha/mfconsult/core/module/magic_link"
 
 	"github.com/mklfarha/mfconsult/core/repository"
 )
@@ -42,9 +46,13 @@ type Implementation struct {
 
 	booking_recap booking_recap.Module
 
-	nda_document nda_document.Module
+	engagement_agreement engagement_agreement.Module
 
 	webhook_event webhook_event.Module
+
+	engagement_inquiry engagement_inquiry.Module
+
+	magic_link magic_link.Module
 }
 
 type Params struct {
@@ -144,14 +152,14 @@ func (i Implementation) BookingRecap() booking_recap.Module {
 	return i.booking_recap
 }
 
-func (i Implementation) NdaDocument() nda_document.Module {
-	if i.nda_document == nil {
-		i.nda_document = nda_document.New(coretypes.ModuleParams{
+func (i Implementation) EngagementAgreement() engagement_agreement.Module {
+	if i.engagement_agreement == nil {
+		i.engagement_agreement = engagement_agreement.New(coretypes.ModuleParams{
 			Repository: i.repository,
 			Logger:     i.logger,
 		})
 	}
-	return i.nda_document
+	return i.engagement_agreement
 }
 
 func (i Implementation) WebhookEvent() webhook_event.Module {
@@ -162,4 +170,24 @@ func (i Implementation) WebhookEvent() webhook_event.Module {
 		})
 	}
 	return i.webhook_event
+}
+
+func (i Implementation) EngagementInquiry() engagement_inquiry.Module {
+	if i.engagement_inquiry == nil {
+		i.engagement_inquiry = engagement_inquiry.New(coretypes.ModuleParams{
+			Repository: i.repository,
+			Logger:     i.logger,
+		})
+	}
+	return i.engagement_inquiry
+}
+
+func (i Implementation) MagicLink() magic_link.Module {
+	if i.magic_link == nil {
+		i.magic_link = magic_link.New(coretypes.ModuleParams{
+			Repository: i.repository,
+			Logger:     i.logger,
+		})
+	}
+	return i.magic_link
 }

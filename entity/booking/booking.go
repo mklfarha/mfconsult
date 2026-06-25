@@ -15,23 +15,20 @@ import (
 )
 
 type Booking struct {
-	ID               uuid.UUID                              `json:"id"`
-	ClientId         uuid.UUID                              `json:"client_id"`
-	Status           enum.BookingStatus                     `json:"status"`
-	ReviewDecision   enum.ReviewDecision                    `json:"review_decision"`
-	ReviewedAt       null.Time                              `json:"reviewed_at"`
-	DeclineReason    null.String                            `json:"decline_reason"`
-	PayLinkToken     null.String                            `json:"pay_link_token"`
-	PayLinkExpiresAt null.Time                              `json:"pay_link_expires_at"`
-	PortalToken      null.String                            `json:"portal_token"`
-	Intake           []booking_intake.BookingIntake         `json:"intake"`
-	Payment          []booking_payment.BookingPayment       `json:"payment"`
-	Scheduling       []booking_scheduling.BookingScheduling `json:"scheduling"`
-	TermsVersion     null.String                            `json:"terms_version"`
-	TermsAcceptedAt  null.Time                              `json:"terms_accepted_at"`
-	TermsAcceptedIp  null.String                            `json:"terms_accepted_ip"`
-	CreatedAt        null.Time                              `json:"created_at"`
-	UpdatedAt        null.Time                              `json:"updated_at"`
+	ID              uuid.UUID                              `json:"id"`
+	ClientId        uuid.UUID                              `json:"client_id"`
+	Status          enum.BookingStatus                     `json:"status"`
+	ReviewDecision  enum.ReviewDecision                    `json:"review_decision"`
+	ReviewedAt      null.Time                              `json:"reviewed_at"`
+	DeclineReason   null.String                            `json:"decline_reason"`
+	Intake          []booking_intake.BookingIntake         `json:"intake"`
+	Payment         []booking_payment.BookingPayment       `json:"payment"`
+	Scheduling      []booking_scheduling.BookingScheduling `json:"scheduling"`
+	TermsVersion    null.String                            `json:"terms_version"`
+	TermsAcceptedAt null.Time                              `json:"terms_accepted_at"`
+	TermsAcceptedIp null.String                            `json:"terms_accepted_ip"`
+	CreatedAt       null.Time                              `json:"created_at"`
+	UpdatedAt       null.Time                              `json:"updated_at"`
 }
 
 func (e Booking) String() string {

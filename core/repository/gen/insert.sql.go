@@ -14,29 +14,26 @@ import (
 
 const insertBooking = `-- name: InsertBooking :execresult
 INSERT INTO ` + "`" + `booking` + "`" + `
-(` + "`" + `id` + "`" + `,` + "`" + `client_id` + "`" + `,` + "`" + `status` + "`" + `,` + "`" + `review_decision` + "`" + `,` + "`" + `reviewed_at` + "`" + `,` + "`" + `decline_reason` + "`" + `,` + "`" + `pay_link_token` + "`" + `,` + "`" + `pay_link_expires_at` + "`" + `,` + "`" + `portal_token` + "`" + `,` + "`" + `intake` + "`" + `,` + "`" + `payment` + "`" + `,` + "`" + `scheduling` + "`" + `,` + "`" + `terms_version` + "`" + `,` + "`" + `terms_accepted_at` + "`" + `,` + "`" + `terms_accepted_ip` + "`" + `,` + "`" + `created_at` + "`" + `,` + "`" + `updated_at` + "`" + `)
+(` + "`" + `id` + "`" + `,` + "`" + `client_id` + "`" + `,` + "`" + `status` + "`" + `,` + "`" + `review_decision` + "`" + `,` + "`" + `reviewed_at` + "`" + `,` + "`" + `decline_reason` + "`" + `,` + "`" + `intake` + "`" + `,` + "`" + `payment` + "`" + `,` + "`" + `scheduling` + "`" + `,` + "`" + `terms_version` + "`" + `,` + "`" + `terms_accepted_at` + "`" + `,` + "`" + `terms_accepted_ip` + "`" + `,` + "`" + `created_at` + "`" + `,` + "`" + `updated_at` + "`" + `)
 VALUES
-(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+(?,?,?,?,?,?,?,?,?,?,?,?,?,?)
 `
 
 type InsertBookingParams struct {
-	ID               string      `json:"id"`
-	ClientId         string      `json:"client_id"`
-	Status           int64       `json:"status"`
-	ReviewDecision   int64       `json:"review_decision"`
-	ReviewedAt       null.Time   `json:"reviewed_at"`
-	DeclineReason    null.String `json:"decline_reason"`
-	PayLinkToken     null.String `json:"pay_link_token"`
-	PayLinkExpiresAt null.Time   `json:"pay_link_expires_at"`
-	PortalToken      null.String `json:"portal_token"`
-	Intake           []byte      `json:"intake"`
-	Payment          []byte      `json:"payment"`
-	Scheduling       []byte      `json:"scheduling"`
-	TermsVersion     null.String `json:"terms_version"`
-	TermsAcceptedAt  null.Time   `json:"terms_accepted_at"`
-	TermsAcceptedIp  null.String `json:"terms_accepted_ip"`
-	CreatedAt        null.Time   `json:"created_at"`
-	UpdatedAt        null.Time   `json:"updated_at"`
+	ID              string      `json:"id"`
+	ClientId        string      `json:"client_id"`
+	Status          int64       `json:"status"`
+	ReviewDecision  int64       `json:"review_decision"`
+	ReviewedAt      null.Time   `json:"reviewed_at"`
+	DeclineReason   null.String `json:"decline_reason"`
+	Intake          []byte      `json:"intake"`
+	Payment         []byte      `json:"payment"`
+	Scheduling      []byte      `json:"scheduling"`
+	TermsVersion    null.String `json:"terms_version"`
+	TermsAcceptedAt null.Time   `json:"terms_accepted_at"`
+	TermsAcceptedIp null.String `json:"terms_accepted_ip"`
+	CreatedAt       null.Time   `json:"created_at"`
+	UpdatedAt       null.Time   `json:"updated_at"`
 }
 
 func (q *Queries) InsertBooking(ctx context.Context, arg InsertBookingParams) (sql.Result, error) {
@@ -47,9 +44,6 @@ func (q *Queries) InsertBooking(ctx context.Context, arg InsertBookingParams) (s
 		arg.ReviewDecision,
 		arg.ReviewedAt,
 		arg.DeclineReason,
-		arg.PayLinkToken,
-		arg.PayLinkExpiresAt,
-		arg.PortalToken,
 		arg.Intake,
 		arg.Payment,
 		arg.Scheduling,
@@ -124,7 +118,7 @@ VALUES
 
 type InsertClientParams struct {
 	ID        string      `json:"id"`
-	Name      string      `json:"name"`
+	Name      null.String `json:"name"`
 	Email     string      `json:"email"`
 	Timezone  null.String `json:"timezone"`
 	Notes     null.String `json:"notes"`
@@ -144,34 +138,118 @@ func (q *Queries) InsertClient(ctx context.Context, arg InsertClientParams) (sql
 	)
 }
 
-const insertNdaDocument = `-- name: InsertNdaDocument :execresult
-INSERT INTO ` + "`" + `nda_document` + "`" + `
-(` + "`" + `id` + "`" + `,` + "`" + `client_id` + "`" + `,` + "`" + `url` + "`" + `,` + "`" + `status` + "`" + `,` + "`" + `signed_at` + "`" + `,` + "`" + `created_at` + "`" + `,` + "`" + `envelope_id` + "`" + `,` + "`" + `certificate_url` + "`" + `)
+const insertEngagementAgreement = `-- name: InsertEngagementAgreement :execresult
+INSERT INTO ` + "`" + `engagement_agreement` + "`" + `
+(` + "`" + `id` + "`" + `,` + "`" + `client_id` + "`" + `,` + "`" + `nda_url` + "`" + `,` + "`" + `status` + "`" + `,` + "`" + `signed_at` + "`" + `,` + "`" + `created_at` + "`" + `,` + "`" + `envelope_id` + "`" + `,` + "`" + `certificate_url` + "`" + `,` + "`" + `contract_url` + "`" + `,` + "`" + `engagement_inquiry_id` + "`" + `,` + "`" + `updated_at` + "`" + `)
 VALUES
-(?,?,?,?,?,?,?,?)
+(?,?,?,?,?,?,?,?,?,?,?)
 `
 
-type InsertNdaDocumentParams struct {
-	ID             string      `json:"id"`
-	ClientId       string      `json:"client_id"`
-	URL            null.String `json:"url"`
-	Status         null.Int    `json:"status"`
-	SignedAt       null.Time   `json:"signed_at"`
-	CreatedAt      null.Time   `json:"created_at"`
-	EnvelopeId     null.String `json:"envelope_id"`
-	CertificateURL null.String `json:"certificate_url"`
+type InsertEngagementAgreementParams struct {
+	ID                  string      `json:"id"`
+	ClientId            string      `json:"client_id"`
+	NdaURL              null.String `json:"nda_url"`
+	Status              null.Int    `json:"status"`
+	SignedAt            null.Time   `json:"signed_at"`
+	CreatedAt           null.Time   `json:"created_at"`
+	EnvelopeId          null.String `json:"envelope_id"`
+	CertificateURL      null.String `json:"certificate_url"`
+	ContractURL         null.String `json:"contract_url"`
+	EngagementInquiryId string      `json:"engagement_inquiry_id"`
+	UpdatedAt           null.Time   `json:"updated_at"`
 }
 
-func (q *Queries) InsertNdaDocument(ctx context.Context, arg InsertNdaDocumentParams) (sql.Result, error) {
-	return q.db.ExecContext(ctx, insertNdaDocument,
+func (q *Queries) InsertEngagementAgreement(ctx context.Context, arg InsertEngagementAgreementParams) (sql.Result, error) {
+	return q.db.ExecContext(ctx, insertEngagementAgreement,
 		arg.ID,
 		arg.ClientId,
-		arg.URL,
+		arg.NdaURL,
 		arg.Status,
 		arg.SignedAt,
 		arg.CreatedAt,
 		arg.EnvelopeId,
 		arg.CertificateURL,
+		arg.ContractURL,
+		arg.EngagementInquiryId,
+		arg.UpdatedAt,
+	)
+}
+
+const insertEngagementInquiry = `-- name: InsertEngagementInquiry :execresult
+INSERT INTO ` + "`" + `engagement_inquiry` + "`" + `
+(` + "`" + `id` + "`" + `,` + "`" + `client_id` + "`" + `,` + "`" + `name` + "`" + `,` + "`" + `email` + "`" + `,` + "`" + `phone` + "`" + `,` + "`" + `company` + "`" + `,` + "`" + `project_summary` + "`" + `,` + "`" + `why_more_than_session` + "`" + `,` + "`" + `scope_details` + "`" + `,` + "`" + `budget_range` + "`" + `,` + "`" + `timeline` + "`" + `,` + "`" + `status` + "`" + `,` + "`" + `review_notes` + "`" + `,` + "`" + `created_at` + "`" + `,` + "`" + `updated_at` + "`" + `)
+VALUES
+(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+`
+
+type InsertEngagementInquiryParams struct {
+	ID                 string      `json:"id"`
+	ClientId           null.String `json:"client_id"`
+	Name               string      `json:"name"`
+	Email              string      `json:"email"`
+	Phone              null.String `json:"phone"`
+	Company            null.String `json:"company"`
+	ProjectSummary     string      `json:"project_summary"`
+	WhyMoreThanSession null.String `json:"why_more_than_session"`
+	ScopeDetails       null.String `json:"scope_details"`
+	BudgetRange        null.String `json:"budget_range"`
+	Timeline           null.String `json:"timeline"`
+	Status             null.Int    `json:"status"`
+	ReviewNotes        null.String `json:"review_notes"`
+	CreatedAt          null.Time   `json:"created_at"`
+	UpdatedAt          null.Time   `json:"updated_at"`
+}
+
+func (q *Queries) InsertEngagementInquiry(ctx context.Context, arg InsertEngagementInquiryParams) (sql.Result, error) {
+	return q.db.ExecContext(ctx, insertEngagementInquiry,
+		arg.ID,
+		arg.ClientId,
+		arg.Name,
+		arg.Email,
+		arg.Phone,
+		arg.Company,
+		arg.ProjectSummary,
+		arg.WhyMoreThanSession,
+		arg.ScopeDetails,
+		arg.BudgetRange,
+		arg.Timeline,
+		arg.Status,
+		arg.ReviewNotes,
+		arg.CreatedAt,
+		arg.UpdatedAt,
+	)
+}
+
+const insertMagicLink = `-- name: InsertMagicLink :execresult
+INSERT INTO ` + "`" + `magic_link` + "`" + `
+(` + "`" + `id` + "`" + `,` + "`" + `client_id` + "`" + `,` + "`" + `email` + "`" + `,` + "`" + `token` + "`" + `,` + "`" + `purpose` + "`" + `,` + "`" + `expires_at` + "`" + `,` + "`" + `consumed_at` + "`" + `,` + "`" + `created_at` + "`" + `,` + "`" + `created_ip` + "`" + `)
+VALUES
+(?,?,?,?,?,?,?,?,?)
+`
+
+type InsertMagicLinkParams struct {
+	ID         string      `json:"id"`
+	ClientId   string      `json:"client_id"`
+	Email      null.String `json:"email"`
+	Token      string      `json:"token"`
+	Purpose    null.Int    `json:"purpose"`
+	ExpiresAt  null.Time   `json:"expires_at"`
+	ConsumedAt null.Time   `json:"consumed_at"`
+	CreatedAt  null.Time   `json:"created_at"`
+	CreatedIp  null.String `json:"created_ip"`
+}
+
+func (q *Queries) InsertMagicLink(ctx context.Context, arg InsertMagicLinkParams) (sql.Result, error) {
+	return q.db.ExecContext(ctx, insertMagicLink,
+		arg.ID,
+		arg.ClientId,
+		arg.Email,
+		arg.Token,
+		arg.Purpose,
+		arg.ExpiresAt,
+		arg.ConsumedAt,
+		arg.CreatedAt,
+		arg.CreatedIp,
 	)
 }
 

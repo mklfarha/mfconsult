@@ -10,23 +10,20 @@ import (
 
 func (e Booking) FieldIdentifierToTypeMap() map[string]entitytypes.FieldType {
 	return map[string]entitytypes.FieldType{
-		"id":                  entitytypes.StringFieldType,
-		"client_id":           entitytypes.StringFieldType,
-		"status":              entitytypes.SingleEnumFieldType,
-		"review_decision":     entitytypes.SingleEnumFieldType,
-		"reviewed_at":         entitytypes.TimestampFieldType,
-		"decline_reason":      entitytypes.StringFieldType,
-		"pay_link_token":      entitytypes.StringFieldType,
-		"pay_link_expires_at": entitytypes.TimestampFieldType,
-		"portal_token":        entitytypes.StringFieldType,
-		"intake":              entitytypes.SingleDependantEntityFieldType,
-		"payment":             entitytypes.SingleDependantEntityFieldType,
-		"scheduling":          entitytypes.SingleDependantEntityFieldType,
-		"terms_version":       entitytypes.StringFieldType,
-		"terms_accepted_at":   entitytypes.TimestampFieldType,
-		"terms_accepted_ip":   entitytypes.StringFieldType,
-		"created_at":          entitytypes.TimestampFieldType,
-		"updated_at":          entitytypes.TimestampFieldType,
+		"id":                entitytypes.StringFieldType,
+		"client_id":         entitytypes.StringFieldType,
+		"status":            entitytypes.SingleEnumFieldType,
+		"review_decision":   entitytypes.SingleEnumFieldType,
+		"reviewed_at":       entitytypes.TimestampFieldType,
+		"decline_reason":    entitytypes.StringFieldType,
+		"intake":            entitytypes.SingleDependantEntityFieldType,
+		"payment":           entitytypes.SingleDependantEntityFieldType,
+		"scheduling":        entitytypes.SingleDependantEntityFieldType,
+		"terms_version":     entitytypes.StringFieldType,
+		"terms_accepted_at": entitytypes.TimestampFieldType,
+		"terms_accepted_ip": entitytypes.StringFieldType,
+		"created_at":        entitytypes.TimestampFieldType,
+		"updated_at":        entitytypes.TimestampFieldType,
 	}
 }
 
@@ -38,9 +35,6 @@ func (e Booking) OrderedFieldIdentifiers() []string {
 	res = append(res, "review_decision")
 	res = append(res, "reviewed_at")
 	res = append(res, "decline_reason")
-	res = append(res, "pay_link_token")
-	res = append(res, "pay_link_expires_at")
-	res = append(res, "portal_token")
 	res = append(res, "intake")
 	res = append(res, "payment")
 	res = append(res, "scheduling")

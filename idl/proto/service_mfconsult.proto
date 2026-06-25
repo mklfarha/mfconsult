@@ -23,9 +23,13 @@ import "booking_document.proto";
 
 import "booking_recap.proto";
 
-import "nda_document.proto";
+import "engagement_agreement.proto";
 
 import "webhook_event.proto";
+
+import "engagement_inquiry.proto";
+
+import "magic_link.proto";
 
 
 service Mfconsult {    
@@ -72,17 +76,29 @@ service Mfconsult {
     rpc UpdateBookingRecap(UpdateBookingRecapRequest) returns (BookingRecap) {}
     // booking_recap end
     
-    // nda_document start
-    rpc ListNdaDocument(ListNdaDocumentRequest) returns (ListNdaDocumentResponse){}
-    rpc CreateNdaDocument(CreateNdaDocumentRequest) returns (NdaDocument) {}
-    rpc UpdateNdaDocument(UpdateNdaDocumentRequest) returns (NdaDocument) {}
-    // nda_document end
+    // engagement_agreement start
+    rpc ListEngagementAgreement(ListEngagementAgreementRequest) returns (ListEngagementAgreementResponse){}
+    rpc CreateEngagementAgreement(CreateEngagementAgreementRequest) returns (EngagementAgreement) {}
+    rpc UpdateEngagementAgreement(UpdateEngagementAgreementRequest) returns (EngagementAgreement) {}
+    // engagement_agreement end
     
     // webhook_event start
     rpc ListWebhookEvent(ListWebhookEventRequest) returns (ListWebhookEventResponse){}
     rpc CreateWebhookEvent(CreateWebhookEventRequest) returns (WebhookEvent) {}
     rpc UpdateWebhookEvent(UpdateWebhookEventRequest) returns (WebhookEvent) {}
     // webhook_event end
+    
+    // engagement_inquiry start
+    rpc ListEngagementInquiry(ListEngagementInquiryRequest) returns (ListEngagementInquiryResponse){}
+    rpc CreateEngagementInquiry(CreateEngagementInquiryRequest) returns (EngagementInquiry) {}
+    rpc UpdateEngagementInquiry(UpdateEngagementInquiryRequest) returns (EngagementInquiry) {}
+    // engagement_inquiry end
+    
+    // magic_link start
+    rpc ListMagicLink(ListMagicLinkRequest) returns (ListMagicLinkResponse){}
+    rpc CreateMagicLink(CreateMagicLinkRequest) returns (MagicLink) {}
+    rpc UpdateMagicLink(UpdateMagicLinkRequest) returns (MagicLink) {}
+    // magic_link end
     
 }
 
@@ -374,8 +390,8 @@ message UpdateBookingRecapRequest {
 }
 // booking_recap end
 
-// nda_document start
-message ListNdaDocumentRequest {
+// engagement_agreement start
+message ListEngagementAgreementRequest {
     // The maximum number of records to return. The service may return fewer than
     // this value.
     int32 page_size = 1;
@@ -394,26 +410,26 @@ message ListNdaDocumentRequest {
     bool skip_cache = 7;
 }
 
-message ListNdaDocumentResponse {
-    repeated NdaDocument nda_document = 1;
+message ListEngagementAgreementResponse {
+    repeated EngagementAgreement engagement_agreement = 1;
 
     // A token that can be sent as `page_token` to retrieve the next page.
     // If this field is omitted, there are no subsequent pages.
     string next_page_token = 2;
 }
 
-message CreateNdaDocumentRequest {
-    NdaDocument nda_document = 1;
+message CreateEngagementAgreementRequest {
+    EngagementAgreement engagement_agreement = 1;
 }
 
-message UpdateNdaDocumentRequest {
+message UpdateEngagementAgreementRequest {
    
-    NdaDocument nda_document = 1;
+    EngagementAgreement engagement_agreement = 1;
   
     // The list of fields to update.
     google.protobuf.FieldMask update_mask = 2;
 }
-// nda_document end
+// engagement_agreement end
 
 // webhook_event start
 message ListWebhookEventRequest {
@@ -455,3 +471,85 @@ message UpdateWebhookEventRequest {
     google.protobuf.FieldMask update_mask = 2;
 }
 // webhook_event end
+
+// engagement_inquiry start
+message ListEngagementInquiryRequest {
+    // The maximum number of records to return. The service may return fewer than
+    // this value.
+    int32 page_size = 1;
+
+    // A page token, received from a previous call.
+    // Provide this to retrieve the subsequent page.    
+    string page_token = 2;
+
+    // https://google.aip.dev/160
+    // https://pkg.go.dev/go.einride.tech/aip@v0.67.1
+    // https://github.com/einride/aip-go    
+    string filter = 3;
+    string order_by = 4;  
+    repeated string include_fields = 5;
+    repeated string exclude_fields = 6;
+    bool skip_cache = 7;
+}
+
+message ListEngagementInquiryResponse {
+    repeated EngagementInquiry engagement_inquiry = 1;
+
+    // A token that can be sent as `page_token` to retrieve the next page.
+    // If this field is omitted, there are no subsequent pages.
+    string next_page_token = 2;
+}
+
+message CreateEngagementInquiryRequest {
+    EngagementInquiry engagement_inquiry = 1;
+}
+
+message UpdateEngagementInquiryRequest {
+   
+    EngagementInquiry engagement_inquiry = 1;
+  
+    // The list of fields to update.
+    google.protobuf.FieldMask update_mask = 2;
+}
+// engagement_inquiry end
+
+// magic_link start
+message ListMagicLinkRequest {
+    // The maximum number of records to return. The service may return fewer than
+    // this value.
+    int32 page_size = 1;
+
+    // A page token, received from a previous call.
+    // Provide this to retrieve the subsequent page.    
+    string page_token = 2;
+
+    // https://google.aip.dev/160
+    // https://pkg.go.dev/go.einride.tech/aip@v0.67.1
+    // https://github.com/einride/aip-go    
+    string filter = 3;
+    string order_by = 4;  
+    repeated string include_fields = 5;
+    repeated string exclude_fields = 6;
+    bool skip_cache = 7;
+}
+
+message ListMagicLinkResponse {
+    repeated MagicLink magic_link = 1;
+
+    // A token that can be sent as `page_token` to retrieve the next page.
+    // If this field is omitted, there are no subsequent pages.
+    string next_page_token = 2;
+}
+
+message CreateMagicLinkRequest {
+    MagicLink magic_link = 1;
+}
+
+message UpdateMagicLinkRequest {
+   
+    MagicLink magic_link = 1;
+  
+    // The list of fields to update.
+    google.protobuf.FieldMask update_mask = 2;
+}
+// magic_link end

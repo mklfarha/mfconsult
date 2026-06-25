@@ -19,33 +19,39 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	Mfconsult_ListClient_FullMethodName              = "/mfconsult.Mfconsult/ListClient"
-	Mfconsult_CreateClient_FullMethodName            = "/mfconsult.Mfconsult/CreateClient"
-	Mfconsult_UpdateClient_FullMethodName            = "/mfconsult.Mfconsult/UpdateClient"
-	Mfconsult_ListBooking_FullMethodName             = "/mfconsult.Mfconsult/ListBooking"
-	Mfconsult_CreateBooking_FullMethodName           = "/mfconsult.Mfconsult/CreateBooking"
-	Mfconsult_UpdateBooking_FullMethodName           = "/mfconsult.Mfconsult/UpdateBooking"
-	Mfconsult_ListBookingIntake_FullMethodName       = "/mfconsult.Mfconsult/ListBookingIntake"
-	Mfconsult_CreateBookingIntake_FullMethodName     = "/mfconsult.Mfconsult/CreateBookingIntake"
-	Mfconsult_UpdateBookingIntake_FullMethodName     = "/mfconsult.Mfconsult/UpdateBookingIntake"
-	Mfconsult_ListBookingPayment_FullMethodName      = "/mfconsult.Mfconsult/ListBookingPayment"
-	Mfconsult_CreateBookingPayment_FullMethodName    = "/mfconsult.Mfconsult/CreateBookingPayment"
-	Mfconsult_UpdateBookingPayment_FullMethodName    = "/mfconsult.Mfconsult/UpdateBookingPayment"
-	Mfconsult_ListBookingScheduling_FullMethodName   = "/mfconsult.Mfconsult/ListBookingScheduling"
-	Mfconsult_CreateBookingScheduling_FullMethodName = "/mfconsult.Mfconsult/CreateBookingScheduling"
-	Mfconsult_UpdateBookingScheduling_FullMethodName = "/mfconsult.Mfconsult/UpdateBookingScheduling"
-	Mfconsult_ListBookingDocument_FullMethodName     = "/mfconsult.Mfconsult/ListBookingDocument"
-	Mfconsult_CreateBookingDocument_FullMethodName   = "/mfconsult.Mfconsult/CreateBookingDocument"
-	Mfconsult_UpdateBookingDocument_FullMethodName   = "/mfconsult.Mfconsult/UpdateBookingDocument"
-	Mfconsult_ListBookingRecap_FullMethodName        = "/mfconsult.Mfconsult/ListBookingRecap"
-	Mfconsult_CreateBookingRecap_FullMethodName      = "/mfconsult.Mfconsult/CreateBookingRecap"
-	Mfconsult_UpdateBookingRecap_FullMethodName      = "/mfconsult.Mfconsult/UpdateBookingRecap"
-	Mfconsult_ListNdaDocument_FullMethodName         = "/mfconsult.Mfconsult/ListNdaDocument"
-	Mfconsult_CreateNdaDocument_FullMethodName       = "/mfconsult.Mfconsult/CreateNdaDocument"
-	Mfconsult_UpdateNdaDocument_FullMethodName       = "/mfconsult.Mfconsult/UpdateNdaDocument"
-	Mfconsult_ListWebhookEvent_FullMethodName        = "/mfconsult.Mfconsult/ListWebhookEvent"
-	Mfconsult_CreateWebhookEvent_FullMethodName      = "/mfconsult.Mfconsult/CreateWebhookEvent"
-	Mfconsult_UpdateWebhookEvent_FullMethodName      = "/mfconsult.Mfconsult/UpdateWebhookEvent"
+	Mfconsult_ListClient_FullMethodName                = "/mfconsult.Mfconsult/ListClient"
+	Mfconsult_CreateClient_FullMethodName              = "/mfconsult.Mfconsult/CreateClient"
+	Mfconsult_UpdateClient_FullMethodName              = "/mfconsult.Mfconsult/UpdateClient"
+	Mfconsult_ListBooking_FullMethodName               = "/mfconsult.Mfconsult/ListBooking"
+	Mfconsult_CreateBooking_FullMethodName             = "/mfconsult.Mfconsult/CreateBooking"
+	Mfconsult_UpdateBooking_FullMethodName             = "/mfconsult.Mfconsult/UpdateBooking"
+	Mfconsult_ListBookingIntake_FullMethodName         = "/mfconsult.Mfconsult/ListBookingIntake"
+	Mfconsult_CreateBookingIntake_FullMethodName       = "/mfconsult.Mfconsult/CreateBookingIntake"
+	Mfconsult_UpdateBookingIntake_FullMethodName       = "/mfconsult.Mfconsult/UpdateBookingIntake"
+	Mfconsult_ListBookingPayment_FullMethodName        = "/mfconsult.Mfconsult/ListBookingPayment"
+	Mfconsult_CreateBookingPayment_FullMethodName      = "/mfconsult.Mfconsult/CreateBookingPayment"
+	Mfconsult_UpdateBookingPayment_FullMethodName      = "/mfconsult.Mfconsult/UpdateBookingPayment"
+	Mfconsult_ListBookingScheduling_FullMethodName     = "/mfconsult.Mfconsult/ListBookingScheduling"
+	Mfconsult_CreateBookingScheduling_FullMethodName   = "/mfconsult.Mfconsult/CreateBookingScheduling"
+	Mfconsult_UpdateBookingScheduling_FullMethodName   = "/mfconsult.Mfconsult/UpdateBookingScheduling"
+	Mfconsult_ListBookingDocument_FullMethodName       = "/mfconsult.Mfconsult/ListBookingDocument"
+	Mfconsult_CreateBookingDocument_FullMethodName     = "/mfconsult.Mfconsult/CreateBookingDocument"
+	Mfconsult_UpdateBookingDocument_FullMethodName     = "/mfconsult.Mfconsult/UpdateBookingDocument"
+	Mfconsult_ListBookingRecap_FullMethodName          = "/mfconsult.Mfconsult/ListBookingRecap"
+	Mfconsult_CreateBookingRecap_FullMethodName        = "/mfconsult.Mfconsult/CreateBookingRecap"
+	Mfconsult_UpdateBookingRecap_FullMethodName        = "/mfconsult.Mfconsult/UpdateBookingRecap"
+	Mfconsult_ListEngagementAgreement_FullMethodName   = "/mfconsult.Mfconsult/ListEngagementAgreement"
+	Mfconsult_CreateEngagementAgreement_FullMethodName = "/mfconsult.Mfconsult/CreateEngagementAgreement"
+	Mfconsult_UpdateEngagementAgreement_FullMethodName = "/mfconsult.Mfconsult/UpdateEngagementAgreement"
+	Mfconsult_ListWebhookEvent_FullMethodName          = "/mfconsult.Mfconsult/ListWebhookEvent"
+	Mfconsult_CreateWebhookEvent_FullMethodName        = "/mfconsult.Mfconsult/CreateWebhookEvent"
+	Mfconsult_UpdateWebhookEvent_FullMethodName        = "/mfconsult.Mfconsult/UpdateWebhookEvent"
+	Mfconsult_ListEngagementInquiry_FullMethodName     = "/mfconsult.Mfconsult/ListEngagementInquiry"
+	Mfconsult_CreateEngagementInquiry_FullMethodName   = "/mfconsult.Mfconsult/CreateEngagementInquiry"
+	Mfconsult_UpdateEngagementInquiry_FullMethodName   = "/mfconsult.Mfconsult/UpdateEngagementInquiry"
+	Mfconsult_ListMagicLink_FullMethodName             = "/mfconsult.Mfconsult/ListMagicLink"
+	Mfconsult_CreateMagicLink_FullMethodName           = "/mfconsult.Mfconsult/CreateMagicLink"
+	Mfconsult_UpdateMagicLink_FullMethodName           = "/mfconsult.Mfconsult/UpdateMagicLink"
 )
 
 // MfconsultClient is the client API for Mfconsult service.
@@ -80,14 +86,22 @@ type MfconsultClient interface {
 	ListBookingRecap(ctx context.Context, in *ListBookingRecapRequest, opts ...grpc.CallOption) (*ListBookingRecapResponse, error)
 	CreateBookingRecap(ctx context.Context, in *CreateBookingRecapRequest, opts ...grpc.CallOption) (*BookingRecap, error)
 	UpdateBookingRecap(ctx context.Context, in *UpdateBookingRecapRequest, opts ...grpc.CallOption) (*BookingRecap, error)
-	// nda_document start
-	ListNdaDocument(ctx context.Context, in *ListNdaDocumentRequest, opts ...grpc.CallOption) (*ListNdaDocumentResponse, error)
-	CreateNdaDocument(ctx context.Context, in *CreateNdaDocumentRequest, opts ...grpc.CallOption) (*NdaDocument, error)
-	UpdateNdaDocument(ctx context.Context, in *UpdateNdaDocumentRequest, opts ...grpc.CallOption) (*NdaDocument, error)
+	// engagement_agreement start
+	ListEngagementAgreement(ctx context.Context, in *ListEngagementAgreementRequest, opts ...grpc.CallOption) (*ListEngagementAgreementResponse, error)
+	CreateEngagementAgreement(ctx context.Context, in *CreateEngagementAgreementRequest, opts ...grpc.CallOption) (*EngagementAgreement, error)
+	UpdateEngagementAgreement(ctx context.Context, in *UpdateEngagementAgreementRequest, opts ...grpc.CallOption) (*EngagementAgreement, error)
 	// webhook_event start
 	ListWebhookEvent(ctx context.Context, in *ListWebhookEventRequest, opts ...grpc.CallOption) (*ListWebhookEventResponse, error)
 	CreateWebhookEvent(ctx context.Context, in *CreateWebhookEventRequest, opts ...grpc.CallOption) (*WebhookEvent, error)
 	UpdateWebhookEvent(ctx context.Context, in *UpdateWebhookEventRequest, opts ...grpc.CallOption) (*WebhookEvent, error)
+	// engagement_inquiry start
+	ListEngagementInquiry(ctx context.Context, in *ListEngagementInquiryRequest, opts ...grpc.CallOption) (*ListEngagementInquiryResponse, error)
+	CreateEngagementInquiry(ctx context.Context, in *CreateEngagementInquiryRequest, opts ...grpc.CallOption) (*EngagementInquiry, error)
+	UpdateEngagementInquiry(ctx context.Context, in *UpdateEngagementInquiryRequest, opts ...grpc.CallOption) (*EngagementInquiry, error)
+	// magic_link start
+	ListMagicLink(ctx context.Context, in *ListMagicLinkRequest, opts ...grpc.CallOption) (*ListMagicLinkResponse, error)
+	CreateMagicLink(ctx context.Context, in *CreateMagicLinkRequest, opts ...grpc.CallOption) (*MagicLink, error)
+	UpdateMagicLink(ctx context.Context, in *UpdateMagicLinkRequest, opts ...grpc.CallOption) (*MagicLink, error)
 }
 
 type mfconsultClient struct {
@@ -308,30 +322,30 @@ func (c *mfconsultClient) UpdateBookingRecap(ctx context.Context, in *UpdateBook
 	return out, nil
 }
 
-func (c *mfconsultClient) ListNdaDocument(ctx context.Context, in *ListNdaDocumentRequest, opts ...grpc.CallOption) (*ListNdaDocumentResponse, error) {
+func (c *mfconsultClient) ListEngagementAgreement(ctx context.Context, in *ListEngagementAgreementRequest, opts ...grpc.CallOption) (*ListEngagementAgreementResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListNdaDocumentResponse)
-	err := c.cc.Invoke(ctx, Mfconsult_ListNdaDocument_FullMethodName, in, out, cOpts...)
+	out := new(ListEngagementAgreementResponse)
+	err := c.cc.Invoke(ctx, Mfconsult_ListEngagementAgreement_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *mfconsultClient) CreateNdaDocument(ctx context.Context, in *CreateNdaDocumentRequest, opts ...grpc.CallOption) (*NdaDocument, error) {
+func (c *mfconsultClient) CreateEngagementAgreement(ctx context.Context, in *CreateEngagementAgreementRequest, opts ...grpc.CallOption) (*EngagementAgreement, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(NdaDocument)
-	err := c.cc.Invoke(ctx, Mfconsult_CreateNdaDocument_FullMethodName, in, out, cOpts...)
+	out := new(EngagementAgreement)
+	err := c.cc.Invoke(ctx, Mfconsult_CreateEngagementAgreement_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *mfconsultClient) UpdateNdaDocument(ctx context.Context, in *UpdateNdaDocumentRequest, opts ...grpc.CallOption) (*NdaDocument, error) {
+func (c *mfconsultClient) UpdateEngagementAgreement(ctx context.Context, in *UpdateEngagementAgreementRequest, opts ...grpc.CallOption) (*EngagementAgreement, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(NdaDocument)
-	err := c.cc.Invoke(ctx, Mfconsult_UpdateNdaDocument_FullMethodName, in, out, cOpts...)
+	out := new(EngagementAgreement)
+	err := c.cc.Invoke(ctx, Mfconsult_UpdateEngagementAgreement_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -362,6 +376,66 @@ func (c *mfconsultClient) UpdateWebhookEvent(ctx context.Context, in *UpdateWebh
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(WebhookEvent)
 	err := c.cc.Invoke(ctx, Mfconsult_UpdateWebhookEvent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *mfconsultClient) ListEngagementInquiry(ctx context.Context, in *ListEngagementInquiryRequest, opts ...grpc.CallOption) (*ListEngagementInquiryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListEngagementInquiryResponse)
+	err := c.cc.Invoke(ctx, Mfconsult_ListEngagementInquiry_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *mfconsultClient) CreateEngagementInquiry(ctx context.Context, in *CreateEngagementInquiryRequest, opts ...grpc.CallOption) (*EngagementInquiry, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EngagementInquiry)
+	err := c.cc.Invoke(ctx, Mfconsult_CreateEngagementInquiry_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *mfconsultClient) UpdateEngagementInquiry(ctx context.Context, in *UpdateEngagementInquiryRequest, opts ...grpc.CallOption) (*EngagementInquiry, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EngagementInquiry)
+	err := c.cc.Invoke(ctx, Mfconsult_UpdateEngagementInquiry_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *mfconsultClient) ListMagicLink(ctx context.Context, in *ListMagicLinkRequest, opts ...grpc.CallOption) (*ListMagicLinkResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMagicLinkResponse)
+	err := c.cc.Invoke(ctx, Mfconsult_ListMagicLink_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *mfconsultClient) CreateMagicLink(ctx context.Context, in *CreateMagicLinkRequest, opts ...grpc.CallOption) (*MagicLink, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MagicLink)
+	err := c.cc.Invoke(ctx, Mfconsult_CreateMagicLink_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *mfconsultClient) UpdateMagicLink(ctx context.Context, in *UpdateMagicLinkRequest, opts ...grpc.CallOption) (*MagicLink, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MagicLink)
+	err := c.cc.Invoke(ctx, Mfconsult_UpdateMagicLink_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -400,14 +474,22 @@ type MfconsultServer interface {
 	ListBookingRecap(context.Context, *ListBookingRecapRequest) (*ListBookingRecapResponse, error)
 	CreateBookingRecap(context.Context, *CreateBookingRecapRequest) (*BookingRecap, error)
 	UpdateBookingRecap(context.Context, *UpdateBookingRecapRequest) (*BookingRecap, error)
-	// nda_document start
-	ListNdaDocument(context.Context, *ListNdaDocumentRequest) (*ListNdaDocumentResponse, error)
-	CreateNdaDocument(context.Context, *CreateNdaDocumentRequest) (*NdaDocument, error)
-	UpdateNdaDocument(context.Context, *UpdateNdaDocumentRequest) (*NdaDocument, error)
+	// engagement_agreement start
+	ListEngagementAgreement(context.Context, *ListEngagementAgreementRequest) (*ListEngagementAgreementResponse, error)
+	CreateEngagementAgreement(context.Context, *CreateEngagementAgreementRequest) (*EngagementAgreement, error)
+	UpdateEngagementAgreement(context.Context, *UpdateEngagementAgreementRequest) (*EngagementAgreement, error)
 	// webhook_event start
 	ListWebhookEvent(context.Context, *ListWebhookEventRequest) (*ListWebhookEventResponse, error)
 	CreateWebhookEvent(context.Context, *CreateWebhookEventRequest) (*WebhookEvent, error)
 	UpdateWebhookEvent(context.Context, *UpdateWebhookEventRequest) (*WebhookEvent, error)
+	// engagement_inquiry start
+	ListEngagementInquiry(context.Context, *ListEngagementInquiryRequest) (*ListEngagementInquiryResponse, error)
+	CreateEngagementInquiry(context.Context, *CreateEngagementInquiryRequest) (*EngagementInquiry, error)
+	UpdateEngagementInquiry(context.Context, *UpdateEngagementInquiryRequest) (*EngagementInquiry, error)
+	// magic_link start
+	ListMagicLink(context.Context, *ListMagicLinkRequest) (*ListMagicLinkResponse, error)
+	CreateMagicLink(context.Context, *CreateMagicLinkRequest) (*MagicLink, error)
+	UpdateMagicLink(context.Context, *UpdateMagicLinkRequest) (*MagicLink, error)
 	mustEmbedUnimplementedMfconsultServer()
 }
 
@@ -481,14 +563,14 @@ func (UnimplementedMfconsultServer) CreateBookingRecap(context.Context, *CreateB
 func (UnimplementedMfconsultServer) UpdateBookingRecap(context.Context, *UpdateBookingRecapRequest) (*BookingRecap, error) {
 	return nil, status.Error(codes.Unimplemented, "method UpdateBookingRecap not implemented")
 }
-func (UnimplementedMfconsultServer) ListNdaDocument(context.Context, *ListNdaDocumentRequest) (*ListNdaDocumentResponse, error) {
-	return nil, status.Error(codes.Unimplemented, "method ListNdaDocument not implemented")
+func (UnimplementedMfconsultServer) ListEngagementAgreement(context.Context, *ListEngagementAgreementRequest) (*ListEngagementAgreementResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListEngagementAgreement not implemented")
 }
-func (UnimplementedMfconsultServer) CreateNdaDocument(context.Context, *CreateNdaDocumentRequest) (*NdaDocument, error) {
-	return nil, status.Error(codes.Unimplemented, "method CreateNdaDocument not implemented")
+func (UnimplementedMfconsultServer) CreateEngagementAgreement(context.Context, *CreateEngagementAgreementRequest) (*EngagementAgreement, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateEngagementAgreement not implemented")
 }
-func (UnimplementedMfconsultServer) UpdateNdaDocument(context.Context, *UpdateNdaDocumentRequest) (*NdaDocument, error) {
-	return nil, status.Error(codes.Unimplemented, "method UpdateNdaDocument not implemented")
+func (UnimplementedMfconsultServer) UpdateEngagementAgreement(context.Context, *UpdateEngagementAgreementRequest) (*EngagementAgreement, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateEngagementAgreement not implemented")
 }
 func (UnimplementedMfconsultServer) ListWebhookEvent(context.Context, *ListWebhookEventRequest) (*ListWebhookEventResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListWebhookEvent not implemented")
@@ -498,6 +580,24 @@ func (UnimplementedMfconsultServer) CreateWebhookEvent(context.Context, *CreateW
 }
 func (UnimplementedMfconsultServer) UpdateWebhookEvent(context.Context, *UpdateWebhookEventRequest) (*WebhookEvent, error) {
 	return nil, status.Error(codes.Unimplemented, "method UpdateWebhookEvent not implemented")
+}
+func (UnimplementedMfconsultServer) ListEngagementInquiry(context.Context, *ListEngagementInquiryRequest) (*ListEngagementInquiryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListEngagementInquiry not implemented")
+}
+func (UnimplementedMfconsultServer) CreateEngagementInquiry(context.Context, *CreateEngagementInquiryRequest) (*EngagementInquiry, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateEngagementInquiry not implemented")
+}
+func (UnimplementedMfconsultServer) UpdateEngagementInquiry(context.Context, *UpdateEngagementInquiryRequest) (*EngagementInquiry, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateEngagementInquiry not implemented")
+}
+func (UnimplementedMfconsultServer) ListMagicLink(context.Context, *ListMagicLinkRequest) (*ListMagicLinkResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMagicLink not implemented")
+}
+func (UnimplementedMfconsultServer) CreateMagicLink(context.Context, *CreateMagicLinkRequest) (*MagicLink, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateMagicLink not implemented")
+}
+func (UnimplementedMfconsultServer) UpdateMagicLink(context.Context, *UpdateMagicLinkRequest) (*MagicLink, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateMagicLink not implemented")
 }
 func (UnimplementedMfconsultServer) mustEmbedUnimplementedMfconsultServer() {}
 func (UnimplementedMfconsultServer) testEmbeddedByValue()                   {}
@@ -898,56 +998,56 @@ func _Mfconsult_UpdateBookingRecap_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Mfconsult_ListNdaDocument_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListNdaDocumentRequest)
+func _Mfconsult_ListEngagementAgreement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListEngagementAgreementRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MfconsultServer).ListNdaDocument(ctx, in)
+		return srv.(MfconsultServer).ListEngagementAgreement(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Mfconsult_ListNdaDocument_FullMethodName,
+		FullMethod: Mfconsult_ListEngagementAgreement_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MfconsultServer).ListNdaDocument(ctx, req.(*ListNdaDocumentRequest))
+		return srv.(MfconsultServer).ListEngagementAgreement(ctx, req.(*ListEngagementAgreementRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Mfconsult_CreateNdaDocument_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateNdaDocumentRequest)
+func _Mfconsult_CreateEngagementAgreement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateEngagementAgreementRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MfconsultServer).CreateNdaDocument(ctx, in)
+		return srv.(MfconsultServer).CreateEngagementAgreement(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Mfconsult_CreateNdaDocument_FullMethodName,
+		FullMethod: Mfconsult_CreateEngagementAgreement_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MfconsultServer).CreateNdaDocument(ctx, req.(*CreateNdaDocumentRequest))
+		return srv.(MfconsultServer).CreateEngagementAgreement(ctx, req.(*CreateEngagementAgreementRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Mfconsult_UpdateNdaDocument_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateNdaDocumentRequest)
+func _Mfconsult_UpdateEngagementAgreement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateEngagementAgreementRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MfconsultServer).UpdateNdaDocument(ctx, in)
+		return srv.(MfconsultServer).UpdateEngagementAgreement(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Mfconsult_UpdateNdaDocument_FullMethodName,
+		FullMethod: Mfconsult_UpdateEngagementAgreement_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MfconsultServer).UpdateNdaDocument(ctx, req.(*UpdateNdaDocumentRequest))
+		return srv.(MfconsultServer).UpdateEngagementAgreement(ctx, req.(*UpdateEngagementAgreementRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1002,6 +1102,114 @@ func _Mfconsult_UpdateWebhookEvent_Handler(srv interface{}, ctx context.Context,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MfconsultServer).UpdateWebhookEvent(ctx, req.(*UpdateWebhookEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Mfconsult_ListEngagementInquiry_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListEngagementInquiryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MfconsultServer).ListEngagementInquiry(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Mfconsult_ListEngagementInquiry_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MfconsultServer).ListEngagementInquiry(ctx, req.(*ListEngagementInquiryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Mfconsult_CreateEngagementInquiry_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateEngagementInquiryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MfconsultServer).CreateEngagementInquiry(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Mfconsult_CreateEngagementInquiry_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MfconsultServer).CreateEngagementInquiry(ctx, req.(*CreateEngagementInquiryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Mfconsult_UpdateEngagementInquiry_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateEngagementInquiryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MfconsultServer).UpdateEngagementInquiry(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Mfconsult_UpdateEngagementInquiry_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MfconsultServer).UpdateEngagementInquiry(ctx, req.(*UpdateEngagementInquiryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Mfconsult_ListMagicLink_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMagicLinkRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MfconsultServer).ListMagicLink(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Mfconsult_ListMagicLink_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MfconsultServer).ListMagicLink(ctx, req.(*ListMagicLinkRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Mfconsult_CreateMagicLink_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateMagicLinkRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MfconsultServer).CreateMagicLink(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Mfconsult_CreateMagicLink_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MfconsultServer).CreateMagicLink(ctx, req.(*CreateMagicLinkRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Mfconsult_UpdateMagicLink_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateMagicLinkRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MfconsultServer).UpdateMagicLink(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Mfconsult_UpdateMagicLink_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MfconsultServer).UpdateMagicLink(ctx, req.(*UpdateMagicLinkRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1098,16 +1306,16 @@ var Mfconsult_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Mfconsult_UpdateBookingRecap_Handler,
 		},
 		{
-			MethodName: "ListNdaDocument",
-			Handler:    _Mfconsult_ListNdaDocument_Handler,
+			MethodName: "ListEngagementAgreement",
+			Handler:    _Mfconsult_ListEngagementAgreement_Handler,
 		},
 		{
-			MethodName: "CreateNdaDocument",
-			Handler:    _Mfconsult_CreateNdaDocument_Handler,
+			MethodName: "CreateEngagementAgreement",
+			Handler:    _Mfconsult_CreateEngagementAgreement_Handler,
 		},
 		{
-			MethodName: "UpdateNdaDocument",
-			Handler:    _Mfconsult_UpdateNdaDocument_Handler,
+			MethodName: "UpdateEngagementAgreement",
+			Handler:    _Mfconsult_UpdateEngagementAgreement_Handler,
 		},
 		{
 			MethodName: "ListWebhookEvent",
@@ -1120,6 +1328,30 @@ var Mfconsult_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateWebhookEvent",
 			Handler:    _Mfconsult_UpdateWebhookEvent_Handler,
+		},
+		{
+			MethodName: "ListEngagementInquiry",
+			Handler:    _Mfconsult_ListEngagementInquiry_Handler,
+		},
+		{
+			MethodName: "CreateEngagementInquiry",
+			Handler:    _Mfconsult_CreateEngagementInquiry_Handler,
+		},
+		{
+			MethodName: "UpdateEngagementInquiry",
+			Handler:    _Mfconsult_UpdateEngagementInquiry_Handler,
+		},
+		{
+			MethodName: "ListMagicLink",
+			Handler:    _Mfconsult_ListMagicLink_Handler,
+		},
+		{
+			MethodName: "CreateMagicLink",
+			Handler:    _Mfconsult_CreateMagicLink_Handler,
+		},
+		{
+			MethodName: "UpdateMagicLink",
+			Handler:    _Mfconsult_UpdateMagicLink_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

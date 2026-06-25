@@ -9,23 +9,20 @@ import (
 )
 
 type Booking struct {
-	ID               string      `json:"id"`
-	ClientId         string      `json:"client_id"`
-	Status           int64       `json:"status"`
-	ReviewDecision   int64       `json:"review_decision"`
-	ReviewedAt       null.Time   `json:"reviewed_at"`
-	DeclineReason    null.String `json:"decline_reason"`
-	PayLinkToken     null.String `json:"pay_link_token"`
-	PayLinkExpiresAt null.Time   `json:"pay_link_expires_at"`
-	PortalToken      null.String `json:"portal_token"`
-	Intake           []byte      `json:"intake"`
-	Payment          []byte      `json:"payment"`
-	Scheduling       []byte      `json:"scheduling"`
-	TermsVersion     null.String `json:"terms_version"`
-	TermsAcceptedAt  null.Time   `json:"terms_accepted_at"`
-	TermsAcceptedIp  null.String `json:"terms_accepted_ip"`
-	CreatedAt        null.Time   `json:"created_at"`
-	UpdatedAt        null.Time   `json:"updated_at"`
+	ID              string      `json:"id"`
+	ClientId        string      `json:"client_id"`
+	Status          int64       `json:"status"`
+	ReviewDecision  int64       `json:"review_decision"`
+	ReviewedAt      null.Time   `json:"reviewed_at"`
+	DeclineReason   null.String `json:"decline_reason"`
+	Intake          []byte      `json:"intake"`
+	Payment         []byte      `json:"payment"`
+	Scheduling      []byte      `json:"scheduling"`
+	TermsVersion    null.String `json:"terms_version"`
+	TermsAcceptedAt null.Time   `json:"terms_accepted_at"`
+	TermsAcceptedIp null.String `json:"terms_accepted_ip"`
+	CreatedAt       null.Time   `json:"created_at"`
+	UpdatedAt       null.Time   `json:"updated_at"`
 }
 
 type BookingDocument struct {
@@ -48,7 +45,7 @@ type BookingRecap struct {
 
 type Client struct {
 	ID        string      `json:"id"`
-	Name      string      `json:"name"`
+	Name      null.String `json:"name"`
 	Email     string      `json:"email"`
 	Timezone  null.String `json:"timezone"`
 	Notes     null.String `json:"notes"`
@@ -56,15 +53,48 @@ type Client struct {
 	UpdatedAt null.Time   `json:"updated_at"`
 }
 
-type NdaDocument struct {
-	ID             string      `json:"id"`
-	ClientId       string      `json:"client_id"`
-	URL            null.String `json:"url"`
-	Status         null.Int    `json:"status"`
-	SignedAt       null.Time   `json:"signed_at"`
-	CreatedAt      null.Time   `json:"created_at"`
-	EnvelopeId     null.String `json:"envelope_id"`
-	CertificateURL null.String `json:"certificate_url"`
+type EngagementAgreement struct {
+	ID                  string      `json:"id"`
+	ClientId            string      `json:"client_id"`
+	NdaURL              null.String `json:"nda_url"`
+	Status              null.Int    `json:"status"`
+	SignedAt            null.Time   `json:"signed_at"`
+	CreatedAt           null.Time   `json:"created_at"`
+	EnvelopeId          null.String `json:"envelope_id"`
+	CertificateURL      null.String `json:"certificate_url"`
+	ContractURL         null.String `json:"contract_url"`
+	EngagementInquiryId string      `json:"engagement_inquiry_id"`
+	UpdatedAt           null.Time   `json:"updated_at"`
+}
+
+type EngagementInquiry struct {
+	ID                 string      `json:"id"`
+	ClientId           null.String `json:"client_id"`
+	Name               string      `json:"name"`
+	Email              string      `json:"email"`
+	Phone              null.String `json:"phone"`
+	Company            null.String `json:"company"`
+	ProjectSummary     string      `json:"project_summary"`
+	WhyMoreThanSession null.String `json:"why_more_than_session"`
+	ScopeDetails       null.String `json:"scope_details"`
+	BudgetRange        null.String `json:"budget_range"`
+	Timeline           null.String `json:"timeline"`
+	Status             null.Int    `json:"status"`
+	ReviewNotes        null.String `json:"review_notes"`
+	CreatedAt          null.Time   `json:"created_at"`
+	UpdatedAt          null.Time   `json:"updated_at"`
+}
+
+type MagicLink struct {
+	ID         string      `json:"id"`
+	ClientId   string      `json:"client_id"`
+	Email      null.String `json:"email"`
+	Token      string      `json:"token"`
+	Purpose    null.Int    `json:"purpose"`
+	ExpiresAt  null.Time   `json:"expires_at"`
+	ConsumedAt null.Time   `json:"consumed_at"`
+	CreatedAt  null.Time   `json:"created_at"`
+	CreatedIp  null.String `json:"created_ip"`
 }
 
 type WebhookEvent struct {

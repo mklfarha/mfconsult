@@ -80,17 +80,17 @@ func DocumentKindSliceFromProto(s []pb.DocumentKind) []enum.DocumentKind {
 	return res
 }
 
-func NdaStatusSliceToProto(s []enum.NdaStatus) []pb.NdaStatus {
-	res := []pb.NdaStatus{}
+func AgreementStatusSliceToProto(s []enum.AgreementStatus) []pb.AgreementStatus {
+	res := []pb.AgreementStatus{}
 	for _, e := range s {
-		res = append(res, pb.NdaStatus(e))
+		res = append(res, pb.AgreementStatus(e))
 	}
 	return res
 }
-func NdaStatusSliceFromProto(s []pb.NdaStatus) []enum.NdaStatus {
-	res := []enum.NdaStatus{}
+func AgreementStatusSliceFromProto(s []pb.AgreementStatus) []enum.AgreementStatus {
+	res := []enum.AgreementStatus{}
 	for _, e := range s {
-		res = append(res, enum.NdaStatus(e))
+		res = append(res, enum.AgreementStatus(e))
 	}
 	return res
 }
@@ -106,6 +106,36 @@ func WebhookSourceSliceFromProto(s []pb.WebhookSource) []enum.WebhookSource {
 	res := []enum.WebhookSource{}
 	for _, e := range s {
 		res = append(res, enum.WebhookSource(e))
+	}
+	return res
+}
+
+func InquiryStatusSliceToProto(s []enum.InquiryStatus) []pb.InquiryStatus {
+	res := []pb.InquiryStatus{}
+	for _, e := range s {
+		res = append(res, pb.InquiryStatus(e))
+	}
+	return res
+}
+func InquiryStatusSliceFromProto(s []pb.InquiryStatus) []enum.InquiryStatus {
+	res := []enum.InquiryStatus{}
+	for _, e := range s {
+		res = append(res, enum.InquiryStatus(e))
+	}
+	return res
+}
+
+func MagicLinkPurposeSliceToProto(s []enum.MagicLinkPurpose) []pb.MagicLinkPurpose {
+	res := []pb.MagicLinkPurpose{}
+	for _, e := range s {
+		res = append(res, pb.MagicLinkPurpose(e))
+	}
+	return res
+}
+func MagicLinkPurposeSliceFromProto(s []pb.MagicLinkPurpose) []enum.MagicLinkPurpose {
+	res := []enum.MagicLinkPurpose{}
+	for _, e := range s {
+		res = append(res, enum.MagicLinkPurpose(e))
 	}
 	return res
 }

@@ -14,7 +14,9 @@ type Querier interface {
 	DeleteBookingDocument(ctx context.Context, id string) (sql.Result, error)
 	DeleteBookingRecap(ctx context.Context, id string) (sql.Result, error)
 	DeleteClient(ctx context.Context, id string) (sql.Result, error)
-	DeleteNdaDocument(ctx context.Context, id string) (sql.Result, error)
+	DeleteEngagementAgreement(ctx context.Context, id string) (sql.Result, error)
+	DeleteEngagementInquiry(ctx context.Context, id string) (sql.Result, error)
+	DeleteMagicLink(ctx context.Context, id string) (sql.Result, error)
 	DeleteWebhookEvent(ctx context.Context, id string) (sql.Result, error)
 	FetchBooking(ctx context.Context) ([]Booking, error)
 	// booking selects:
@@ -32,10 +34,18 @@ type Querier interface {
 	// client selects:
 	FetchClientById(ctx context.Context, id string) ([]Client, error)
 	FetchClientByIdForUpdate(ctx context.Context, id string) ([]Client, error)
-	FetchNdaDocument(ctx context.Context) ([]NdaDocument, error)
-	// nda_document selects:
-	FetchNdaDocumentById(ctx context.Context, id string) ([]NdaDocument, error)
-	FetchNdaDocumentByIdForUpdate(ctx context.Context, id string) ([]NdaDocument, error)
+	FetchEngagementAgreement(ctx context.Context) ([]EngagementAgreement, error)
+	// engagement_agreement selects:
+	FetchEngagementAgreementById(ctx context.Context, id string) ([]EngagementAgreement, error)
+	FetchEngagementAgreementByIdForUpdate(ctx context.Context, id string) ([]EngagementAgreement, error)
+	FetchEngagementInquiry(ctx context.Context) ([]EngagementInquiry, error)
+	// engagement_inquiry selects:
+	FetchEngagementInquiryById(ctx context.Context, id string) ([]EngagementInquiry, error)
+	FetchEngagementInquiryByIdForUpdate(ctx context.Context, id string) ([]EngagementInquiry, error)
+	FetchMagicLink(ctx context.Context) ([]MagicLink, error)
+	// magic_link selects:
+	FetchMagicLinkById(ctx context.Context, id string) ([]MagicLink, error)
+	FetchMagicLinkByIdForUpdate(ctx context.Context, id string) ([]MagicLink, error)
 	FetchWebhookEvent(ctx context.Context) ([]WebhookEvent, error)
 	// webhook_event selects:
 	FetchWebhookEventById(ctx context.Context, id string) ([]WebhookEvent, error)
@@ -44,13 +54,17 @@ type Querier interface {
 	InsertBookingDocument(ctx context.Context, arg InsertBookingDocumentParams) (sql.Result, error)
 	InsertBookingRecap(ctx context.Context, arg InsertBookingRecapParams) (sql.Result, error)
 	InsertClient(ctx context.Context, arg InsertClientParams) (sql.Result, error)
-	InsertNdaDocument(ctx context.Context, arg InsertNdaDocumentParams) (sql.Result, error)
+	InsertEngagementAgreement(ctx context.Context, arg InsertEngagementAgreementParams) (sql.Result, error)
+	InsertEngagementInquiry(ctx context.Context, arg InsertEngagementInquiryParams) (sql.Result, error)
+	InsertMagicLink(ctx context.Context, arg InsertMagicLinkParams) (sql.Result, error)
 	InsertWebhookEvent(ctx context.Context, arg InsertWebhookEventParams) (sql.Result, error)
 	UpdateBooking(ctx context.Context, arg UpdateBookingParams) error
 	UpdateBookingDocument(ctx context.Context, arg UpdateBookingDocumentParams) error
 	UpdateBookingRecap(ctx context.Context, arg UpdateBookingRecapParams) error
 	UpdateClient(ctx context.Context, arg UpdateClientParams) error
-	UpdateNdaDocument(ctx context.Context, arg UpdateNdaDocumentParams) error
+	UpdateEngagementAgreement(ctx context.Context, arg UpdateEngagementAgreementParams) error
+	UpdateEngagementInquiry(ctx context.Context, arg UpdateEngagementInquiryParams) error
+	UpdateMagicLink(ctx context.Context, arg UpdateMagicLinkParams) error
 	UpdateWebhookEvent(ctx context.Context, arg UpdateWebhookEventParams) error
 }
 

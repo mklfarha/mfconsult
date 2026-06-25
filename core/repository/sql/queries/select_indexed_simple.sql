@@ -40,14 +40,14 @@ FOR UPDATE;
 
 -- booking selects:
 -- name: FetchBookingById :many
-SELECT `id`,`client_id`,`status`,`review_decision`,`reviewed_at`,`decline_reason`,`pay_link_token`,`pay_link_expires_at`,`portal_token`,`intake`,`payment`,`scheduling`,`terms_version`,`terms_accepted_at`,`terms_accepted_ip`,`created_at`,`updated_at`
+SELECT `id`,`client_id`,`status`,`review_decision`,`reviewed_at`,`decline_reason`,`intake`,`payment`,`scheduling`,`terms_version`,`terms_accepted_at`,`terms_accepted_ip`,`created_at`,`updated_at`
 FROM `booking`
 WHERE 
     `id` = ? ;
 
         
 -- name: FetchBookingByIdForUpdate :many
-SELECT `id`,`client_id`,`status`,`review_decision`,`reviewed_at`,`decline_reason`,`pay_link_token`,`pay_link_expires_at`,`portal_token`,`intake`,`payment`,`scheduling`,`terms_version`,`terms_accepted_at`,`terms_accepted_ip`,`created_at`,`updated_at`
+SELECT `id`,`client_id`,`status`,`review_decision`,`reviewed_at`,`decline_reason`,`intake`,`payment`,`scheduling`,`terms_version`,`terms_accepted_at`,`terms_accepted_ip`,`created_at`,`updated_at`
 FROM `booking`
 WHERE 
     `id` = ? 
@@ -95,17 +95,55 @@ FOR UPDATE;
 
 
 
--- nda_document selects:
--- name: FetchNdaDocumentById :many
-SELECT `id`,`client_id`,`url`,`status`,`signed_at`,`created_at`,`envelope_id`,`certificate_url`
-FROM `nda_document`
+-- engagement_agreement selects:
+-- name: FetchEngagementAgreementById :many
+SELECT `id`,`client_id`,`nda_url`,`status`,`signed_at`,`created_at`,`envelope_id`,`certificate_url`,`contract_url`,`engagement_inquiry_id`,`updated_at`
+FROM `engagement_agreement`
 WHERE 
     `id` = ? ;
 
         
--- name: FetchNdaDocumentByIdForUpdate :many
-SELECT `id`,`client_id`,`url`,`status`,`signed_at`,`created_at`,`envelope_id`,`certificate_url`
-FROM `nda_document`
+-- name: FetchEngagementAgreementByIdForUpdate :many
+SELECT `id`,`client_id`,`nda_url`,`status`,`signed_at`,`created_at`,`envelope_id`,`certificate_url`,`contract_url`,`engagement_inquiry_id`,`updated_at`
+FROM `engagement_agreement`
+WHERE 
+    `id` = ? 
+FOR UPDATE;
+        
+
+
+
+
+-- engagement_inquiry selects:
+-- name: FetchEngagementInquiryById :many
+SELECT `id`,`client_id`,`name`,`email`,`phone`,`company`,`project_summary`,`why_more_than_session`,`scope_details`,`budget_range`,`timeline`,`status`,`review_notes`,`created_at`,`updated_at`
+FROM `engagement_inquiry`
+WHERE 
+    `id` = ? ;
+
+        
+-- name: FetchEngagementInquiryByIdForUpdate :many
+SELECT `id`,`client_id`,`name`,`email`,`phone`,`company`,`project_summary`,`why_more_than_session`,`scope_details`,`budget_range`,`timeline`,`status`,`review_notes`,`created_at`,`updated_at`
+FROM `engagement_inquiry`
+WHERE 
+    `id` = ? 
+FOR UPDATE;
+        
+
+
+
+
+-- magic_link selects:
+-- name: FetchMagicLinkById :many
+SELECT `id`,`client_id`,`email`,`token`,`purpose`,`expires_at`,`consumed_at`,`created_at`,`created_ip`
+FROM `magic_link`
+WHERE 
+    `id` = ? ;
+
+        
+-- name: FetchMagicLinkByIdForUpdate :many
+SELECT `id`,`client_id`,`email`,`token`,`purpose`,`expires_at`,`consumed_at`,`created_at`,`created_ip`
+FROM `magic_link`
 WHERE 
     `id` = ? 
 FOR UPDATE;

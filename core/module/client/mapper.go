@@ -20,7 +20,7 @@ func mapModelsToEntities(models []mfconsultdb.Client) []main_entity.Client {
 func mapModelToEntity(m mfconsultdb.Client) main_entity.Client {
 	return main_entity.Client{
 		ID:        mapper.StringToUUID(m.ID),
-		Name:      m.Name,
+		Name:      null.NewString(m.Name.String, m.Name.Valid),
 		Email:     m.Email,
 		Timezone:  null.NewString(m.Timezone.String, m.Timezone.Valid),
 		Notes:     null.NewString(m.Notes.String, m.Notes.Valid),

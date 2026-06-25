@@ -10,7 +10,7 @@ import (
 )
 
 const fetchBooking = `-- name: FetchBooking :many
-SELECT ` + "`" + `id` + "`" + `,` + "`" + `client_id` + "`" + `,` + "`" + `status` + "`" + `,` + "`" + `review_decision` + "`" + `,` + "`" + `reviewed_at` + "`" + `,` + "`" + `decline_reason` + "`" + `,` + "`" + `pay_link_token` + "`" + `,` + "`" + `pay_link_expires_at` + "`" + `,` + "`" + `portal_token` + "`" + `,` + "`" + `intake` + "`" + `,` + "`" + `payment` + "`" + `,` + "`" + `scheduling` + "`" + `,` + "`" + `terms_version` + "`" + `,` + "`" + `terms_accepted_at` + "`" + `,` + "`" + `terms_accepted_ip` + "`" + `,` + "`" + `created_at` + "`" + `,` + "`" + `updated_at` + "`" + `
+SELECT ` + "`" + `id` + "`" + `,` + "`" + `client_id` + "`" + `,` + "`" + `status` + "`" + `,` + "`" + `review_decision` + "`" + `,` + "`" + `reviewed_at` + "`" + `,` + "`" + `decline_reason` + "`" + `,` + "`" + `intake` + "`" + `,` + "`" + `payment` + "`" + `,` + "`" + `scheduling` + "`" + `,` + "`" + `terms_version` + "`" + `,` + "`" + `terms_accepted_at` + "`" + `,` + "`" + `terms_accepted_ip` + "`" + `,` + "`" + `created_at` + "`" + `,` + "`" + `updated_at` + "`" + `
 FROM ` + "`" + `booking` + "`" + `
 `
 
@@ -30,9 +30,6 @@ func (q *Queries) FetchBooking(ctx context.Context) ([]Booking, error) {
 			&i.ReviewDecision,
 			&i.ReviewedAt,
 			&i.DeclineReason,
-			&i.PayLinkToken,
-			&i.PayLinkExpiresAt,
-			&i.PortalToken,
 			&i.Intake,
 			&i.Payment,
 			&i.Scheduling,
@@ -161,29 +158,114 @@ func (q *Queries) FetchClient(ctx context.Context) ([]Client, error) {
 	return items, nil
 }
 
-const fetchNdaDocument = `-- name: FetchNdaDocument :many
-SELECT ` + "`" + `id` + "`" + `,` + "`" + `client_id` + "`" + `,` + "`" + `url` + "`" + `,` + "`" + `status` + "`" + `,` + "`" + `signed_at` + "`" + `,` + "`" + `created_at` + "`" + `,` + "`" + `envelope_id` + "`" + `,` + "`" + `certificate_url` + "`" + `
-FROM ` + "`" + `nda_document` + "`" + `
+const fetchEngagementAgreement = `-- name: FetchEngagementAgreement :many
+SELECT ` + "`" + `id` + "`" + `,` + "`" + `client_id` + "`" + `,` + "`" + `nda_url` + "`" + `,` + "`" + `status` + "`" + `,` + "`" + `signed_at` + "`" + `,` + "`" + `created_at` + "`" + `,` + "`" + `envelope_id` + "`" + `,` + "`" + `certificate_url` + "`" + `,` + "`" + `contract_url` + "`" + `,` + "`" + `engagement_inquiry_id` + "`" + `,` + "`" + `updated_at` + "`" + `
+FROM ` + "`" + `engagement_agreement` + "`" + `
 `
 
-func (q *Queries) FetchNdaDocument(ctx context.Context) ([]NdaDocument, error) {
-	rows, err := q.db.QueryContext(ctx, fetchNdaDocument)
+func (q *Queries) FetchEngagementAgreement(ctx context.Context) ([]EngagementAgreement, error) {
+	rows, err := q.db.QueryContext(ctx, fetchEngagementAgreement)
 	if err != nil {
 		return nil, err
 	}
 	defer rows.Close()
-	var items []NdaDocument
+	var items []EngagementAgreement
 	for rows.Next() {
-		var i NdaDocument
+		var i EngagementAgreement
 		if err := rows.Scan(
 			&i.ID,
 			&i.ClientId,
-			&i.URL,
+			&i.NdaURL,
 			&i.Status,
 			&i.SignedAt,
 			&i.CreatedAt,
 			&i.EnvelopeId,
 			&i.CertificateURL,
+			&i.ContractURL,
+			&i.EngagementInquiryId,
+			&i.UpdatedAt,
+		); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
+
+const fetchEngagementInquiry = `-- name: FetchEngagementInquiry :many
+SELECT ` + "`" + `id` + "`" + `,` + "`" + `client_id` + "`" + `,` + "`" + `name` + "`" + `,` + "`" + `email` + "`" + `,` + "`" + `phone` + "`" + `,` + "`" + `company` + "`" + `,` + "`" + `project_summary` + "`" + `,` + "`" + `why_more_than_session` + "`" + `,` + "`" + `scope_details` + "`" + `,` + "`" + `budget_range` + "`" + `,` + "`" + `timeline` + "`" + `,` + "`" + `status` + "`" + `,` + "`" + `review_notes` + "`" + `,` + "`" + `created_at` + "`" + `,` + "`" + `updated_at` + "`" + `
+FROM ` + "`" + `engagement_inquiry` + "`" + `
+`
+
+func (q *Queries) FetchEngagementInquiry(ctx context.Context) ([]EngagementInquiry, error) {
+	rows, err := q.db.QueryContext(ctx, fetchEngagementInquiry)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []EngagementInquiry
+	for rows.Next() {
+		var i EngagementInquiry
+		if err := rows.Scan(
+			&i.ID,
+			&i.ClientId,
+			&i.Name,
+			&i.Email,
+			&i.Phone,
+			&i.Company,
+			&i.ProjectSummary,
+			&i.WhyMoreThanSession,
+			&i.ScopeDetails,
+			&i.BudgetRange,
+			&i.Timeline,
+			&i.Status,
+			&i.ReviewNotes,
+			&i.CreatedAt,
+			&i.UpdatedAt,
+		); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
+
+const fetchMagicLink = `-- name: FetchMagicLink :many
+SELECT ` + "`" + `id` + "`" + `,` + "`" + `client_id` + "`" + `,` + "`" + `email` + "`" + `,` + "`" + `token` + "`" + `,` + "`" + `purpose` + "`" + `,` + "`" + `expires_at` + "`" + `,` + "`" + `consumed_at` + "`" + `,` + "`" + `created_at` + "`" + `,` + "`" + `created_ip` + "`" + `
+FROM ` + "`" + `magic_link` + "`" + `
+`
+
+func (q *Queries) FetchMagicLink(ctx context.Context) ([]MagicLink, error) {
+	rows, err := q.db.QueryContext(ctx, fetchMagicLink)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []MagicLink
+	for rows.Next() {
+		var i MagicLink
+		if err := rows.Scan(
+			&i.ID,
+			&i.ClientId,
+			&i.Email,
+			&i.Token,
+			&i.Purpose,
+			&i.ExpiresAt,
+			&i.ConsumedAt,
+			&i.CreatedAt,
+			&i.CreatedIp,
 		); err != nil {
 			return nil, err
 		}
