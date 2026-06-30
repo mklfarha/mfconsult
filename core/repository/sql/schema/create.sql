@@ -5,7 +5,8 @@ CREATE TABLE IF NOT EXISTS `client` (
     `timezone` VARCHAR(64),
     `notes` TEXT,
     `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
-    `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP
+    `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `webhook_event` (
@@ -14,7 +15,8 @@ CREATE TABLE IF NOT EXISTS `webhook_event` (
     `event_type` VARCHAR(128),
     `payload` TEXT,
     `processed_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
-    `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP
+    `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `booking` (
@@ -32,6 +34,7 @@ CREATE TABLE IF NOT EXISTS `booking` (
     `terms_accepted_ip` VARCHAR(64),
     `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`),
     CONSTRAINT `client_has_bookings`
         FOREIGN KEY (`client_id`)
         REFERENCES `client` (`id`)
@@ -45,6 +48,7 @@ CREATE TABLE IF NOT EXISTS `booking_document` (
     `label` VARCHAR(255),
     `purge_after` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`),
     CONSTRAINT `booking_has_documents`
         FOREIGN KEY (`booking_id`)
         REFERENCES `booking` (`id`)
@@ -56,6 +60,7 @@ CREATE TABLE IF NOT EXISTS `booking_recap` (
     `body` TEXT,
     `published_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`),
     CONSTRAINT `booking_has_recap`
         FOREIGN KEY (`booking_id`)
         REFERENCES `booking` (`id`)
@@ -73,6 +78,7 @@ CREATE TABLE IF NOT EXISTS `engagement_agreement` (
     `contract_url` VARCHAR(512),
     `engagement_inquiry_id` CHAR(36) NOT NULL,
     `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`),
     CONSTRAINT `client_has_agreement`
         FOREIGN KEY (`client_id`)
         REFERENCES `client` (`id`),
@@ -97,6 +103,7 @@ CREATE TABLE IF NOT EXISTS `engagement_inquiry` (
     `review_notes` TEXT,
     `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`),
     CONSTRAINT `client_has_inquiries`
         FOREIGN KEY (`client_id`)
         REFERENCES `client` (`id`)
@@ -112,6 +119,7 @@ CREATE TABLE IF NOT EXISTS `magic_link` (
     `consumed_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `created_ip` VARCHAR(64),
+    PRIMARY KEY (`id`),
     CONSTRAINT `client_has_magic_links`
         FOREIGN KEY (`client_id`)
         REFERENCES `client` (`id`)

@@ -1,14 +1,13 @@
 package main
 
 import (
-	mfconsultconfig "github.com/mklfarha/mfconsult/config"
-	"github.com/mklfarha/mfconsult/core"
 	"go.uber.org/config"
-	"go.uber.org/fx"
-	"go.uber.org/zap"
 	"net/http"
 
-	pbserver "github.com/mklfarha/mfconsult/idl/server"
+	mfconsultconfig "github.com/mklfarha/mfconsult/config"
+	"github.com/mklfarha/mfconsult/core"
+	"go.uber.org/fx"
+	"go.uber.org/zap"
 )
 
 func main() {
@@ -18,9 +17,8 @@ func main() {
 			mfconsultconfig.New,
 			core.New,
 		),
-		fx.Invoke(httpServer),
 
-		fx.Invoke(pbserver.New),
+		fx.Invoke(httpServer),
 	).Run()
 }
 

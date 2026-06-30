@@ -1,6 +1,6 @@
 
 ports:  
-  grpc: 6005
+  grpc: 50051
   http: 8080
 
 auth:
